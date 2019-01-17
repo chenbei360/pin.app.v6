@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": 0,
@@ -52,6 +52,12 @@
 					"name": "个人中心",
 					"pathName": "pages/checkout",
 					"query": "goods_id=340&sell_type=1"
+				},
+				{
+					"id": -1,
+					"name": "新增地址",
+					"pathName": "pages/address",
+					"query": ""
 				}
 			]
 		}
