@@ -1,0 +1,18 @@
+<view class="group-detail" wx:if="{{isGroupHelp}}" bindtap="close_group_desc">
+<view class="div group-detail-notice-container" style="display:;" data-reactid="71">
+<view class="div notice-pop-container" data-reactid="82" catchtouchmove="stop">
+    <view  data-reactroot="" class="div notice-pop">
+        <view class="div mask"></view>
+        <view class="div notice-pop-content">
+            <view class="div notice-pop-title">如何参加拼团</view>
+            <view class="ul notice-pop-list">
+                <view class="li join">开团或参加别人的团</view>
+                <view class="li time">在规定的时间内，邀请好友参团</view>
+                <view class="li send">达到拼团人数，分别给团长和团员发货</view>
+                <view class="li withdraw">未达到拼团人数，货款将自动原路返还</view>
+            </view>
+        </view>
+    </view>
+</view>
+</view>
+</view>

@@ -1,0 +1,36 @@
+<!-- 海报 -->
+<view class="modal-mask" bindtap="hidePosterModal" catchtouchmove="preventTouchMove" wx:if="{{showPosterModal}}"></view>
+
+<view class="modal-wrap" bindtap="hidePosterModal" wx:if="{{showPosterModal}}">
+  <view class="modal-dialog" catchtap='emptytest'>
+
+    <view class="close" bindtap='hidePosterModal' hover-class='hover-effect'>
+      <image src="../../images/push/exit2.png"></image>
+    </view>
+    <image class="goods-cover" src="{{goods.image_url}}" mode='cover'></image>
+
+    <view class="goods-info">
+      <view class="title-1 {{goods.title_one?'':'text-center'}}">{{goods.title_one}}</view>
+      <view class="title-2">{{goods.title_two}}</view>
+
+      <view class="price" wx:if="{{goods.group_price}}">¥ {{goods.group_price}}</view>
+    </view>
+
+    <view class="dash-line"></view>
+
+
+    <view class="qrcode-info-wrap">
+      <image class="qrcode" src="{{qrcodeUrl}}"></image>
+
+      <view class="ps-wrap">
+        <view class="text">长按识别图中的小程序码</view>
+        <view class="text">查看详情</view>
+      </view>
+    </view>
+
+    <view class="modal-footer">
+      <button class="save-btn" bindtap='save' disabled='{{disabled}}'>保存图片</button>
+      <view class="text">保存后，可以从手机相册分享到朋友圈</view>
+    </view>
+  </view>
+</view>

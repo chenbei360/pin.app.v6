@@ -1,0 +1,143 @@
+/**app.wxss**/
+@import 'style/v.1.0/weui.wxss';
+@import 'style/v.1.0/yeui.wxss';
+@import 'libs/font/iconfont.wxss';
+.clearfix:after{
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+.clearfix{
+    zoom:1;
+}
+page{
+    font-size: 24rpx;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+    background-color:#ffffff;
+    color:#333;
+}
+
+/* banner 滚动记数*/
+.banner{
+  position: relative;
+}
+
+.swiper-count{
+  position: absolute;
+  bottom:20rpx;
+  right:20rpx;
+  background:rgba(255, 255, 255, 0.5);
+  color:#333;
+  text-align: center;
+  font-size: 10px;
+  padding:0 3px;
+  border-radius: 2px;
+}
+/* end banner 滚动计数*/
+
+
+/* 底部modal */
+.commodity_screen {
+ width: 100%;
+ height: 100%;
+ position: fixed;
+ top: 0;
+ left: 0;
+ background: #000;
+ opacity: 0.2;
+ overflow: hidden;
+ z-index: 1000;
+ color: #fff;
+}
+.commodity_attr_box {
+ width: 100%;
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ z-index: 2000;
+ background: #fff;
+ padding-top: 20rpx;
+}
+/* end 底部modal */
+
+
+/** 分享modal **/
+page .share-modal{
+  min-height: 300rpx;
+  max-height: 100%;
+  background: #f5f5f5;
+}
+
+.share-modal .cancel-btn{
+  width:100%;
+  background:#fff;
+  height:88rpx;
+  line-height: 88rpx;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  font-size: 28rpx;
+}
+.share-modal .item{
+  width:50%;
+  text-align: center;
+  padding-top:30rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  float:left;
+  font-size: 24rpx;
+  border:none;
+  color:inherit;
+  background:transparent;
+}
+
+.share-modal button .text{
+  padding-top:0rpx;
+}
+
+.item::after{
+  border: none;
+}
+
+.share-modal .image-wrap{
+  background:#fff;
+  width:100rpx;
+  height:100rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction:column;
+  justify-content: center;
+}
+
+.share-modal .image-wrap image{
+  width:48rpx;
+  height: 42rpx;
+  object-fit: cover;
+}
+
+.share-modal .text{
+  padding-top:10rpx;
+  text-align: center;
+}
+
+.weui-badge{
+  background-color:#ff4965;
+}
+
+.a {display: inline;}
+.div {display: block;}
+.footer {display: block;}
+.header {display: block;}
+.small {display:inline;}
+.i {display:inline;}
+.span {display:inline;}
+.ul {display: block;}
+.li {display: inline;}
+.b {display: inline}
+.strong {display: inline}
+.p {display: inline}

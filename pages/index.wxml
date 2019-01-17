@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<page-loading isLoading="{{isLoading}}" isOperate="{{isOperate}}"></page-loading>
+
+<view class="container" wx-if="{{!isLoading || isOperate}}">
+  <view class="for-margin-top"></view>   
+  <!--banner广告区域-->
+  <view class="banner">
+    <swiper autoplay="true"  interval="5000" indicator-active-color="#d81e06" circular="true" >
+    <block wx:for="{{banner}}" wx:key="id">
+      <swiper-item data-type="{{item.banner_type}}" data-text="{{item.banner_name}}" bindtap="bannerClick">
+      <image  src="{{item.image_url}}" style="width:100%;height:100%;" mode='aspectFill'></image>
+      </swiper-item>
+    </block>
+    </swiper>
+    
+    <view class="swiper-count">{{swiperCount}}</view>
+  </view>
+
+  <view class="for-margin-top"></view>   
+  
+  <!--goods商品列表  -->
+  <block wx:key="item" wx:for="{{goods}}">
+    <view style="" class="goods_list tuan-new div">
+        <view class="tuan_g div {{goods.length==index+1 ? 'tuan_g_last' : ''}}">
+            <view class="i"></view>
+            <navigator hover-class="none" url="./goods?goods_id={{item.goods_id}}">
+                <view class="tuan_g_img div">
+                    <image  data-id="goods_img" class=" loadThumb img" mode="widthFix" src="{{item.image_url}}" data-id="goods_img" style='width:100%;height:100%;'></image> 
+                </view>
+                
+                <view class="tuan_goods_info div">
+                    <view class="p tuan_goods_name">{{item.goods_name}}</view>
+                        <view class="p tuan_goods_cx">
+                            <view class="span"></view>
+                        </view>
+                </view>
+            
+                <view class="tuan_goods_core div">
+                    <view class="tuan_goods_btn div">
+                        <view class="span">去开团</view>
+                    </view>
+
+                    <view class="tuan_goods_price">
+                        <view class="red span">
+                            <view class="small">￥</view>
+                            <span>{{item.group_price}} </span>
+                        </view>
+                        <view class="span group-desc">  {{item.group_number}}人团.单买价{{item.alone_price}}元</view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+  </block>
+</view>
+
+<net-error-tips isNoNetError="{{isNoNetError}}" bind:loadData="loadData"></net-error-tips>
+<load-more isHideLoadMore="{{isHideLoadMore}}"></load-more>

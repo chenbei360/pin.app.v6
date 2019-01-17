@@ -1,0 +1,10 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "page-loading": "../../component/page-loading/page-loading",
+    "net-error-tips": "../../component/net-error-tips/net-error-tips",
+    "mall-service": "../../component/mall-service/mall-service",
+    "qrcode-poster": "../../component/qrcode-poster/qrcode-poster"
+  }
+}

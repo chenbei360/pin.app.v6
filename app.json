@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index",
+    "pages/groups",
+    "pages/orders",
+    "pages/checkout",
+    "pages/personal",
+    "pages/goods",
+    "pages/addresses",
+    "pages/address",
+    "pages/order",
+    "pages/group"
+  ],
+  "window": {
+    "backgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#FF4C42",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "拼购"
+  },
+  "tabBar": {
+    "backgroundColor": "#FFF",
+    "selectedColor": "#FF4C42",
+    "color": "#777",
+    "list": [
+      {
+        "pagePath": "pages/index",
+        "text": "首页",
+        "iconPath": "./images/home.png",
+        "selectedIconPath": "./images/select_home.png"
+      },
+      {
+        "pagePath": "pages/groups",
+        "text": "我的团",
+        "iconPath": "./images/groups.png",
+        "selectedIconPath": "./images/select_groups.png"
+      },
+      {
+        "pagePath": "pages/orders",
+        "text": "我的订单",
+        "iconPath": "./images/orders.png",
+        "selectedIconPath": "./images/select_orders.png"
+      },
+      {
+        "pagePath": "pages/personal",
+        "text": "我的",
+        "iconPath": "./images/personal.png",
+        "selectedIconPath": "./images/select_personal.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

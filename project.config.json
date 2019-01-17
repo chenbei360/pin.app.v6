@@ -1,0 +1,59 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wx48d98f380462ebde",
+	"projectname": "weipin5test",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": 0,
+					"name": "个人中心",
+					"pathName": "pages/personal",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "商品详情",
+					"pathName": "pages/goods",
+					"query": "goods_id=340"
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/checkout",
+					"query": "goods_id=340&sell_type=1"
+				}
+			]
+		}
+	}
+}

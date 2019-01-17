@@ -1,0 +1,138 @@
+/* pages/index.wxss */
+page{
+  height: 100%;
+  background: #eceded;
+}
+.container{
+  width:100%;
+}
+.for-margin-top {
+    margin-top: 20rpx
+}
+.tuan {
+    min-height: 1040rpx;
+}
+
+.tuan-new {
+    padding: 0 2rpx;
+}
+
+.goods_list {
+    margin: 0 2rpx;
+    overflow: hidden;
+}
+
+.tuan_g {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  position: relative;
+}
+.tuan_g_last {
+  margin-bottom: 0rpx;
+}
+
+.tuan_g_img {
+    display: block;
+    position: relative;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAEsCAMAAABkJfIZAAAAGXRFW…AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADY4H8CDADljnflZlO+SAAAAABJRU5ErkJggg==) 50% 50% no-repeat;
+}
+
+.tuan_g_img .img {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+.tuan-new .goods-tag {
+    position: absolute;
+    left: 24rpx;
+    top: 0;
+    width: 84rpx;
+    height: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 30rpx;
+    font-weight: 600;
+    font-family: PingFang;
+}
+
+.tuan-new .tuan_goods_info {
+    padding: 18rpx 22rpx;
+}
+
+.tuan-new .tuan_goods_info .tuan_goods_name {
+    font-size: 30rpx;
+    color: #151516;
+    height: 43.2rpx;
+    line-height: 37.76rpx;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    vertical-align: middle;
+    padding: 0 3.2rpx;
+    word-break: break-all;
+    white-space: normal;
+    text-align: left;
+    -webkit-box-orient: vertical;
+    text-overflow: clip;
+    word-wrap: break-word;
+    color: #a4a5a7;
+}
+
+.tuan-new .tuan_goods_info .tuan_goods_cx {
+    padding: 12rpx 0 8rpx;
+    line-height: 30rpx;
+    font-size: 26rpx;
+}
+
+.tuan-new .tuan_goods_info .tuan_goods_cx .span {
+    padding-right: 8rpx;
+}
+
+.tuan-new .tuan_goods_core {
+    padding: 0 22rpx 24rpx;
+}
+.tuan-new .tuan_goods_core .tuan_goods_btn {
+    float: right;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #fff;
+    background-color: #FF5C54;
+    font-size: 28rpx;
+    border-radius: 8rpx;
+    width:144rpx;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 60rpx;
+    background: -webkit-gradient(linear,left top,right top,from(#e93b3d),to(#ff9474));
+    background: -webkit-linear-gradient(left,#e93b3d,#ff9474);
+    background: linear-gradient(90deg,#e93b3d,#ff9474);
+    box-shadow: 0 6rpx 12rpx rgba(233,59,61,.2);
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_price {
+    height: 52rpx;
+    line-height: 52rpx;
+    overflow: hidden;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_price .red {
+    font-size: 36rpx;
+    color: #FF4C42;
+    margin-right: 1.92rpx;
+    font-weight: 700;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_price .divide {
+    color: #878787;
+    font-size: 32rpx;
+}
+
+.tuan-new .tuan_goods_core .tuan_goods_price .spec {
+    color: #878787;
+    font-size: 26rpx;
+}
+
+.group-desc {
+  color: #9c9c9c;
+}

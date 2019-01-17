@@ -1,0 +1,35 @@
+<!--component/g-h-service/g-h-service.wxml-->
+<view class="goods-header false false">
+  <view class="div">
+      <view class="g-h-div"></view>
+      <view class="div g-h-services" catchtap="open_service_detail">
+        <block wx:for="{{service}}">
+          <view class="g-h-service">
+              <view class="g-h-service-dot" wx:if="{{index != 0}}"></view>
+              <view class="g-h-service-txt {{index == 0 ? 'first-service' : ''}}">{{item.type}}</view>
+          </view>
+        </block>
+          <view class="g-h-enter"><view class="span g-h-enter-icon"></view>
+          </view>
+      </view>
+      <view class="service-detail-bg" catchtap="close_service_detail" style="{{service_detail ? '' : 'display:none;'}}">
+          <view class="gh-service-detail-main {{service_detail && service_detail_show ? 'gh-main-show' : 'gh-main-hide'}}">
+              <view class="gh-service-title"><view class="span">服务说明</view>
+                  <view class="gh-service-close-btn" catchtap="close_service_detail"></view>
+              </view>
+              <view id="gh-service-modal-list-service" class="gh-service-modal-content">
+                  <view class="gh-service-content">
+                      <view class="gh-service-item" wx:for="{{service}}">
+                          <view class="gh-service-left">
+                              <view class="gh-service-item-top"><view class="span gh-ms-item-icon"></view>
+                              <view class="span gh-service-item-name">{{item.type}}</view>
+                          </view>
+                          <view class="span service-item-desc">{{item.desc}}</view>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </view>
+  </view> 
+</view>

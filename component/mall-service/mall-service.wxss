@@ -1,0 +1,227 @@
+.goods-header .g-h-div {
+    border-top: 1px solid #f2f2f2;
+    margin-top: -2rpx;
+    margin-left: 24rpx;
+    box-sizing: border-box;
+}
+.goods-header .g-h-services, .goods-header .g-h-services .g-h-country {
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.goods-header .g-h-services {
+    padding: 24rpx;
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: start;
+    -webkit-justify-content: start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    font-size: 26rpx;
+    line-height: 76rpx;
+    color: #58595b;
+    height: 76rpx;
+    box-sizing: border-box;
+}
+
+.goods-header .g-h-services .g-h-service {
+    margin-left: 16rpx;
+    margin-top: 2rpx;
+    display: -webkit-inline-box;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+}
+.goods-header .g-h-services .g-h-service .g-h-service-txt {
+  margin-left: 16rpx;
+}
+.goods-header .g-h-services .g-h-service .g-h-service-txt.first-service {
+  margin-left: -16rpx;
+}
+
+.goods-header .g-h-services .g-h-service .g-h-service-dot {
+  height: 4rpx;
+  width: 4rpx;
+  border-radius: 50%;
+  background-color: #9c9c9c;
+  box-sizing: border-box;
+}
+.goods-header .g-h-enter .g-h-enter-icon:before {
+  border-bottom: 2rpx solid #DDDDDD;
+  border-left: 2rpx solid #DDDDDD;
+  content: "";
+  display: inline-block;
+  height: 14rpx;
+  overflow: hidden;
+  position: absolute;
+  right: 24rpx;
+  top: 31rpx;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  width: 14rpx;
+}
+.service-detail-bg {
+    position: fixed;
+    width: 100%;
+    max-width: 640px;
+    height: 100%;
+    top: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 10002;
+}
+.service-detail-bg .gh-service-detail-main.gh-main-show {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+}
+.service-detail-bg .gh-service-detail-main.gh-main-hide {
+    -webkit-transform: translateZ(0) translateY(819.99rpx);
+    transform: translateZ(0) translateY(819.99rpx);
+}
+.service-detail-bg .gh-service-detail-main {
+    position: fixed;
+    width: 100%;
+    max-width: 640px;
+    height: 819.99rpx;
+    background-color: #fff;
+    z-index: 10000;
+    -webkit-transition: -webkit-transform .15s ease-in-out .15s;
+    transition: -webkit-transform .15s ease-in-out .15s;
+    transition: transform .15s ease-in-out .15s;
+    transition: transform .15s ease-in-out .15s,-webkit-transform .15s ease-in-out .15s;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    bottom: 0;
+}
+.service-detail-bg .gh-service-title {
+    user-select: auto;
+    -webkit-user-select: auto;
+    position: relative;
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 34rpx;
+    color: #151516;
+    text-align: center;
+    border-bottom: 1px solid hsla(0,0%,88%,.4);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+.service-detail-bg .gh-service-close-btn {
+    position: absolute;
+    width: 88rpx;
+    height: 88rpx;
+    padding: 30rpx;
+    top: 0;
+    right: 0;
+    padding-top: 32rpx;
+    box-sizing: border-box;
+}
+.service-detail-bg .gh-service-close-btn:before {
+    content: "\E61D";
+    font-size: 24rpx;
+    color: #e0e0e0;
+    font-family: icomoon;
+    line-height: 1;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+}
+
+.service-detail-bg .gh-service-modal-content {
+    width: 100%;
+    height: 744rpx;
+    font-size: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.goods-header .gh-service-content {
+    padding: 42rpx 24rpx 60rpx;
+}
+.goods-header .gh-service-item, .goods-header .gh-service-item .gh-service-left {
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: start;
+    -webkit-justify-content: start;
+    -webkit-box-direction: normal;
+}
+.goods-header .gh-service-item {
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    width: 100%;
+    padding: 0 0 42rpx;
+}
+
+.goods-header .gh-service-item .gh-service-left {
+    -webkit-box-align: start;
+    align-items: start;
+    -webkit-align-items: start;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.goods-header .gh-service-item .gh-service-left .gh-service-item-top {
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: start;
+    -webkit-justify-content: start;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+}
+
+.goods-header .gh-service-item .gh-service-left .service-item-desc {
+    margin-top: 12rpx;
+    margin-left: 18rpx;
+    font-size: 28rpx;
+    color: #9c9c9c;
+    line-height: 40rpx;
+    display: -webkit-box;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-pack: start;
+    justify-content: start;
+    -webkit-justify-content: start;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+}
+
+.goods-header .gh-service-item .gh-service-left .gh-service-item-top .gh-service-item-name {
+    margin-left: 12rpx;
+    font-size: 32rpx;
+    color: #151516;
+    line-height: 32rpx;
+}

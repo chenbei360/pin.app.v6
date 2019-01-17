@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "usingComponents": {
+    "page-loading": "../../component/page-loading/page-loading",
+    "net-error-tips": "../../component/net-error-tips/net-error-tips",
+    "group-help": "../../component/group-help/group-help"
+  }
+}
