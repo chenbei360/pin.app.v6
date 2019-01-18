@@ -1,65 +1,97 @@
 // pages/addresses.js
+//获取应用实例
+const app = getApp();
+
+var goodsId = 0, addressId = 0, sellType = 0;
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+ 
   data: {
-
+    isLoading: true,
+    isOperate: false,
+    showAuthModal: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  loadData: function () {
+    var that = this;
+
+    app.getUserInfo(function (res) {
+
+    }, function () {
+      that.setData({
+        showAuthModal: true,
+      });
+    });
+    
+    wx.request({
+      url: app.globalData.apiUrl + 'v1.0/users/addresses',
+      header: {
+        'AccessToken': wx.getStorageSync("token")
+      },
+      success: function (res) {
+
+        that.setData({
+          addressList: res.data.address_list
+        });
+
+        that.setData({
+          isNoNetError: true
+        });
+      },
+      fail: function (res) {
+        that.setData({
+          isNoNetError: false
+        });
+      },
+      complete: function (res) {
+        wx.stopPullDownRefresh();
+        that.setData({
+          isLoading: false
+        });
+      }
+    });
+  },
+  
+  onPullDownRefresh: function () {
+    this.loadData();
+  },
+
   onLoad: function (options) {
-
+    goodsId = options.goods_id,
+    sellType = options.sell_type,
+    addressId = options.address_id;
+    this.loadData();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+  edit: function (e) {
+    wx.navigateTo({
+      "url": "address?address_id=" + e.target.dataset.address_id + "&goods_id=" + goodsId + "&sell_type=" + sellType,
+    });
+  },
+
   onReady: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
+  
   onShow: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
+ 
   onHide: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
+ 
   onUnload: function () {
 
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
+ 
   onReachBottom: function () {
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
 
   }

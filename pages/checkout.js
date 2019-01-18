@@ -10,7 +10,8 @@ Page({
   data: {
     isLoading: true,
     isBannering: true,
-    isGroupHelp: false
+    isGroupHelp: false,
+    isNoNetError: true
   },
   setIsGroupHelp: function() {
     this.setData({"isGroupHelp" : true});
@@ -60,6 +61,26 @@ Page({
   loadData: function() {
     this.goodsDetail(),
       this.orderBanner();
+  },
+
+  //跳转地址页面
+  redirectAddresses: function () {
+
+
+    var url;
+
+
+    if (this.data.address != undefined && this.data.address.address_id != undefined && this.data.address.address_id > 0) {
+      url = "addresses?sell_type=" + this.sell_type + "&goods_id=" + this.goods_id;
+      url += " &address_id=" + this.data.address.address_id;
+    } else {
+      url = "address?goods_id=" + this.goods_id + "&sell_type=" + this.sell_type;
+    }
+
+
+    wx.navigateTo({
+      url: url
+    });
   },
 
   /**

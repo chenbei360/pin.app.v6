@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": " ",
-  "navigationBarBackgroundColor": "#FFF",
-  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "navigationBarBackgroundColor": "#3B3A3E",
   "usingComponents": {
     "page-loading": "../../component/page-loading/page-loading",
     "net-error-tips": "../../component/net-error-tips/net-error-tips",

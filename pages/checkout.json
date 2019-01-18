@@ -1,4 +1,5 @@
 {
+  "navigationBarBackgroundColor": "#3B3A3E",
   "navigationBarTitleText": "确认订单",
   "usingComponents": {
     "page-loading": "../../component/page-loading/page-loading",

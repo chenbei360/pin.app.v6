@@ -1,21 +1,21 @@
 <page-loading isLoading="{{isLoading}}" isOperate="{{isOperate}}"></page-loading>
 
-<view class="body" avalonctrl="order">
+<view class="body" wx:if="{{!isLoading}}">
     <view class="div" style="display: block;">
         <view class="div wx_wrap">
-            <!--ms-if-->
+            
             <view bindtap="redirectAddresses" hover-class="none">
                 <view class="a send_address">
                     
                     <view class="div" id="sendTo">
                         <view class="div address address_defalut" style="{{address ? '' : 'display: none;'}}">
                         <view class="div address_name_order">
-                            <view class="span">{{address.address_name == "WORK" ? "公司" : "家庭"}}</view><!--ms-if-->
+                            <view class="span">{{address.address_name == "WORK" ? "公司" : "家庭"}}</view>
                         </view>
                         
                         <view class="h3">
                             <view class="b send_margin">送至</view>
-                            <view class="br"></view><!--ms-if-->
+                            <view class="br"></view>
                         </view>
                             
                             <view id="editAddBtn" adid="4" class="ul">
@@ -69,7 +69,9 @@
                     <block wx:if="{{sell_type == 1}}">{{goods.group_price}}</block>
                     <block wx:else>{{goods.alone_price}}</block></view></view>
                 <view class="pay2 div ">
-                    <view class="div pay2_hd">请选择支付方式</view>
+                    <!-- <view class="div pay2_hd">请选择支付方式</view> -->
+                    <view class='h_20'></view>
+                    
                     <view id="payList" class="div pay2_list">
                         <view id="goTenPay" class="div pay2_item pay2_wx pay2_selected">
                             <view class="span pay2_item_state"></view>
@@ -77,9 +79,9 @@
                             <view class="span pay2_item_tit">微信支付</view>
                         </view>
                     </view>
-                    <!--ms-if-->
-                    <!--ms-if-->
-                    <!--ms-if-->
+                    
+                    <view class='h_20'></view>
+
                     <form name="theForm" id="theForm" class="form" report-submit="true" bindsubmit="btnOrderDone">
                         <view>  
                              <button formType="submit" class="pay2_btn" loading="{{btn_order_done ? true : false}}"  id="btn_order_done" style="{{btn_order_done || !address ? 'opacity: 0.4;' : ''}}" >
@@ -92,6 +94,9 @@
                 </view>
             </view>
         </view>
+
+        <view class='h_20'></view>
+
         <view class="div step">
             <view class="div step_hd">
                 拼团玩法

@@ -1,4 +1,12 @@
 /* pages/checkout.wxss */
+page{
+  height: 100%;
+  background: #eceded;
+}
+.h_20 {
+  background: #eceded;
+  height: 30rpx;
+}
 :root, body {
     background: #fff;
 }
@@ -131,8 +139,8 @@
 
 .order {
     background-color: #fff;
-    border-top: 1px solid #e4e4e4;
-    border-bottom: 1px solid #dedede;
+    /* border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #dedede; */
 }
 
 .order {
@@ -146,7 +154,7 @@
 
 .order_bd {
     background-color: #fff;
-    border-bottom: 1px solid #dedede;
+    /* border-bottom: 1px solid #dedede; */
     padding: 0 10px;
 }
 
@@ -287,7 +295,7 @@
 
 .pay2 {
     background-color: #fff;
-    border-bottom: 1px solid #d2d2d2;
+    /* border-bottom: 1px solid #d2d2d2; */
     font-size: 12px;
     padding-bottom: 15px;
 }
@@ -304,7 +312,7 @@
 }
 
 .pay2_list {
-    border-top: 1px solid #d9d9d9;
+    /* border-top: 1px solid #d9d9d9; */
 }
 
 .pay2_item:first-child {
@@ -312,7 +320,7 @@
 }
 
 .pay2_item {
-    border-bottom: 1px solid #d2d2d2;
+    /* border-bottom: 1px solid #d2d2d2; */
     display: none;
     height: 50px;
     line-height: 50px;
@@ -387,8 +395,8 @@
 
 .step {
     background-color: #fff;
-    border-bottom: 1px solid #d5d5d5;
-    border-top: 1px solid #d5d5d5;
+    /* border-bottom: 1px solid #d5d5d5; */
+    /* border-top: 1px solid #d5d5d5; */
     font-size: 12px;
     padding: 15px 10px;
     position: relative;
@@ -467,7 +475,7 @@
     display: block;
     width: 60px;
     height: 60px;
-    border: 1px solid #d7d7d7;
+    /* border: 1px solid #d7d7d7; */
 }
 
 .strong {
