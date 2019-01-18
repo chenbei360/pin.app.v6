@@ -1,7 +1,7 @@
 // pages/checkout.js
 //获取应用实例
 const app = getApp();
-var sellType = 0, goodsId = 0, addressId = 0, groupOrderId = 0;
+var sellType = 0, goodsId = 0, addressId = 0, groupOrderId = 0, orderId = 0;
 
 Page({
 
@@ -9,7 +9,8 @@ Page({
     isLoading: true,
     isBannering: true,
     isGroupHelp: false,
-    isNoNetError: true
+    isNoNetError: true,
+    isPayDisable: false
   },
   
   loadAddresses: function (successCallback, failCallback) {
@@ -138,15 +139,20 @@ Page({
 
   btnOrderDone: function () {
     if (!this.data.address) return false;
-    if (this.data.order_loading) return true;
+    if (this.data.isPayDisable) return true;
 
-   
+    var that = this, createOrderData;
+    this.setData({ "isPayDisable": true });
 
-    var that = this, data;
 
-    this.setData({ "order_loading": true });
+    if (orderId){
+      that.pay();
+      return;
+    }
 
-    data = {
+
+
+    createOrderData = {
       "goods_id": goodsId,
       "address_id": addressId,
       "groupbuy": sellType == 1 ? 1 : 0,
@@ -158,17 +164,52 @@ Page({
       header: {
         'AccessToken': wx.getStorageSync("token")
       },
-      data: data,
-      success: function (res) {
-        
+      data: createOrderData,
+      success: function (res){
+        if(res.data.result == "ok"){
+          orderId = res.data.order_id,
+          that.pay();
+        }else{
+          that.setData({ "isPayDisable": false });
+        }
       },
       fail: function (res) {
-       
+        that.setData({"isPayDisable": false});
       },
       complete: function (res) {
-        that.setData({ "order_loading": false });
       }
     });
+
+  },
+
+  // 请求支付参数
+  pay: function (e) {
+
+
+    var that = this;
+    
+    wx.request({
+      url: app.globalData.apiUrl + 'v1.0/users/orders/wxpay/' + orderId,
+      header: {
+        'AccessToken': wx.getStorageSync("token")
+      },
+      success: function (res) {
+        if (res.result == "ok") {
+          
+        }else{
+          
+        }
+      },
+      fail: function (res) {
+        
+      },
+      complete: function (res) {
+        that.setData({ "isPayDisable": false });
+      }
+
+
+    });
+
 
   },
 

@@ -34,6 +34,7 @@ Page({
 
   
   onShow: function () {
+    this.setData({showAuthModal: false});
     this.loadData();
   },
 
