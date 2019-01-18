@@ -118,7 +118,7 @@ Page({
       var adTypeIdx = 0;
       if (res.data.address.address_name == that.data.addressNames[0]) {
         adTypeIdx = 0
-      } else if (data.address.address_name == that.data.addressNames[1]) {
+      } else if (res.data.address.address_name == that.data.addressNames[1]) {
         adTypeIdx = 1;
       }
 
@@ -169,7 +169,7 @@ Page({
         }
       }
 
-      that.setData({ provinces: provinces, citys: citys, areas: areas, address: res.data.address, old_value: [provinceIdx, areaIdx, cityIdx]});
+      that.setData({ provinces: provinces, citys: citys, areas: areas, address: res.data.address, old_value: [provinceIdx, areaIdx, cityIdx], adTypeIdx: adTypeIdx});
 
 
 
@@ -454,6 +454,42 @@ Page({
   closeRegion: function (e) {
     this.setData({
       isRegionOpen: false
+    })
+  },
+
+  deleteAddressEvent: function(e) {
+    var that = this;
+    wx.showModal({
+      title: '确定删除这个地址吗？',
+      content: '',
+      success: function (res) {
+        if (res.confirm) {
+          that.setData({ isLoading: true, isOperate: true });
+          wx.request({
+            url: app.globalData.apiUrl + "v1.0/users/address/" + addressId,
+            method: "DELETE",
+            header: {
+              'AccessToken': wx.getStorageSync("token")
+            },
+            success(res) {
+              if (res.data.result == 'ok') {
+                var url = "./addresses";
+                if (goodsId != undefined) {
+                  url = url + "?sell_type=" + sellType + "&goods_id="
+                    + goodsId + "&address_id=" + addressId;
+                }
+
+                wx.navigateBack();
+              }
+            },
+            fail: function (res) {
+            },
+            complete: function (res) {
+              that.setData({ isLoading: false, isOperate: false })
+            }
+          });
+        }
+      }
     })
   },
 

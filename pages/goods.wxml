@@ -227,3 +227,4 @@
 <qrcode-poster showPosterModal="{{showPosterModal}}" goods="{{goods}}" qrcodeUrl="{{qrcodeUrl}}" posterUrl="{{posterUrl}}"></qrcode-poster>
 <net-error-tips isNoNetError="{{isNoNetError}}" bind:loadData="loadData"></net-error-tips>
 <load-more isHideLoadMore="{{isHideLoadMore}}"></load-more>
+<auth-dialog showAuthModal="{{showAuthModal}}" bind:confirm="loadData"></auth-dialog>

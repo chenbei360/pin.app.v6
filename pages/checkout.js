@@ -2,20 +2,37 @@
 //获取应用实例
 const app = getApp();
 var sellType = 0, goodsId = 0, addressId = 0, groupOrderId = 0;
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     isLoading: true,
     isBannering: true,
     isGroupHelp: false,
     isNoNetError: true
   },
+  
+  loadAddresses: function (successCallback, failCallback) {
+    var that = this;
+    wx.request({
+      url: app.globalData.apiUrl + 'v1.0/users/addresses',
+      header: {
+        'AccessToken': wx.getStorageSync("token")
+      },
+      success: function (res) {
+        successCallback(res);
+      },
+      fail: function (res) {
+      },
+      complete: function (res) {
+      }
+    });
+  },
+
   setIsGroupHelp: function() {
     this.setData({"isGroupHelp" : true});
   },
+  
   goodsDetail: function() {
     var that = this;
     wx.request({
@@ -59,8 +76,24 @@ Page({
   },
 
   loadData: function() {
+    var that = this;
+    
     this.goodsDetail(),
-      this.orderBanner();
+    
+    this.orderBanner(),
+
+    this.loadAddresses(function(res){
+      if (res.data['result'] == "ok") {
+        if (res.data.address_list.length > 0){
+
+
+          var address = that.addressSort(res.data.address_list, addressId); 
+          that.setData({ "address": address }), addressId = address.address_id;
+        }
+      }
+    },function(){});
+
+
   },
 
   //跳转地址页面
@@ -71,10 +104,10 @@ Page({
 
 
     if (this.data.address != undefined && this.data.address.address_id != undefined && this.data.address.address_id > 0) {
-      url = "addresses?sell_type=" + this.sell_type + "&goods_id=" + this.goods_id;
-      url += " &address_id=" + this.data.address.address_id;
+      url = "addresses?sell_type=" + sellType + "&goods_id=" + goodsId;
+      url += "&address_id=" + this.data.address.address_id;
     } else {
-      url = "address?goods_id=" + this.goods_id + "&sell_type=" + this.sell_type;
+      url = "address?goods_id=" + goodsId + "&sell_type=" + sellType;
     }
 
 
@@ -83,9 +116,6 @@ Page({
     });
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     var that = this;
     goodsId = options.goods_id,
@@ -105,52 +135,96 @@ Page({
     this.loadData();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+
+  btnOrderDone: function () {
+    if (!this.data.address) return false;
+    if (this.data.order_loading) return true;
+
+   
+
+    var that = this, data;
+
+    this.setData({ "order_loading": true });
+
+    data = {
+      "goods_id": goodsId,
+      "address_id": addressId,
+      "groupbuy": sellType == 1 ? 1 : 0,
+      "group_order_id": groupOrderId ? groupOrderId : 0
+    };    
+    wx.request({
+      url: app.globalData.apiUrl + 'v1.0/users/orders',
+      method: "POST",
+      header: {
+        'AccessToken': wx.getStorageSync("token")
+      },
+      data: data,
+      success: function (res) {
+        
+      },
+      fail: function (res) {
+       
+      },
+      complete: function (res) {
+        that.setData({ "order_loading": false });
+      }
+    });
+
+  },
+
   onReady: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
+
   onShow: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
+
   onHide: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
+
   onUnload: function () {
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
+
   onReachBottom: function () {
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
 
+  },
+
+
+  addressSort: function (list, address_id) {
+    var address;
+    if (list.length == 1) {
+      return list[0];
+    }
+    if (list.length <= 0) {
+      return null;
+    }
+
+    for (var i in list) {
+      if (undefined != address_id) {
+        if (list[i]['address_id'] == address_id) {
+          address = list[i];
+        }
+      } else if (list[i]['status'] == "DEFAULT") {
+        address = list[i];
+      } else if (i >= list.length - 1) {
+        address = list[0];
+      }
+    }
+    return address;
   }
 })

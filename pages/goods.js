@@ -25,11 +25,21 @@ Page({
     qrcodeUrl: null,//海报地址
     showPosterModal: false,
 
-    current: 1
+    current: 1,
+    showAuthModal: false
   },
 
   loadData: function() {
     var that = this;
+
+    app.getUserInfo(function (res) {
+
+    }, function () {
+      that.setData({
+        showAuthModal: true,
+      });
+    });
+    
     wx.request({
       url: app.globalData.miniUrl + 'v1.0/goods/' + goodsId,
       success: function (res) {
