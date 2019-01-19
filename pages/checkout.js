@@ -1,7 +1,8 @@
 // pages/checkout.js
 //获取应用实例
 const app = getApp();
-var sellType = 0, goodsId = 0, addressId = 0, groupOrderId = 0, orderId = 0;
+var sellType = 0, goodsId = 0, addressId = 0, groupOrderId = 0, orderId = 0,
+    order = require('../utils/order.js')
 
 Page({
 
@@ -10,7 +11,8 @@ Page({
     isBannering: true,
     isGroupHelp: false,
     isNoNetError: true,
-    isPayDisable: false
+    isPayDisable: false,
+    isCancelPay: false
   },
   
   loadAddresses: function (successCallback, failCallback) {
@@ -100,6 +102,10 @@ Page({
   //跳转地址页面
   redirectAddresses: function () {
 
+    if(orderId){
+      wx.showToast({ title: "订单已生成，信息不可更改", icon: "none" });
+      return;
+    }
 
     var url;
 
@@ -184,33 +190,24 @@ Page({
 
   // 请求支付参数
   pay: function (e) {
-
-
     var that = this;
-    
-    wx.request({
-      url: app.globalData.apiUrl + 'v1.0/users/orders/wxpay/' + orderId,
-      header: {
-        'AccessToken': wx.getStorageSync("token")
-      },
-      success: function (res) {
-        if (res.result == "ok") {
-          
-        }else{
-          
-        }
-      },
-      fail: function (res) {
-        
-      },
-      complete: function (res) {
-        that.setData({ "isPayDisable": false });
+    order.pay(orderId,function(res){  
+
+      if (res.data.result == 'ok') {
+        order.goPay(res.data.param, function () { }, function () { }, function (res) {
+          if (res.errMsg == "requestPayment:fail cancel") {
+            that.setData({ "isCancelPay": true }),
+              wx.showToast({ title: "支付未完成， 请重新支付", icon: "none" });
+          }
+          that.setData({ "isPayDisable": false })
+        });
       }
 
-
+    },function(res){
+      that.setData({ "isPayDisable": false })
+    },function(res){
+      
     });
-
-
   },
 
   onReady: function () {

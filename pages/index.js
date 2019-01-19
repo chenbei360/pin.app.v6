@@ -19,7 +19,7 @@ Page({
       url: app.globalData.apiUrl + 'v1.0/banners',
       success: function (res) {
         that.setData({
-          banner: res.data
+          banner: res.data.banners
         });
       },
       fail: function (res) {
@@ -38,7 +38,7 @@ Page({
       data: { offset: that.data.goods.length,size: 30},
       success: function (res) {
         that.setData({
-          goods: res.data
+          goods: res.data.goods
         });
 
         that.setData({
@@ -87,7 +87,7 @@ Page({
       data: { offset: that.data.goods.length, size: 15 },
       success: function (res) {
         that.setData({
-          goods: that.data.goods.concat(res.data)
+          goods: that.data.goods.concat(res.data.goods)
         });
       },
       fail: function (res) {

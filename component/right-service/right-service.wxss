@@ -1,0 +1,52 @@
+/* component/right-service/right-service.wxss */
+
+.service {
+    background: url(http://139.199.168.122:8989/Public/Api/images/service_5ca802.png) no-repeat;
+    background-size: contain;
+    top: 276px;
+    width: 56px;
+    height: 56px;
+}
+
+.explain_icon_right {
+    right: -50px;
+    -webkit-animation: shake 1s ease-in .3s forwards;
+    animation: shake 1s ease-in .3s forwards;
+}
+
+.explain_icon, .explain_icon_right {
+    position: fixed;
+    z-index: 10;
+}
+
+@keyframes shake {
+    0% {
+        right: -50px
+    }
+
+    30%,to {
+        right: 20px
+    }
+
+    40%,60%,80% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg)
+    }
+
+    50%,70%,90% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg)
+    }
+}
+
+contact-button {
+    display:block;
+    line-height:4;
+    z-index:9999999999;
+    width:40px;
+    height:40px;
+    margin-left:9px;
+    background-color:#1AAD19;
+    margin-top:7px;
+    opacity:-0.5;
+}

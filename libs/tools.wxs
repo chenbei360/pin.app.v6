@@ -1,0 +1,41 @@
+var orderStatus = {
+  "0": "待支付",
+  "1": "已支付，未确认",
+  "2": "已确认，待发货",
+  "3": "配送中",
+  "4": "已签收",
+  "5": "交易已取消",
+  "6": "未发货退款处理中",
+  "7": "未发货退款成功",
+  "8": "已发货退款处理中",
+  "9": "已发货退款成功"
+};
+
+//时间戳 格式化
+function formatTimeStamp(timestamp) {
+  timestamp = getDate(timestamp * 1000);
+  return formatTime(timestamp); 
+}
+
+function formatTime(date) {
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+
+
+  return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+}
+
+function formatNumber(n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+module.exports = {
+  formatTimeStamp: formatTimeStamp,
+  orderStatus: orderStatus
+}

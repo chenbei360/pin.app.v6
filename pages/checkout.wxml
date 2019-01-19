@@ -84,9 +84,9 @@
 
                     <form name="theForm" id="theForm" class="form" report-submit="true" bindsubmit="btnOrderDone">
                         <view>  
-                             <button formType="submit" class="pay2_btn" loading="{{btn_order_done ? true : false}}"  id="btn_order_done" style="{{btn_order_done || !address ? 'opacity: 0.4;' : ''}}" >
-                                 <block wx:if="{{order_loading}}">正在支付 请稍候</block>
-                                 <block wx:elif="{{cancel_pay}}">继续支付</block>
+                             <button formType="submit" class="pay2_btn" id="btn_order_done" style="{{isPayDisable || !address ? 'opacity: 0.4;' : ''}}" >
+                                 <block wx:if="{{isPayDisable}}">正在支付 请稍候</block>
+                                 <block wx:elif="{{isCancelPay}}">继续支付</block>
                                  <block wx:else>立即支付</block>
                              </button>
                         </view>

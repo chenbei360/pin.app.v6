@@ -128,7 +128,7 @@ page .share-modal{
 .weui-badge{
   background-color:#ff4965;
 }
-
+button::after {border: none;}
 .a {display: inline;}
 .div {display: block;}
 .footer {display: block;}

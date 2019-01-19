@@ -1,0 +1,7 @@
+<!--component/right-service/right-service.wxml-->
+<view onclick="common.showService()" class="i service explain_icon_right" style="display: block;">
+    <contact-button 
+        type="default-light" 
+          size="27" >
+      </contact-button>  
+</view>

@@ -1,65 +1,112 @@
 // pages/order.js
+//获取应用实例
+const app = getApp();
+var orderId = 0,
+    order = require('../utils/order.js');
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+
   data: {
-
+    isLoading: true,
+    isOperate: false,
+    isNoNetError: true,
+    order: {},
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  loadData: function() {
+    var that = this;
+    wx.request({
+      url: app.globalData.apiUrl + 'v1.0/users/orders/' + orderId,
+      header: {
+        'AccessToken': wx.getStorageSync("token")
+      },
+      success: function (res) {
+        that.setData({
+          order: res.data.order,
+        });
+        
+        that.setData({ isLoading: false, isOperate: false })
+
+        that.setData({
+          isNoNetError: true
+        });
+      },
+      fail: function (res) {
+        that.setData({
+          isNoNetError: false
+        });
+      },
+      complete: function (res) {
+        wx.stopPullDownRefresh();
+      }
+    });
+  },
+  
+  orderCancel: function(e) {
+    var that = this;
+    order.cancel(orderId, function (res) {
+      if (res.data.result == 'ok') {
+        wx.startPullDownRefresh();
+      }
+    }, function (res) {
+    });
+        
+  },
+
+  orderBuy: function (e) {
+    var that = this;
+    orderId = e.currentTarget.dataset.order_id,
+      order.pay(orderId, function (res) {
+
+        if (res.data.result == 'ok') {
+          order.goPay(res.data.param, function () {
+            wx.startPullDownRefresh();
+          }, function () { }, function () {
+          });
+        }
+        
+      }, function () {
+
+      }, function () {
+
+      });
+  },
+
+  onPullDownRefresh: function () {
+    this.loadData();
+  },
+
   onLoad: function (options) {
-
+    orderId = options.id;
+    this.loadData();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+ 
   onReady: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
+  
   onShow: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
+  
   onHide: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
+ 
   onUnload: function () {
 
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
+  },  
+  
   onReachBottom: function () {
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
+  
   onShareAppMessage: function () {
 
   }

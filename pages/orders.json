@@ -1,1 +1,11 @@
-{}
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "我的订单",
+  "navigationBarBackgroundColor": "#3B3A3E",
+  "usingComponents": {
+    "page-loading": "../../component/page-loading/page-loading",
+    "net-error-tips": "../../component/net-error-tips/net-error-tips",
+    "auth-dialog": "../../component/auth-dialog/auth-dialog",
+    "right-service": "../../component/right-service/right-service"
+  }
+}
