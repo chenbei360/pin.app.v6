@@ -1,8 +1,7 @@
 // pages/orders.js
 //获取应用实例
 const app = getApp();
-var orderType = 0, 
-    orderId = 0, 
+var orderType = 0,
     order = require('../utils/order.js')
 
 Page({
@@ -13,7 +12,8 @@ Page({
     isNoNetError: true,
     orders: [],
     isHideLoadMore: true,
-    isNoNetError: true
+    isNoNetError: true,
+    showExpressModal: false
   },
 
   loadData: function () {
@@ -88,6 +88,16 @@ Page({
     this.loadData();
   },
 
+  orderReceive: function (e) {
+    var that = this, orderId = e.currentTarget.dataset.order_id;
+    order.receive(orderId, function (res) {
+      if (res.data.result == 'ok') {
+        wx.startPullDownRefresh();
+      }
+    }, function (res) {
+    });
+  },
+
   orderCancel: function(e) {
     var that = this, orderId = e.currentTarget.dataset.order_id;
     order.cancel(orderId, function (res) {
@@ -99,9 +109,10 @@ Page({
   },
   
   orderBuy: function(e) {
-    orderId = e.currentTarget.dataset.order_id,
-    order.pay(orderId,function(res) {
+    var that = this, orderId = e.currentTarget.dataset.order_id;
 
+
+    order.pay(orderId,function(res) {
 
       if(res.data.result == 'ok'){
         order.goPay(res.data.param,function(){
@@ -118,6 +129,30 @@ Page({
     },function() {
       
     });
+  },
+
+  expressShow: function(e) {
+    var that = this, orderId = e.currentTarget.dataset.order_id;
+    
+    this.setData({ showExpressModal: true, IsLoadingExpress: true, Express: null, isNoNetErrorExpress: false});
+
+    order.express(orderId, function (res) {
+      if (res.data.result == 'ok'){
+        that.setData({ Express: res.data.shipping});
+      }else{
+
+        that.setData({isNoNetErrorExpress:true});
+        
+      }
+    }, function (res){
+
+      that.setData({ isNoNetErrorExpress: true });
+
+    },function(res){
+
+      that.setData({ IsLoadingExpress: false});
+    });
+
   },
 
   // onTabItemTap: function (item) {

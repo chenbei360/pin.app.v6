@@ -1,6 +1,8 @@
 <!--index.wxml-->
 <page-loading isLoading="{{isLoading}}" isOperate="{{isOperate}}"></page-loading>
 
+<express-dialog showExpressModal="{{showExpressModal}}" shippingInfo="{{Express}}" isLoading="{{IsLoadingExpress}}" isNoNetError="isNoNetErrorExpress"></express-dialog>
+
 <wxs src="../libs/tools.wxs" module="tools" />
 
     <view class="body">

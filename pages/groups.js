@@ -1,65 +1,91 @@
 // pages/groups.js
+//获取应用实例
+const app = getApp();
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    isLoading: true,
+    isOperate: false,
+    isNoNetError: true,
+    groups: [],
+    isHideLoadMore: true,
+    isNoNetError: true
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  loadData: function () {
+    var that = this;
+    //请求订单列表
+    that.data.orders = [];
+    wx.request({
+      url: app.globalData.apiUrl + 'v1.0/users/groups',
+      header: {
+        'AccessToken': wx.getStorageSync("token")
+      },
+      data: { offset: that.data.orders.length, size: 30 },
+      success: function (res) {
+        that.setData({
+          groups: res.data.group_orders
+        });
+
+        that.setData({
+          isNoNetError: true
+        });
+      },
+      fail: function (res) {
+        that.setData({
+          isNoNetError: false
+        });
+      },
+      complete: function (res) {
+        wx.stopPullDownRefresh();
+        that.setData({
+          isLoading: false
+        });
+      }
+    });
+  },
+
+  toDetail: function (e) {
+    var url = e.currentTarget.dataset.url + "?id=" + e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: url
+    });
+  },
+  
   onLoad: function (options) {
-
+    this.loadData();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+  
   onReady: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
+
   onShow: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
   onHide: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
+
   onPullDownRefresh: function () {
 
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
+
   onReachBottom: function () {
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
+
   onShareAppMessage: function () {
 
   }

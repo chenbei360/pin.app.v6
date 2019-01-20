@@ -11,7 +11,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.4",
+	"libVersion": "2.5.0",
 	"appid": "wxea92fbaa0b763870",
 	"projectname": "weipin6",
 	"isGameTourist": false,
@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 9,
 			"list": [
 				{
 					"id": 0,
@@ -82,6 +82,18 @@
 					"name": "订单详情",
 					"pathName": "pages/order",
 					"query": "id=14"
+				},
+				{
+					"id": -1,
+					"name": "团列表",
+					"pathName": "pages/groups",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "团详情",
+					"pathName": "pages/group",
+					"query": "id=1"
 				}
 			]
 		}

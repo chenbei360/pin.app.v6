@@ -42,6 +42,16 @@ Page({
       }
     });
   },
+
+  orderReceive: function (e) {
+    var that = this, orderId = e.currentTarget.dataset.order_id;
+    order.receive(orderId, function (res) {
+      if (res.data.result == 'ok') {
+        wx.startPullDownRefresh();
+      }
+    }, function (res) {
+    });
+  },
   
   orderCancel: function(e) {
     var that = this;
@@ -71,6 +81,30 @@ Page({
       }, function () {
 
       });
+  },
+
+  expressShow: function (e) {
+    var that = this, orderId = e.currentTarget.dataset.order_id;
+
+    this.setData({ showExpressModal: true, IsLoadingExpress: true, Express: null, isNoNetErrorExpress: false });
+
+    order.express(orderId, function (res) {
+      if (res.data.result == 'ok') {
+        that.setData({ Express: res.data.shipping });
+      } else {
+
+        that.setData({ isNoNetErrorExpress: true });
+
+      }
+    }, function (res) {
+
+      that.setData({ isNoNetErrorExpress: true });
+
+    }, function (res) {
+
+      that.setData({ IsLoadingExpress: false });
+    });
+
   },
 
   onPullDownRefresh: function () {

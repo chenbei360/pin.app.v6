@@ -1,65 +1,86 @@
 // pages/group.js
+//获取应用实例
+const app = getApp();
+var groupOrderId = 0;
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+
   data: {
-
+    isLoading: true,
+    isOperate: false,
+    isNoNetError: true,
+    isHideLoadMore: true,
+    isNoNetError: true
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  loadData: function () {
+    var that = this;
+    //请求订单列表
+    that.data.orders = [];
+    wx.request({
+      url: app.globalData.apiUrl + 'v1.0/users/groups/' + groupOrderId,
+      header: {
+        'AccessToken': wx.getStorageSync("token")
+      },
+      success: function (res) {
+        that.setData({
+          group_order: res.data.group_order
+        });
+
+        that.setData({
+          isNoNetError: true
+        });
+      },
+      fail: function (res) {
+        that.setData({
+          isNoNetError: false
+        });
+      },
+      complete: function (res) {
+        wx.stopPullDownRefresh();
+        that.setData({
+          isLoading: false
+        });
+      }
+    });
+  },
+
   onLoad: function (options) {
-
+    groupOrderId = options.id;
+    this.loadData();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+
   onReady: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
+
   onShow: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
+
   onHide: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
+
   onUnload: function () {
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
 
+  onPullDownRefresh: function () {
+    this.loadData();
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
+
   onReachBottom: function () {
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
+
   onShareAppMessage: function () {
 
   }
