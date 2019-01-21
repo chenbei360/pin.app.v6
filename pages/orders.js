@@ -91,7 +91,7 @@ Page({
     if ('3' == navStatus){
       navStatus = null;
     }
-    this.setData({ navStatus: navStatus }),
+    this.setData({ navStatus: navStatus,isLoading: true,isOperate: true }),
     this.loadData()
   },
 
