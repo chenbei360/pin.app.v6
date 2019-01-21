@@ -17,13 +17,13 @@ Page({
   loadData: function () {
     var that = this;
     //请求订单列表
-    that.data.orders = [];
+    that.data.groups = [];
     wx.request({
       url: app.globalData.apiUrl + 'v1.0/users/groups',
       header: {
         'AccessToken': wx.getStorageSync("token")
       },
-      data: { offset: that.data.orders.length, size: 30 },
+      data: { offset: that.data.groups.length, size: 30 },
       success: function (res) {
         that.setData({
           groups: res.data.group_orders
@@ -45,6 +45,34 @@ Page({
         });
       }
     });
+  },
+
+  loadMore: function() {
+    var that = this;
+    that.setData({
+      isHideLoadMore: false
+    });
+
+    wx.request({
+      url: app.globalData.apiUrl + 'v1.0/users/groups',
+      header: {
+        'AccessToken': wx.getStorageSync("token")
+      },
+      data: { offset: that.data.groups.length, size: 15 },
+      success: function (res) {
+        that.setData({
+          groups: that.data.group_orders.concat(res.data.group_orders)
+        });
+      },
+      fail: function (res) {
+      },
+      complete: function (res) {
+        that.setData({
+          isHideLoadMore: true
+        });
+      }
+    });
+    
   },
 
   toDetail: function (e) {
@@ -78,9 +106,17 @@ Page({
 
 
   onPullDownRefresh: function () {
-
+    this.loadData();
   },
 
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    if (this.data.isHideLoadMore) {
+      this.loadMore();
+    }
+  },
 
   onReachBottom: function () {
 
@@ -89,5 +125,9 @@ Page({
 
   onShareAppMessage: function () {
 
+  },
+
+  onTabItemTap: function (item) {
+    wx.startPullDownRefresh();
   }
 })
