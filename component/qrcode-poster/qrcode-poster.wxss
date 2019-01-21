@@ -40,6 +40,7 @@
   object-fit: cover;
   margin:0 auto;
   margin-top:80rpx;
+  width:100%;
 }
 
 .modal-footer{
