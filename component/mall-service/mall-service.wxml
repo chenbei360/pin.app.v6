@@ -1,4 +1,3 @@
-<!--component/g-h-service/g-h-service.wxml-->
 <view class="goods-header false false">
   <view class="div">
       <view class="g-h-div"></view>

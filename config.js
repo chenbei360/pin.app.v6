@@ -110,11 +110,22 @@ var config =
     cancel: "支付取消"
   },
 
+  mall_service: [
+    { 
+      type: "全场包邮", 
+      desc: "所有商品均无条件包邮" 
+    },
+    { 
+      type: "7天退换",
+      desc: "满足相应条件时，消费者可申请7天无理由退换货" 
+    },
+    {
+      type: "48小时发货", 
+      desc: "若超时未发货，消费者将会收到至少3元无门槛代金券" 
+    }
+  ],
 
   group_image_url: "http://139.199.168.122:8989/Public/Api/images/avatar_4_64.png"
-
-
-
 };
 
 module.exports = {
