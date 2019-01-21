@@ -1,3 +1,22 @@
+// 时间格式化输出，如3:25:19 86。每10ms都会调用一次
+function dateformat(micro_second) {
+  // 秒数
+  var second = Math.floor(micro_second / 1000);
+  // 小时位
+  var hr = Math.floor(second / 3600);
+
+  // 分钟位
+  var min = Math.floor((second - hr * 3600) / 60);
+
+  // 秒位
+  var sec = (second - hr * 3600 - min * 60);// equal to => var sec = second % 60;
+
+  // 毫秒位，保留2位
+  var micro_sec = Math.floor((micro_second % 1000) / 10);
+
+  return [hr, min, sec].map(formatNumber);
+}
+
 const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n

@@ -151,6 +151,13 @@ Page({
     });
   },
 
+  /*返回我的团*/
+  goGroups: function () {
+    wx.switchTab({
+      url: './groups',
+    });
+  },
+
   showShareModal: function () {
 
     this.setData({

@@ -155,7 +155,7 @@
             <view class="div mod_footer" id="mod_footer">
                 <view class="div mod_footer_lk">
                     <view class="a on" href="index.html" id="shop_name" bindtap="bindRedirect" data-url="index">{{_.app.name}}</view>
-                    <view class="a" href="groups.html" bindtap="bindRedirect" data-url="groups">我的团</view>
+                    <view class="a" href="groups.html" bindtap="goGroups" data-url="groups">我的团</view>
                 </view>
                 <view class="div mod_footer_logo">
                     <view class="span">{{_.app.url}}</view>
