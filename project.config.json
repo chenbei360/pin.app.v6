@@ -43,7 +43,7 @@
 				},
 				{
 					"id": 1,
-					"name": "商品详情-340",
+					"name": "商品详情",
 					"pathName": "pages/goods",
 					"query": "goods_id=340"
 				},
@@ -91,7 +91,7 @@
 				},
 				{
 					"id": 9,
-					"name": "团详情-1",
+					"name": "团详情",
 					"pathName": "pages/group",
 					"query": "id=1"
 				}
