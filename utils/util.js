@@ -14,6 +14,62 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function remove_array(array, index) {
+  for (var i = 0; i < array.length; i++) {
+    var temp = array[i];
+    if (!isNaN(index)) {
+      temp = i;
+    }
+    if (temp == index) {
+      for (var j = i; j < array.length; j++) {
+        array[j] = array[j + 1];
+      }
+      array.length = array.length - 1;
+    }
+  }
+  return array;
+}
+
+/** 
+ *多个定时器
+*/
+function countdowns(that, total_micro_seconds, initCallback) {
+  var clock = [];
+  for (var i = 0; i < total_micro_seconds.length; i++) {
+    var total_micro_second = total_micro_seconds[i];
+    if (total_micro_second <= 0 || isNaN(total_micro_second)) {
+      clock[i] = [0, 0, 0].map(formatNumber);
+      if (that.timer != undefined) {
+        // total_micro_seconds = remove_array(total_micro_seconds, i),
+        initCallback(i);
+      }
+      continue;
+    } else {
+      clock[i] = dateformat(total_micro_second);
+    }
+  }
+
+  that.setData({ clock: clock });
+
+  if (total_micro_seconds.length < 1) {
+    if (that.timer != undefined) {
+      clearTimeout(that.timer);
+    }
+  }
+
+  that.timer = setTimeout(function () {
+    var temp_array = [];
+    for (var i = 0; i < total_micro_seconds.length; i++) {
+      var total_micro_second = total_micro_seconds[i] - 60;
+      temp_array[i] = total_micro_second;
+    }
+
+    countdowns(that, temp_array, initCallback);
+  }
+    , 60);
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  countdowns: countdowns
 }

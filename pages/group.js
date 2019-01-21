@@ -1,7 +1,7 @@
 // pages/group.js
 //获取应用实例
 const app = getApp();
-var groupOrderId = 0;
+var groupOrderId = 0, util = require('../utils/util.js');
 Page({
 
 
@@ -12,6 +12,14 @@ Page({
     isHideLoadMore: true,
     isNoNetError: true,
     _: app.globalData._.config
+  },
+
+  countdown: function (expire_time) {
+    if (this.timer) clearTimeout(this.timer);
+    var times = (expire_time - new Date().getTime() / 1000) * 1000, that = this;
+    util.countdowns(this, [times],function(i) {
+      clearTimeout(that.timer);
+    });
   },
 
   setIsGroupHelp: function () {
@@ -75,6 +83,9 @@ Page({
           res.data.group_order.group_but_url = group_but_url,
           res.data.group_order.group_detail_class = group_detail_class,
           res.data.group_order.group_title_class = group_title_class;
+
+
+          that.countdown(res.data.group_order.expire_time);
 
 
           that.setData({

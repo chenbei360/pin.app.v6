@@ -66,7 +66,7 @@
                     <view class="div pp_tips" id="flag_0_a" style="{{group_order.status == 1 || group_order.status == 9 || group_order.status == 2 || group_order.status == 5  || group_order.status == 6 ? 'display:none;' : ''}}">还差<view class="b">{{group_order.require_num - group_order.people}}</view>人，盼你如南方人盼暖气~</view>
                     <view class="div pp_state" id="flag_0_b" style="{{group_order.status == 1 || group_order.status == 9 || group_order.status == 2 || group_order.status == 5  || group_order.status == 6 ? 'display:none;' : ''}}">
                         <view class="div pp_time">
-                            剩余<view id="ti_time_hour" class="span">{{clock[0]}}</view>:<view class="span" id="ti_time_min">{{clock[1]}}</view>:<view class="span" id="ti_time_sec">{{clock[2]}}</view>结束
+                            剩余<view id="ti_time_hour" class="span">{{clock[0][0]}}</view>:<view class="span" id="ti_time_min">{{clock[0][1]}}</view>:<view class="span" id="ti_time_sec">{{clock[0][2]}}</view>结束
                         </view>
                     </view>
                     <!--<view class="pp_state_txt" id="flag_1_b" style="display:none;">团购成功，卖家将尽快发货</view> -->
