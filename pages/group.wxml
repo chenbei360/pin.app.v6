@@ -225,3 +225,5 @@
 <net-error-tips isNoNetError="{{isNoNetError}}" bind:loadData="loadData"></net-error-tips>
 
 <winpop-mask showWinpopModal="{{showWinpopModal}}" showWinpopCancel="{{showWinpopCancel}}" winpopContent="{{winpopContent}} " bind:cancelCallback="cancelCallback" bind:confirmCallback="confirmCallback"></winpop-mask>
+
+<auth-dialog showAuthModal="{{showAuthModal}}" bind:confirm="loadData"></auth-dialog>

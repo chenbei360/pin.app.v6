@@ -18,7 +18,9 @@ Page({
     showShareModalStatus: false,
 
 
-    showPage: false
+    showPage: false,
+
+    showAuthModal: false
 
   },
 
@@ -202,7 +204,23 @@ Page({
 
   onLoad: function (options) {
     groupId = options.id;
-    this.loadData();
+
+    var thisPage = this;
+    app.getUserInfo(function (res) {
+      thisPage.setData({
+        userInfo: res,
+      });
+      thisPage.loadData()
+    }, function () {
+      ;
+      thisPage.setData({
+        showAuthModal: true,
+        isLoading: false,
+        isOperate: false,
+        showPage: true
+      });
+    });
+    
   },
 
 
