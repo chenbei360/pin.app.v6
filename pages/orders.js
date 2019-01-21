@@ -13,7 +13,8 @@ Page({
     orders: [],
     isHideLoadMore: true,
     isNoNetError: true,
-    showExpressModal: false
+    showExpressModal: false,
+    _: app.globalData._.config
   },
 
   loadData: function () {

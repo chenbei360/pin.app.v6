@@ -1,4 +1,3 @@
-<wxs src="../../libs/tools.wxs" module="tools" />
 <view class="div all_page" ms-if="confirm_code"></view>
     
   <view class="ul"class="div express_html" wx:if="{{showExpressModal}}" catchtouchmove="stop">
@@ -25,7 +24,7 @@
                     {{item.remark}}
                     </view></view></view></view></view></view>
 
-                <view class="div center" wx-if="{{isNoNetError}}">{{tools.errorText[8]}}</view>
+                <view class="div center" wx-if="{{isNoNetError}}">{{_.error_text[8]}}</view>
             
             </scroll-view>
             <image class="express_loading" wx-if="{{isLoading}}" src="http://139.199.168.122:8989/Public/Api/images/loading_eb0d43.gif"></image>

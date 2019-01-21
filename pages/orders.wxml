@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <page-loading isLoading="{{isLoading}}" isOperate="{{isOperate}}"></page-loading>
 
-<express-dialog showExpressModal="{{showExpressModal}}" shippingInfo="{{Express}}" isLoading="{{IsLoadingExpress}}" isNoNetError="isNoNetErrorExpress"></express-dialog>
+<express-dialog showExpressModal="{{showExpressModal}}" shippingInfo="{{Express}}" isLoading="{{IsLoadingExpress}}" isNoNetError="isNoNetErrorExpress" _="{{_}}"></express-dialog>
 
 <wxs src="../libs/tools.wxs" module="tools" />
 
@@ -73,7 +73,7 @@
                                        
                                     </view>
                                     <view class="div" wx:if = "order.pay_status != 2 || order.order_status != 1">
-                                        <view class="span order_status">{{tools.orderStatus[order.order_status]}}</view>
+                                        <view class="span order_status">{{_.order_status[order.order_status]}}</view>
                                     </view>
                                     <view class="div order_btn" hidden="{{!(order.order_status==0)}}">
                                         <view class="a order_btn_buy" wx:click="orderBuy(order)" bindtap="orderBuy" data-order_id="{{order.order_id}}">去支付</view>

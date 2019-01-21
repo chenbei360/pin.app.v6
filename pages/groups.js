@@ -10,7 +10,8 @@ Page({
     isNoNetError: true,
     groups: [],
     isHideLoadMore: true,
-    isNoNetError: true
+    isNoNetError: true,
+    _: app.globalData._.config
   },
 
   loadData: function () {

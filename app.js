@@ -203,13 +203,11 @@ App({
   globalData: {
     userInfo: null,
     isIphonex: false,
-    shopcartCount: 0,
-    apiUrl: "http://192.168.9.131/api/",
-    miniUrl: "http://192.168.9.131/mini/",
-    appiconUrl: "https://cdn.notestore.cn/w3/logo.png",
-    appName: "拼购",
+    apiUrl: "http://192.168.9.146/api/",
+    miniUrl: "http://192.168.9.146/mini/",
     device: "",
     windowHeight: "",
-    windowWidth: ""
+    windowWidth: "",
+    _: require('./config.js')
   }
 })

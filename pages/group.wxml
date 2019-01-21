@@ -1,3 +1,7 @@
+<page-loading isLoading="{{isLoading}}" isOperate="{{isOperate}}"></page-loading>
+
+<wxs src="../libs/tools.wxs" module="tools" />
+
 <view class=" body" id="group">
     <view class="div" id="group-container" style="display: block;">
         <view class="div explain_modal" >
@@ -52,9 +56,9 @@
                             </view>
                         </block>
 
-                        <block  wx:key="item" wx:for="{{group_order.defaultAvatar}}">
+                        <block  wx:key="item" wx:for="{{group_order.require_num - group_order.people}}">
                             <view class="a pp_users_item" href="#">
-                                <image class="img" alt="" src="{{item}}"/>
+                                <image class="img" alt="" src="{{_.group_image_url}}"/>
                             </view>
                         </block>
                     </view>
@@ -74,21 +78,21 @@
 							<image class="img pp_list_avatar" alt="" src="{{item.avatar}}" />
 							<view class="div pp_list_info" id="pp_list_info">
 							<view class="span pp_list_name">团长<view class="b">{{item.nickname}}</view></view>
-							<view class="span pp_list_time">{{item.join_time}}开团</view></view>
+							<view class="span pp_list_time">{{tools.formatTimeStamp(item.join_time)}}开团</view></view>
 						</view>
 							
 						<view class="div div pp_list_item pp_list_item_2" wx:elif="{{index == 1}}">
 							<image class="img pp_list_avatar" alt="" src="{{item.avatar}}" />
 							<view class="div pp_list_info" id="pp_list_info">
 							<view class="span pp_list_name"><view class="b">{{item.nickname}}</view></view>
-							<view class="span pp_list_time">{{item.join_time}}参团</view></view>
+							<view class="span pp_list_time">{{tools.formatTimeStamp(item.join_time)}}参团</view></view>
 						</view>
 						
 						<view class="div div pp_list_item" wx:else>
 							<image class="img pp_list_avatar" alt="" src="{{item.avatar}}" />
 							<view class="div pp_list_info" id="pp_list_info">
 							<view class="span pp_list_name"><view class="b">{{item.nickname}}</view></view>
-							<view class="span pp_list_time">{{item.join_time}}参团</view></view>
+							<view class="span pp_list_time">{{tools.formatTimeStamp(item.join_time)}}参团</view></view>
 						</view>
     					</view>
 					</block>
@@ -110,34 +114,10 @@
                 <view id="describe" class="div describe">
                 </view>
             </view>
-			
-			<!-- 你可能喜欢 -->
-            <view id="recommendA" class="div recommendA" hidden="{{goods == '' || goods == undefined}}">
-				<view class="div recommend" style="display: block;">
-					<view class="div title">你可能喜欢</view>
-					<view class="ul">
-                        <block  wx:key="item" wx:for="{{goods}}">
-                            <view class="li"  bindtap="bindRedirect" data-url="goods?goods_id={{item.goods_id}}">
-                                <view style="{{(index + 1) % 2 == 0 ? 'padding: 10px 0px 20px 0px;' : 'padding: 10px 0px 20px 0px;'}}">
-                                    <view class="div img">
-                                        <image src="{{item.image_url}}" class="img" mode="widthFix"  /></view>
-                                    <view class="div desc">
-                                        <view class="div text">{{item.goods_name}}</view>
-                                        <view class="div detail">
-                                            <view class="span price">
-                                            <view class="small">￥</view>{{item.group_price}}</view> 
-                                            <view class="span spec">
-                                            </view></view>
-                                    </view>
-                                </view>
-                            </view>
-                        </block>
-						<view class="div" style="clear:both"></view>
-					</view>
-				</view>
-            </view>
+
+      
             <view class="div step">
-                <view class="div step_hd">拼团玩法<view class="a step_more" href="tuan_rule.html" bindtap="show_group_desc">查看详情</view>
+                <view class="div step_hd">拼团玩法<view class="a step_more" href="tuan_rule.html" bindtap="setIsGroupHelp">查看详情</view>
                 </view>
                 <view id="footItem" class="div step_list">
                     <view class="div step_item ">
@@ -170,13 +150,15 @@
                     </view>
                 </view>
             </view>
+
+
             <view class="div mod_footer" id="mod_footer">
                 <view class="div mod_footer_lk">
-                    <view class="a on" href="index.html" id="shop_name" bindtap="bindRedirect" data-url="index">{{web.name}}</view>
+                    <view class="a on" href="index.html" id="shop_name" bindtap="bindRedirect" data-url="index">{{_.app.name}}</view>
                     <view class="a" href="groups.html" bindtap="bindRedirect" data-url="groups">我的团</view>
                 </view>
                 <view class="div mod_footer_logo">
-                    <view class="span">{{web.url}}</view>
+                    <view class="span">{{_.app.url}}</view>
                 </view>
             </view>
             <view style="height:72px;"></view>
@@ -212,4 +194,6 @@
 </view>
 </view>
 
-<include src="common/footer.wxml"/>
+<group-help isGroupHelp="{{isGroupHelp}}"></group-help>
+
+<net-error-tips isNoNetError="{{isNoNetError}}" bind:loadData="loadData"></net-error-tips>

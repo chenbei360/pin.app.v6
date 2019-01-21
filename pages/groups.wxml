@@ -17,7 +17,7 @@
                         <view class="p mt_g_name">{{item.order_goods.goods_name}}</view> 
                         <view class="p mt_g_price"> 成团价： <view class="span"> <view class="b"> <view class="small">￥</view>{{item.order_amount}}</view>/件</view><view class="i"></view> </view> </view> </view>
                 <view class="div mt_status">
-                    <view class="span mt_status_txt">{{tuan_status[item.status].desc}}</view>
+                    <view class="span mt_status_txt">{{_.tuan_status[item.status].desc}}</view>
                     <view class="mt_status_lk1 " href="order.html?id=9272403" data-url="order" data-id="{{item.order_id}}" bindtap="toDetail"> 查看订单详情 </view>
                     <view class="mt_status_lk1 marg_right" href="group.html?id=2071596" data-url="./group" data-id="{{item.group_order_id}}" bindtap="toDetail"> 查看团详情 </view> 
                 </view>

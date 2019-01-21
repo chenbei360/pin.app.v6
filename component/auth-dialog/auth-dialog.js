@@ -15,8 +15,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    appiconUrl: app.globalData.appiconUrl,
-    appName: app.globalData.appName,
+    appiconUrl: app.globalData._.config.app.icon_url,
+    appName: app.globalData._.config.app.name,
     confirmDisabled: false
   },
 

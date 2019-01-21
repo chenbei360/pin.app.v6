@@ -12,6 +12,7 @@ Page({
     isOperate: false,
     isNoNetError: true,
     order: {},
+    _: app.globalData._.config
   },
 
   loadData: function() {

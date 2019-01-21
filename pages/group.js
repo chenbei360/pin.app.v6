@@ -10,22 +10,79 @@ Page({
     isOperate: false,
     isNoNetError: true,
     isHideLoadMore: true,
-    isNoNetError: true
+    isNoNetError: true,
+    _: app.globalData._.config
+  },
+
+  setIsGroupHelp: function () {
+    this.setData({ "isGroupHelp": true });
   },
 
   loadData: function () {
     var that = this;
     //请求订单列表
-    that.data.orders = [];
+    that.data.group_order = null;
     wx.request({
       url: app.globalData.apiUrl + 'v1.0/users/groups/' + groupOrderId,
       header: {
         'AccessToken': wx.getStorageSync("token")
       },
       success: function (res) {
-        that.setData({
-          group_order: res.data.group_order
-        });
+        var group_title_class, group_detail_class, is_buy = false, group_but_url, group_but_text, tips_tit, tips_detail, group_type;
+        if (res.data.result == 'ok') {
+          
+          group_title_class = res.data.group_order.status == '2' ? 'tips_err' : res.data.group_order.status == '1' ? 'tips_succ tips_succ2' : 'tips_succ tips_succ2',
+
+          group_detail_class = res.data.group_order.status == '2' ? 'tm_err' : res.data.group_order.status == '1' ? 'tm_succ' : 'tm_tm';
+
+          
+          for (var i = 0; i < res.data.group_order.users.length; i++) {
+            if (res.data.group_order.caller_id == res.data.group_order.users[i].user_id) {
+              is_buy = true;
+            }
+          } 
+
+
+          if (res.data.group_order.status == '0') {
+            if(!is_buy) {
+              group_but_url = 'checkout?sell_type=1&goods_id=' + res.data.group_order.order.goods_id + "&group_order_id=" + res.data.group_order.group_order_id;
+              group_but_text = that.data._.group_text[1];  
+            } else {
+              group_but_url = '';
+              group_but_text = that.data._.group_text[0].replace("%s", (res.data.group_order.require_num - res.data.group_order.people));
+            }
+          } else {
+            group_but_url = 'index';
+            group_but_text = that.data._.group_text[2];
+          }
+
+        
+          if(is_buy) {
+            group_type = 0;
+          } else if (that.data.group_order.users[0].user_id != that.data.group_order.caller_id) {
+            group_type = 1;
+          } else {
+            group_type = 2;
+          }
+
+          tips_tit = that.data._.tuan_status[res.data.group_order.status]['tips_title'][group_type],
+          tips_detail = that.data._.tuan_status[res.data.group_order.status]['tips_detail'][group_type];
+
+
+          res.data.group_order.tips_tit = tips_tit,
+          res.data.group_order.tips_detail = tips_detail,
+          res.data.group_order.group_but_text = group_but_text,
+          res.data.group_order.group_but_url = group_but_url,
+          res.data.group_order.group_detail_class = group_detail_class,
+          res.data.group_order.group_title_class = group_title_class;
+
+
+          that.setData({
+            group_order: res.data.group_order
+          });
+
+        }
+
 
         that.setData({
           isNoNetError: true

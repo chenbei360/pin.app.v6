@@ -18,6 +18,9 @@ Component({
     isNoNetError: {
       type: Boolean,
       value: false,
+    },
+    _: {
+      type: Object
     }
   },
 
