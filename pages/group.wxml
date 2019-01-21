@@ -115,41 +115,10 @@
                 </view>
             </view>
 
-      
-            <view class="div step">
-                <view class="div step_hd">拼团玩法<view class="a step_more" href="tuan_rule.html" bindtap="setIsGroupHelp">查看详情</view>
-                </view>
-                <view id="footItem" class="div step_list">
-                    <view class="div step_item ">
-                        <view class="div step_num">1</view>
-                        <view class="div step_detail">
-                            <view class="p step_tit">选择
-                                <view class="br"></view>心仪商品</view>
-                        </view>
-                    </view>
-                    <view class="div step_item ">
-                        <view class="div step_num">2</view>
-                        <view class="div step_detail">
-                            <view class="p step_tit">支付开团
-                                <view class="br"></view>或参团</view>
-                        </view>
-                    </view>
-                    <view class="div step_item " id="step_3">
-                        <view class="div step_num">3</view>
-                        <view class="div step_detail">
-                            <view class="p step_tit">等待好友
-                                <view class="br"></view>参团支付</view>
-                        </view>
-                    </view>
-                    <view class="div step_item" id="step_4">
-                        <view class="div step_num">4</view>
-                        <view class="div step_detail">
-                            <view class="p step_tit">达到人数
-                                <view class="br"></view>团购成功</view>
-                        </view>
-                    </view>
-                </view>
-            </view>
+            
+            <import src="./base/group-step.wxml" />
+            <template is="step" data="{{setIsGroupHelp: setIsGroupHelp,step: (!group_but_url) ? 3 : (group_order.status == 1) ? 4 : 2}}" />
+
 
 
             <view class="div mod_footer" id="mod_footer">
@@ -174,26 +143,6 @@
         </view>
     </view>
 </view>
-
-<view class="group-detail" hidden="{{!show_group_desc}}" bindtap="close_group_desc">
-<view class="div group-detail-notice-container" style="display:;" data-reactid="71">
-<view class="div notice-pop-container" data-reactid="82" catchtouchmove="stop">
-    <view  data-reactroot="" class="div notice-pop">
-        <view class="div mask"></view>
-        <view class="div notice-pop-content">
-            <view class="div notice-pop-title">如何参加拼团</view>
-            <view class="ul notice-pop-list">
-                <view class="li join">开团或参加别人的团</view>
-                <view class="li time">在规定的时间内，邀请好友参团</view>
-                <view class="li send">达到拼团人数，分别给团长和团员发货</view>
-                <view class="li withdraw">未达到拼团人数，货款将自动原路返还</view>
-            </view>
-        </view>
-    </view>
-</view>
-</view>
-</view>
-
 
 
 <view class="commodity_screen" bindtap="hideShareModal" wx:if="{{showShareModalStatus}}"></view>

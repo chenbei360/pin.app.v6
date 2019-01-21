@@ -86,9 +86,9 @@ Page({
           }
 
         
-          if(is_buy) {
+          if(!is_buy) {
             group_type = 0;
-          } else if (that.data.group_order.users[0].user_id != that.data.group_order.caller_id) {
+          } else if (res.data.group_order.users[0].user_id != res.data.group_order.caller_id) {
             group_type = 1;
           } else {
             group_type = 2;

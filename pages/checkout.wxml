@@ -97,47 +97,12 @@
 
         <view class='h_20'></view>
 
-        <view class="div step">
-            <view class="div step_hd">
-                拼团玩法
-                <view class="a step_more" bindtap="setIsGroupHelp">查看详情</view>
-            </view>
 
-            <view id="footItem" class="div step_list">
-                <view class="div step_item">
-                    <view class="div step_num">1</view>
-                    <view class="div step_detail">
-                        <view class="p step_tit">选择
-                           <view  class="br">心仪商品</view>
-                    </view>
-                </view>
-              </view>
+        <import src="./base/group-step.wxml" />
+        <template is="step" data="{{setIsGroupHelp: setIsGroupHelp,step: 2}}" />
 
-                <view class="div step_item step_item_on">
-                    <view class="div step_num">2</view>
-                    <view class="div step_detail">
-                        <view class="p step_tit">支付开团
-                           <view  class="br">或参团</view>
-                    </view>
-                </view></view>
+        
 
-                <view class="div step_item">
-                    <view class="div step_num">3</view>
-                    <view class="div step_detail">
-                        <view class="p step_tit">邀请好友
-                           <view  class="br">参团支付</view>
-                    </view>
-                </view></view>
-
-                <view class="div step_item">
-                    <view class="div step_num">4</view>
-                    <view class="div step_detail">
-                        <view class="p step_tit">达到人数
-                           <view  class="br">团购成功</view>
-                    </view>
-                </view></view>
-            </view>
-        </view>
     </view>
     
     <view class="div widget slide_widget_tip {{isBannering && banner.open == '1' ? 'slide_tip' : ''}}" bindtap="closeBanner" hidden="{{!goods}}">

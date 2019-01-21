@@ -1,0 +1,36 @@
+<template name="step">
+  <view class="div step">
+    <view class="div step_hd">拼团玩法<view class="a step_more" bindtap="setIsGroupHelp">查看详情 </view>
+    </view>
+    <view id="footItem" class="div step_list">
+        <view class="div step_item {{1==step?'step_item_on':''}}">
+            <view class="div step_num">1</view>
+            <view class="div step_detail">
+                <view class="p step_tit">选择
+                    <view class="br"></view>心仪商品</view>
+            </view>
+        </view>
+        <view class="div step_item {{2==step?'step_item_on':''}}">
+            <view class="div step_num">2</view>
+            <view class="div step_detail">
+                <view class="p step_tit">支付开团
+                    <view class="br"></view>或参团</view>
+            </view>
+        </view>
+        <view class="div step_item {{3==step?'step_item_on':''}}" id="step_3">
+            <view class="div step_num">3</view>
+            <view class="div step_detail">
+                <view class="p step_tit">等待好友
+                    <view class="br"></view>参团支付</view>
+            </view>
+        </view>
+        <view class="div step_item {{4==step?'step_item_on':''}}" id="step_4">
+            <view class="div step_num">4</view>
+            <view class="div step_detail">
+                <view class="p step_tit">达到人数
+                    <view class="br"></view>团购成功</view>
+            </view>
+        </view>
+    </view>
+  </view>
+</template>

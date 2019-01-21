@@ -1,5 +1,12 @@
 {
   "navigationBarTitleText": "拼团详情",
   "enablePullDownRefresh": true,
-  "navigationBarBackgroundColor": "#3B3A3E"
+  "navigationBarBackgroundColor": "#3B3A3E",
+  "usingComponents": {
+    "page-loading": "../../component/page-loading/page-loading",
+    "net-error-tips": "../../component/net-error-tips/net-error-tips",
+    "auth-dialog": "../../component/auth-dialog/auth-dialog",
+    "right-service": "../../component/right-service/right-service",
+    "winpop-mask": "../../component/winpop-mask/winpop-mask"
+  }
 }

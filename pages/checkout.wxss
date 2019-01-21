@@ -464,13 +464,6 @@ page{
   display:block;
 }
 
-
-.step_item_on .step_num {
-    background-color: #e02e24;
-    border: 1px solid #e02e24;
-    color: #fff;
-}
-
 .order_goods_img .img {
     display: block;
     width: 60px;

@@ -125,6 +125,15 @@ page .share-modal{
   text-align: center;
 }
 
+
+.step_item_on .step_num {
+  background-color: #e02e24;
+  border: 1px solid #e02e24;
+  color: #fff;
+}
+
+
+
 .weui-badge{
   background-color:#ff4965;
 }
