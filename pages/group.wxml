@@ -2,7 +2,7 @@
 
 <wxs src="../libs/tools.wxs" module="tools" />
 
-<view class=" body" id="group">
+<view class=" body" id="group" wx-if="{{showPage}}">
     <view class="div" id="group-container" style="display: block;">
         <view class="div explain_modal" >
             <view class="i explain_lou explain_icon" style="display:none"></view>
@@ -169,7 +169,7 @@
             <view class="div H5_con fixopt" id="fixopt" style="display: block;">
 				<view hidden="{{!group_order.group_but_url}}" class="a fixopt_btn bottomBtn" bindtap="joinGroup" data-url="{{group_order.group_but_url}}" href="index.html">{{group_order.group_but_text}}</view>
 
-                <button style="padding-left:0px;padding-right:0px;font-size:12px;" hidden="{{group_order.group_but_url}}" class="a fixopt_btn bottomBtn" open-type="share" hover-class="none">{{group_order.group_but_text}}</button>
+                <button style="padding-left:0px;padding-right:0px;font-size:12px;" hidden="{{group_order.group_but_url}}" class="a fixopt_btn bottomBtn" hover-class="none" catchtap="showShareModal">{{group_order.group_but_text}}</button>
             </view>
         </view>
     </view>
@@ -194,6 +194,34 @@
 </view>
 </view>
 
-<group-help isGroupHelp="{{isGroupHelp}}"></group-help>
 
+
+<view class="commodity_screen" bindtap="hideShareModal" wx:if="{{showShareModalStatus}}"></view>
+<view animation="{{shareAnimationData}}" class="commodity_attr_box share-modal" wx:if="{{showShareModalStatus}}">
+
+<button open-type='share' class="item">
+
+  <view class="image-wrap">
+    <image src="http://static.zhibojie.tv/images/miniapp/share_user_icon.png"></image>
+  </view>
+
+  <view class="text">发给朋友</view>
+</button>
+
+<view class="item" bindtap='shareQrcode'>
+  <view class="image-wrap">
+    <image src="http://static.zhibojie.tv/images/miniapp/share_qrcode_icon.png"></image>
+  </view>
+
+  <view class="text">生成海报</view>
+</view>
+
+<view class="cancel-btn" hover-class='hover-effect' bindtap='hideShareModal'>取消</view>  
+</view>
+
+
+<group-help isGroupHelp="{{isGroupHelp}}"></group-help>
+<qrcode-poster showPosterModal="{{showPosterModal}}" goods="{{group_order.order.order_goods}}" qrcodeUrl="{{qrcodeUrl}}" posterUrl="{{posterUrl}}"></qrcode-poster>
 <net-error-tips isNoNetError="{{isNoNetError}}" bind:loadData="loadData"></net-error-tips>
+
+<winpop-mask showWinpopModal="{{showWinpopModal}}" showWinpopCancel="{{showWinpopCancel}}" winpopContent="{{winpopContent}} " bind:cancelCallback="cancelCallback" bind:confirmCallback="confirmCallback"></winpop-mask>

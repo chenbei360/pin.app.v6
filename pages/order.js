@@ -46,7 +46,7 @@ Page({
 
   orderReceive: function (e) {
     var that = this, orderId = e.currentTarget.dataset.order_id;
-    order.receive(orderId, function (res) {
+    order.receive(that,orderId, function (res) {
       if (res.data.result == 'ok') {
         wx.startPullDownRefresh();
       }
@@ -56,7 +56,7 @@ Page({
   
   orderCancel: function(e) {
     var that = this;
-    order.cancel(orderId, function (res) {
+    order.cancel(that,orderId, function (res) {
       if (res.data.result == 'ok') {
         wx.startPullDownRefresh();
       }

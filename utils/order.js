@@ -1,30 +1,31 @@
 //获取应用实例
 const app = getApp();
 
-function cancel(orderId,successCallback, failCallback){
-  wx.showModal({
-    title: '确定“取消订单”吗？',
-    content: '',
-    success: function (res) {
-      if (res.confirm) {
-        wx.request({
-          url: app.globalData.apiUrl + "v1.0/users/orders/" + orderId,
-          header: {
-            'AccessToken': wx.getStorageSync("token")
-          },
-          method: "DELETE",
-          success: function(res){
-            successCallback(res);
-          },
-          fail: function (res){
-            failCallback(res);
-          },
-          complete: function(){
-          }
-        })
+function cancel(that,orderId,successCallback, failCallback){
+
+  that.cancelCallback = function() {
+    that.setData({showWinpopModal: true});
+  },
+
+  that.confirmCallback = function() {
+    wx.request({
+      url: app.globalData.apiUrl + "v1.0/users/orders/" + orderId,
+      header: {
+        'AccessToken': wx.getStorageSync("token")
+      },
+      method: "DELETE",
+      success: function(res){
+        successCallback(res);
+      },
+      fail: function (res){
+        failCallback(res);
+      },
+      complete: function(){
       }
-    }
-  });
+    })
+  }
+
+  that.setData({ showWinpopModal: true, winpopContent: "确定“取消订单”吗？"})
 }
 
 function express(orderId, successCallback, failCallback, completeCallback){
@@ -42,30 +43,39 @@ function express(orderId, successCallback, failCallback, completeCallback){
   });
 } 
 
-function receive(orderId, successCallback, failCallback){
-  wx.showModal({
-    title: '确定“确认收货”吗？',
-    content: '',
-    success: function (res) {
-      if (res.confirm) {
-        wx.request({
-          url: app.globalData.apiUrl + "v1.0/users/orders/" + orderId + "/" + "receive",
-          header: {
-            'AccessToken': wx.getStorageSync("token")
-          },
-          method: "POST",
-          success: function (res) {
-            successCallback(res);
-          },
-          fail: function (res) {
-            failCallback(res);
-          },
-          complete: function () {
-          }
-        })
+function receive(that,orderId, successCallback, failCallback){
+
+  that.cancelCallback = function () {
+    that.setData({ showWinpopModal: true });
+  },
+
+  that.confirmCallback = function () {
+    wx.request({
+      url: app.globalData.apiUrl + "v1.0/users/orders/" + orderId + "/" + "receive",
+      header: {
+        'AccessToken': wx.getStorageSync("token")
+      },
+      method: "POST",
+      success: function (res) {
+        successCallback(res);
+      },
+      fail: function (res) {
+        failCallback(res);
+      },
+      complete: function () {
       }
-    }
-  });
+    })
+  }
+
+  that.setData({ showWinpopModal: true, winpopContent: "确定“确认收货”吗？" })
+
+
+  // wx.showModal({
+  //   title: '确定“确认收货”吗？',
+  //   content: '',
+  //   success: function (res) {
+  //   }
+  // });
 }
 
 function pay(orderId, successCallback, failCallback, completeCallback){

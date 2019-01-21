@@ -1,7 +1,7 @@
 <page-loading isLoading="{{isLoading}}" isOperate="{{isOperate}}"></page-loading>
 
 
-<view class="container" wx-if="{{!isLoading || isOperate}}">
+<view class="container" wx-if="{{showPage}}">
     <view class="main-view">
 
         <view class="goods-banner" id="banner">
@@ -228,3 +228,5 @@
 <net-error-tips isNoNetError="{{isNoNetError}}" bind:loadData="loadData"></net-error-tips>
 <load-more isHideLoadMore="{{isHideLoadMore}}"></load-more>
 <auth-dialog showAuthModal="{{showAuthModal}}" bind:confirm="loadData"></auth-dialog>
+
+<winpop-mask showWinpopModal="{{showWinpopModal}}" showWinpopCancel="{{showWinpopCancel}}" winpopContent="{{winpopContent}} " bind:cancelCallback="cancelCallback" bind:confirmCallback="confirmCallback"></winpop-mask>

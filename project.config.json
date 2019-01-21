@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 9,
 			"list": [
 				{
 					"id": 0,
@@ -43,7 +43,7 @@
 				},
 				{
 					"id": 1,
-					"name": "商品详情",
+					"name": "商品详情-340",
 					"pathName": "pages/goods",
 					"query": "goods_id=340"
 				},
@@ -90,8 +90,8 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "团详情",
+					"id": 9,
+					"name": "团详情-1",
 					"pathName": "pages/group",
 					"query": "id=1"
 				}

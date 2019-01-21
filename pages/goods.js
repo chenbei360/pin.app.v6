@@ -25,8 +25,12 @@ Page({
     qrcodeUrl: null,//海报地址
     showPosterModal: false,
 
+    _: app.globalData._.config,
+
     current: 1,
-    showAuthModal: false
+    showAuthModal: false,
+
+    showPage: false
   },
 
   loadData: function() {
@@ -43,23 +47,42 @@ Page({
     wx.request({
       url: app.globalData.miniUrl + 'v1.0/goods/' + goodsId,
       success: function (res) {
-        that.setData({
-          goods: res.data.goods,
-          gallery: res.data.gallery,
-          isShow_out: 0 >= parseInt(res.data.goods.goods_stock),
-        }); 
-        
-        app.getImageUrlInfo(that, that.data.gallery[0].img_url
-        ,function(){
-          that.setData({isOperate:true})
-        },function(image_w_h){
-          that.setData({ isLoading: false, isOperate: false, image_w_h: app.wxAutoImageCal(image_w_h.width, image_w_h.height)})
-        },function(){
-          that.setData({ isLoading: false, isOperate: false })
-        });
-        that.setData({
-          isNoNetError: true
-        });
+        if (res.data.result == 'fail'){
+
+          that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: that.data._.error_text[4] }),
+            that.setData({ isLoading: false, isOperate: false })
+
+        }else if(res.data.result == 'ok'){
+          that.setData({
+            goods: res.data.goods,
+            gallery: res.data.gallery,
+            isShow_out: 0 >= parseInt(res.data.goods.goods_stock),
+            showPage: true
+          });
+
+          app.getImageUrlInfo(that, that.data.gallery[0].img_url
+            , function () {
+              that.setData({ isOperate: true })
+            }, function (image_w_h) {
+              that.setData({ isLoading: false, isOperate: false, image_w_h: app.wxAutoImageCal(image_w_h.width, image_w_h.height) })
+            }, function () {
+              that.setData({ isLoading: false, isOperate: false })
+            });
+          that.setData({
+            isNoNetError: true
+          });
+        }else{
+
+          that.setData({ isLoading: false, isOperate: false }),
+            that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: that.data._.error_text[0]})
+          
+        }
+
+        that.confirmCallback = function(){
+          that.goHome();
+        }
+
+
       },
       fail: function (res) {
         that.setData({

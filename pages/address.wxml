@@ -106,3 +106,5 @@
 </view>
 
 <auth-dialog showAuthModal="{{showAuthModal}}" bind:confirm="loadData"></auth-dialog>
+
+<winpop-mask showWinpopModal="{{showWinpopModal}}" winpopContent="{{winpopContent}} " bind:cancelCallback="cancelCallback" bind:confirmCallback="confirmCallback"></winpop-mask>

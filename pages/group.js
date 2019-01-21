@@ -1,17 +1,25 @@
 // pages/group.js
 //获取应用实例
 const app = getApp();
-var groupOrderId = 0, util = require('../utils/util.js');
+var groupId = 0, util = require('../utils/util.js');
 Page({
 
 
   data: {
     isLoading: true,
     isOperate: false,
-    isNoNetError: true,
+    qrcodeUrl: null,
     isHideLoadMore: true,
     isNoNetError: true,
-    _: app.globalData._.config
+    _: app.globalData._.config,
+
+    showPosterModal: false,
+    shareAnimationData: null,
+    showShareModalStatus: false,
+
+
+    showPage: false
+
   },
 
   countdown: function (expire_time) {
@@ -31,13 +39,24 @@ Page({
     //请求订单列表
     that.data.group_order = null;
     wx.request({
-      url: app.globalData.apiUrl + 'v1.0/users/groups/' + groupOrderId,
+      url: app.globalData.apiUrl + 'v1.0/users/groups/' + groupId,
       header: {
         'AccessToken': wx.getStorageSync("token")
       },
       success: function (res) {
         var group_title_class, group_detail_class, is_buy = false, group_but_url, group_but_text, tips_tit, tips_detail, group_type;
-        if (res.data.result == 'ok') {
+
+
+
+
+        if (res.data.result == 'fail') {
+          that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: that.data._.error_text[2] }),
+            that.setData({ isLoading: false, isOperate: false })
+
+
+
+
+        }else if(res.data.result == 'ok') {
           
           group_title_class = res.data.group_order.status == '2' ? 'tips_err' : res.data.group_order.status == '1' ? 'tips_succ tips_succ2' : 'tips_succ tips_succ2',
 
@@ -89,9 +108,19 @@ Page({
 
 
           that.setData({
-            group_order: res.data.group_order
+            group_order: res.data.group_order,
+            showPage: true
           });
 
+        } else {
+
+          that.setData({ isLoading: false, isOperate: false }),
+            that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: that.data._.error_text[0] })
+
+        }
+
+        that.confirmCallback = function () {
+          that.goHome();
         }
 
 
@@ -113,8 +142,66 @@ Page({
     });
   },
 
+  /*返回首页*/
+  goHome: function () {
+    wx.switchTab({
+      url: './index',
+    });
+  },
+
+  showShareModal: function () {
+
+    this.setData({
+      isNoScroll: true
+    });
+    // 显示遮罩层
+    var animation = wx.createAnimation({
+      duration: 100,
+      timingFunction: "ease",
+      delay: 0
+    });
+
+    animation.translateY(300).step();
+    this.setData({
+      shareAnimationData: animation.export(),
+      showShareModalStatus: true
+    });
+
+    setTimeout(function () {
+      animation.translateY(0).step();
+      this.setData({
+        shareAnimationData: animation.export()
+      })
+    }.bind(this), 100);
+  },
+
+  hideShareModal: function () {
+
+    this.setData({
+      isNoScroll: false
+    });
+    // 隐藏遮罩层
+    var animation = wx.createAnimation({
+      duration: 200,
+      timingFunction: "linear",
+      delay: 0
+    });
+
+    animation.translateY(300).step();
+    this.setData({
+      shareAnimationData: animation.export(),
+    })
+    setTimeout(function () {
+      animation.translateY(0).step();
+      this.setData({
+        shareAnimationData: animation.export(),
+        showShareModalStatus: false
+      });
+    }.bind(this), 200);
+  },
+
   onLoad: function (options) {
-    groupOrderId = options.id;
+    groupId = options.id;
     this.loadData();
   },
 
@@ -151,5 +238,19 @@ Page({
 
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 生成分享海报
+   */
+  shareQrcode: function () {
+    var that = this;
+    that.hideShareModal();
+
+    that.setData({
+      qrcodeUrl: app.globalData.miniUrl + "v1.0/wxacode/" + groupId + "?page=" + "pages/group",
+      posterUrl: app.globalData.miniUrl + "group/poster/" + groupId,
+      showPosterModal: true
+    });
   }
 })

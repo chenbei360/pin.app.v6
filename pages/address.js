@@ -459,38 +459,46 @@ Page({
 
   deleteAddressEvent: function(e) {
     var that = this;
-    wx.showModal({
-      title: '确定删除这个地址吗？',
-      content: '',
-      success: function (res) {
-        if (res.confirm) {
-          that.setData({ isLoading: true, isOperate: true });
-          wx.request({
-            url: app.globalData.apiUrl + "v1.0/users/address/" + addressId,
-            method: "DELETE",
-            header: {
-              'AccessToken': wx.getStorageSync("token")
-            },
-            success(res) {
-              if (res.data.result == 'ok') {
-                var url = "./addresses";
-                if (goodsId != undefined) {
-                  url = url + "?sell_type=" + sellType + "&goods_id="
-                    + goodsId + "&address_id=" + addressId;
-                }
 
-                wx.navigateBack();
-              }
-            },
-            fail: function (res) {
-            },
-            complete: function (res) {
-              that.setData({ isLoading: false, isOperate: false })
+    that.cancelCallback = function () {
+      that.setData({ showWinpopModal: true });
+    },
+
+    that.confirmCallback = function () {
+
+
+      that.setData({ isLoading: true, isOperate: true });
+      wx.request({
+        url: app.globalData.apiUrl + "v1.0/users/address/" + addressId,
+        method: "DELETE",
+        header: {
+          'AccessToken': wx.getStorageSync("token")
+        },
+        success(res) {
+          if (res.data.result == 'ok') {
+            var url = "./addresses";
+            if (goodsId != undefined) {
+              url = url + "?sell_type=" + sellType + "&goods_id="
+                + goodsId + "&address_id=" + addressId;
             }
-          });
+
+            wx.navigateBack();
+          }
+        },
+        fail: function (res) {
+        },
+        complete: function (res) {
+          that.setData({ isLoading: false, isOperate: false })
         }
-      }
-    })
+      });
+
+      
+    },
+
+
+    that.setData({ showWinpopModal: true, winpopContent: "确定删除这个地址吗？" })
+    
+
   },
 
   onReady: function () {

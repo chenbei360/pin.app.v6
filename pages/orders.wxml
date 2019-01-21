@@ -126,5 +126,7 @@
 </view>
 
 
+<winpop-mask showWinpopModal="{{showWinpopModal}}" winpopContent="{{winpopContent}} " bind:cancelCallback="cancelCallback" bind:confirmCallback="confirmCallback"></winpop-mask>
+
 <net-error-tips isNoNetError="{{isNoNetError}}" bind:loadData="loadData"></net-error-tips>
 <load-more isHideLoadMore="{{isHideLoadMore}}"></load-more>

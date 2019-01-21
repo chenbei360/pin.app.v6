@@ -7,6 +7,7 @@
     "net-error-tips": "../../component/net-error-tips/net-error-tips",
     "auth-dialog": "../../component/auth-dialog/auth-dialog",
     "express-dialog": "../../component/express-dialog/express-dialog",
-    "right-service": "../../component/right-service/right-service"
+    "right-service": "../../component/right-service/right-service",
+    "winpop-mask": "../../component/winpop-mask/winpop-mask"
   }
 }

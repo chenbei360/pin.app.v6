@@ -1,0 +1,15 @@
+ <view class="div winpop-mask" id="co_maks" wx:if="{{showWinpopModal}}" style="display:block"></view>
+  <view class="div winpop-box" id="co_box" wx:if="{{showWinpopModal}}" style="display:block">
+      <view class="div co-popmain winpop-main">
+          <view class="p co-main-words">{{winpopContent}}</view>
+      </view>
+      <view class="div co-btns winpop-btns">
+          <button type="button" class="co-false pop-btn2 confirm-false" value="" bindtap="cancelCallback" wx:if="{{showWinpopCancel}}">
+          取消
+          </button>
+
+          <button type="button" class="{{showWinpopCancel && showWinpopConfirm ? 'co-true  pop-btn2 confirm-true' : 'co-alert pop-btn alert-button'}}" value="" bindtap="confirmCallback"  wx:if="{{showWinpopConfirm}}">
+          确定
+          </button>
+      </view>
+  </view>

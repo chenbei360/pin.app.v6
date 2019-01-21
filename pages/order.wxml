@@ -131,3 +131,6 @@
      </view>
     </view>
     </view>
+
+
+<winpop-mask showWinpopModal="{{showWinpopModal}}" winpopContent="{{winpopContent}} " bind:cancelCallback="cancelCallback" bind:confirmCallback="confirmCallback"></winpop-mask>

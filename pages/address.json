@@ -5,6 +5,7 @@
   "usingComponents": {
     "page-loading": "../../component/page-loading/page-loading",
     "net-error-tips": "../../component/net-error-tips/net-error-tips",
-    "auth-dialog": "../../component/auth-dialog/auth-dialog"
+    "auth-dialog": "../../component/auth-dialog/auth-dialog",
+    "winpop-mask": "../../component/winpop-mask/winpop-mask"
   }
 }

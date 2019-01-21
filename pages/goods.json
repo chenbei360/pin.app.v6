@@ -7,6 +7,7 @@
     "net-error-tips": "../../component/net-error-tips/net-error-tips",
     "mall-service": "../../component/mall-service/mall-service",
     "qrcode-poster": "../../component/qrcode-poster/qrcode-poster",
-    "auth-dialog": "../../component/auth-dialog/auth-dialog"
+    "auth-dialog": "../../component/auth-dialog/auth-dialog",
+    "winpop-mask": "../../component/winpop-mask/winpop-mask"
   }
 }
