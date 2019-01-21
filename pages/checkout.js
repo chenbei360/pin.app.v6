@@ -128,7 +128,8 @@ Page({
     goodsId = options.goods_id,
     sellType = options.sell_type, 
     addressId = options.address_id,
-    groupOrderId = options.group_order_id;
+    groupOrderId = options.group_order_id,
+    orderId = 0;
 
     this.setData({
       sell_type: sellType,

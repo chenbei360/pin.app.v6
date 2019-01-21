@@ -14,7 +14,8 @@ Page({
     isHideLoadMore: true,
     isNoNetError: true,
     showExpressModal: false,
-    _: app.globalData._.config
+    _: app.globalData._.config,
+    navStatus: null
   },
 
   loadData: function () {
@@ -26,7 +27,7 @@ Page({
       header: {
         'AccessToken': wx.getStorageSync("token")
       },
-      data: { offset: that.data.orders.length, size: 30 },
+      data: { order_status: (that.data.navStatus == null ? "" : that.data.navStatus),offset: that.data.orders.length, size: 30 },
       success: function (res) {
         that.setData({
           orders: res.data.order_list
@@ -83,6 +84,15 @@ Page({
         });
       }
     });
+  },
+
+  navChange: function(e) {
+    var navStatus = e.currentTarget.dataset.nav_status; 
+    if ('3' == navStatus){
+      navStatus = null;
+    }
+    this.setData({ navStatus: navStatus }),
+    this.loadData()
   },
 
   onLoad: function (options) {
@@ -156,11 +166,10 @@ Page({
 
   },
 
-  // onTabItemTap: function (item) {
-  //   this.setData({isLoading:true}),
-  //   wx.startPullDownRefresh();
-  // },
-
+  onTabItemTap: function (item) {
+    this.setData({ navStatus: null }),
+    wx.startPullDownRefresh();
+  },
   
   onReady: function () {
 
