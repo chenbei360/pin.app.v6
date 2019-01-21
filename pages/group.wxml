@@ -29,7 +29,7 @@
             <view class=" div H5_con" hidden="{{!group_order}}">
                 <view id="group_detail" class="div tm {{group_order.group_detail_class}}" hidden="{{!group_order}}">
                      <!--tm_succ tm_err-->
-                     <view class="a goItemPage"  bindtap="bindRedirect" data-url="goods?goods_id={{group_order.order.goods_id}}">
+                     <view class="a goItemPage"  bindtap="redirect" data-url="goods?goods_id={{group_order.order.goods_id}}">
                      <view class="div td tuanDetailWrap">
                      <view class="div td_img">
                         <image class="img" alt="" src="{{group_order.order.order_goods.image_url}}" mode="aspectFill" />
@@ -123,8 +123,8 @@
 
             <view class="div mod_footer" id="mod_footer">
                 <view class="div mod_footer_lk">
-                    <view class="a on" href="index.html" id="shop_name" bindtap="bindRedirect" data-url="index">{{_.app.name}}</view>
-                    <view class="a" href="groups.html" bindtap="goGroups" data-url="groups">我的团</view>
+                    <view class="a on" href="index.html" id="shop_name" bindtap="goHome" data-url="index">{{_.app.name}}</view>
+                    <view class="a" href="groups.html" bindtap="redirect" data-url="groups">我的团</view>
                 </view>
                 <view class="div mod_footer_logo">
                     <view class="span">{{_.app.url}}</view>
@@ -136,7 +136,7 @@
             <view class="br"></view>
             <view class="br"></view>
             <view class="div H5_con fixopt" id="fixopt" style="display: block;">
-				<view hidden="{{!group_order.group_but_url}}" class="a fixopt_btn bottomBtn" bindtap="joinGroup" data-url="{{group_order.group_but_url}}" href="index.html">{{group_order.group_but_text}}</view>
+				<view hidden="{{!group_order.group_but_url}}" class="a fixopt_btn bottomBtn" bindtap="redirect" data-url="{{group_order.group_but_url}}" href="index.html">{{group_order.group_but_text}}</view>
 
                 <button style="padding-left:0px;padding-right:0px;font-size:12px;" hidden="{{group_order.group_but_url}}" class="a fixopt_btn bottomBtn" hover-class="none" catchtap="showShareModal">{{group_order.group_but_text}}</button>
             </view>

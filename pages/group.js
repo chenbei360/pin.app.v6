@@ -144,19 +144,18 @@ Page({
     });
   },
 
-  /*返回首页*/
+
   goHome: function () {
     wx.switchTab({
       url: './index',
     });
   },
 
-  /*返回我的团*/
-  goGroups: function () {
-    wx.switchTab({
-      url: './groups',
-    });
+
+  redirect: function (e) {
+    util.redirect(e.currentTarget.dataset.url);
   },
+  
 
   showShareModal: function () {
 

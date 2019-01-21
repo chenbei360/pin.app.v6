@@ -17,10 +17,13 @@ function dateformat(micro_second) {
   return [hr, min, sec].map(formatNumber);
 }
 
+
 const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+
+
 
 function remove_array(array, index) {
   for (var i = 0; i < array.length; i++) {
@@ -37,6 +40,7 @@ function remove_array(array, index) {
   }
   return array;
 }
+
 
 /** 
  *多个定时器
@@ -56,6 +60,7 @@ function countdowns(that, total_micro_seconds, initCallback) {
       clock[i] = dateformat(total_micro_second);
     }
   }
+  
 
   that.setData({ clock: clock });
 
@@ -77,6 +82,34 @@ function countdowns(that, total_micro_seconds, initCallback) {
     , 60);
 }
 
+
+function redirect(url){
+  if (!url) return false;
+
+  if (url == 'index' || url == 'groups' || url == 'orders' || url == 'personal') {
+    wx.switchTab({
+      "url": url
+    });
+  } else {
+
+    var pages = getCurrentPages()    //获取加载的页面
+    if (pages.length >= 3) {
+
+      wx.redirectTo({
+        "url": url
+      })
+      return true;
+    }
+
+    wx.navigateTo({
+      "url": url,
+    })
+  }
+}
+
+
+
 module.exports = {
-  countdowns: countdowns
+  countdowns: countdowns,
+  redirect: redirect
 }
