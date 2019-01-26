@@ -32,6 +32,7 @@ button::after {
     line-height: 22px;
     text-align: center;
     font-weight: 600;
+    width:85%;
 }
 
 .goods-info .tuan_goods_cx {
@@ -934,6 +935,7 @@ image {
 }
 
 /* 分享按钮 */
+/* top:10rpx; */
 .share-btn{
   width:64rpx;
   height:96px;
@@ -941,7 +943,7 @@ image {
   border:none;
   padding:0;
   right:20rpx;
-  top:10rpx;
+  top:0rpx;
   position: absolute;
 }
 
