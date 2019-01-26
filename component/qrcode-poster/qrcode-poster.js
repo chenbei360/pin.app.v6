@@ -60,8 +60,8 @@ Component({
 
     save: function () {
 
-      var that = this;
-
+      var that = this, pages = getCurrentPages(), currentPage = pages[pages.length - 1], uri = currentPage.route + "?" + (app.urlEncode(currentPage.options).slice(1));
+      console.log(currentPage)
       wx.showLoading({
         title: '保存图片到手机相册中...',
       });
@@ -69,7 +69,7 @@ Component({
       that.setData({
         disabled: true
       });
-
+      
       wx.downloadFile({
         url: that.data.posterUrl,
         success: function (res) {
@@ -91,11 +91,14 @@ Component({
                   title: '成功保存',
                   icon: "success"
                 });
+                
+                app.handlerShare("分享海报", 1, uri );
 
                 that.triggerEvent("close", {}, {});
               },
               fail: function () {
                 wx.hideLoading();
+                app.handlerShare("分享海报", 0, uri );
                 that.triggerEvent("close", {}, {});
               }
             });
