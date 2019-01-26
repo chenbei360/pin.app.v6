@@ -264,25 +264,43 @@ Page({
       return false;
     }
 
+    var url = "./addresses", goOrder = goodsId && goodsId != "undefined" && sellType && sellType != "undefined";
+
+    if (goOrder) 
+    {
+      url += "?goods_id=" + goodsId,
+      url += "&sell_type=" + sellType; 
+    }
+
     if (!addressId) {
       this.handlerAddress(formData, app.globalData.apiUrl + "v1.0/users/address","POST"
       ,function  (res){
-        console.log(res);
+
+        if (res.data.result == 'ok'){
+          if (goOrder){
+            url += "&address_id=" + res.data.address_id;
+          }
+        }
+
+        wx.redirectTo({
+          url: url,
+        });
+
       },function(){
 
       });
     } else {
       this.handlerAddress(formData, app.globalData.apiUrl + "v1.0/users/address/" + addressId, "PUT"
       , function (res) {
-        var url = "./addresses";
-
-        if (goodsId && goods_id != "undefined" && sellType && sellType != "undefined") {
-          wx.setStorageSync('select_address_id', addressId);
-          wx.navigateBack({ delta: 2 });
-          return;
+        
+        if (goOrder){
+          url += "&address_id=" + addressId;
         }
 
-        wx.navigateBack();
+        wx.redirectTo({
+          url: url,
+        });
+
       }, function () {
 
       });
@@ -436,7 +454,11 @@ Page({
   },
 
   onLoad: function (options) {
-    addressId = this.options.address_id;
+    addressId = this.options.address_id,
+    goodsId = this.options.goods_id,
+    addressId = this.options.address_id,
+    sellType = this.options.sell_type;
+
     wx.setNavigationBarTitle({
       title: addressId ? '编辑地址' : '添加新地址' 
     })
@@ -458,8 +480,8 @@ Page({
   },
 
   deleteAddressEvent: function(e) {
-    var that = this;
-
+    var that = this,url = "./addresses", goOrder = goodsId && goodsId != "undefined" && sellType && sellType != "undefined";
+    console.log(goodsId)
     that.cancelCallback = function () {
       that.setData({ showWinpopModal: true });
     },
@@ -476,13 +498,15 @@ Page({
         },
         success(res) {
           if (res.data.result == 'ok') {
-            var url = "./addresses";
-            if (goodsId != undefined) {
-              url = url + "?sell_type=" + sellType + "&goods_id="
+
+            if (goOrder) {
+              url += "?sell_type=" + sellType + "&goods_id="
                 + goodsId + "&address_id=" + addressId;
             }
 
-            wx.navigateBack();
+            wx.redirectTo({
+              url: url,
+            });
           }
         },
         fail: function (res) {

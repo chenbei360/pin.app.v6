@@ -240,8 +240,8 @@ App({
   globalData: {
     userInfo: null,
     isIphonex: false,
-    apiUrl: "http://192.168.9.136/api/",
-    miniUrl: "http://192.168.9.136/mini/",
+    apiUrl: "http://192.168.9.139/api/",
+    miniUrl: "http://192.168.9.139/mini/",
     device: "",
     windowHeight: "",
     windowWidth: "",

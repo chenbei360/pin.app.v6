@@ -70,10 +70,22 @@ Page({
     this.loadData();
   },
   setDefaults: function (obj) {
-    var idx = obj.currentTarget.dataset.index, that = this;
+    var idx = obj.currentTarget.dataset.index, that = this , url;
+
+    
 
     if (goodsId && goodsId != "undefined" && sellType && sellType != "undefined"){
-      wx.navigateBack();
+
+      url = "./checkout?goods_id=" + goodsId + "&sell_type=" + sellType
+      
+      if (that.data.addressList[idx].address_id){
+        url += "&address_id=" + that.data.addressList[idx].address_id
+      }
+
+      wx.redirectTo({
+        url: url,
+      })
+
       return;
     }
 
@@ -96,8 +108,12 @@ Page({
 
   },
   edit: function (e) {
-    wx.navigateTo({
-      "url": "address?address_id=" + e.target.dataset.address_id + "&goods_id=" + goodsId + "&sell_type=" + sellType,
+    var url = "address?address_id=" + e.target.dataset.address_id;
+    if (goodsId && sellType){
+      url += "&goods_id=" + goodsId + "&sell_type=" + sellType;
+    }
+    wx.redirectTo({
+      "url": url,
     });
   },
 
