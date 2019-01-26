@@ -280,7 +280,7 @@ Page({
 
     that.setData({
       qrcodeUrl: app.globalData.miniUrl + "v1.0/wxacode/" + groupId + "?page=" + "pages/group",
-      posterUrl: app.globalData.miniUrl + "group/poster/" + groupId,
+      posterUrl: app.globalData.miniUrl + "v1.0/group/poster/" + groupId,
       showPosterModal: true
     });
   },
