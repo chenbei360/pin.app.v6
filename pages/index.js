@@ -108,6 +108,8 @@ Page({
 
   onTabItemTap: function (item) {
     wx.startPullDownRefresh();
+  },
+  onShareAppMessage: function () { 
+    return app.share({ title: "", desc: "", path: "" }); 
   }
-
 })

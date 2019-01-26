@@ -6,6 +6,11 @@ var config =
     name: "拼购",
     icon_url: "https://cdn.notestore.cn/w3/logo.png"
   },
+
+  share_text: {
+    title: '风靡全国的拼团商城，优质水果新鲜直供，快来一起“拼购”吧',
+    path: 'pages/index'
+  },
   
   error_text: {
     0: "服务器可能中暑了，请稍后再试",

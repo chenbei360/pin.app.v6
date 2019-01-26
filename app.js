@@ -200,11 +200,48 @@ App({
     return results;
   },
 
+  share: function (data) {
+    var share_text = this.globalData._.config.share_text,
+    share_type = '分享给好友',
+    that = this,
+    path = data.path || share_text.path,
+    title = data.title || share_text.title;
+
+    return {
+      title: title,
+      path: path,
+      withShareTicket: true,
+      success: function (res) {
+        if (res.shareTickets != undefined && res.shareTickets.length > 0) share_type = "分享给群聊";
+        that.handlerShare(share_type, 1, path);
+      },
+      fail: function (res) {
+        that.handlerShare(share_type, 0, path);
+      }
+    }
+  },
+
+  handlerShare(share_type, share_status, path) {
+    var token = wx.getStorageSync("token");
+    wx.request({
+      url: this.globalData.apiUrl + 'v1.0/users/share',
+      method: "POST",
+      data: {
+        share_type: share_type,
+        share_status: share_status,
+        share_url: path
+      },
+      header: {
+        'AccessToken': token
+      }
+    });
+  },
+
   globalData: {
     userInfo: null,
     isIphonex: false,
-    apiUrl: "http://192.168.9.151/api/",
-    miniUrl: "http://192.168.9.151/mini/",
+    apiUrl: "http://192.168.9.136/api/",
+    miniUrl: "http://192.168.9.136/mini/",
     device: "",
     windowHeight: "",
     windowWidth: "",

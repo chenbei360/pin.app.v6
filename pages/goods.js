@@ -148,6 +148,15 @@ Page({
 
   onLoad: function (options) {
     goodsId = options.goods_id;
+
+    //处理扫描二维码打开时候带的参数
+    var scene = decodeURIComponent(options.scene);
+
+    if (scene != "undefined"){
+      goodsId = scene;
+    }
+
+    
     this.loadData();
   },
 
@@ -208,6 +217,10 @@ Page({
       posterUrl: app.globalData.miniUrl + "goods/poster/" + goodsId,
       showPosterModal: true
     });
-  }
+  },
+
+  onShareAppMessage: function () {
+    return app.share({ title: this.data.goods.goods_name, path: "pages/goods?goods_id=" + goodsId });
+  },
 
 })

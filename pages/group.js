@@ -211,6 +211,13 @@ Page({
   onLoad: function (options) {
     groupId = options.id;
 
+    //处理扫描二维码打开时候带的参数
+    var scene = decodeURIComponent(options.scene);
+
+    if (scene != "undefined") {
+      groupId = scene;
+    }
+    
     var thisPage = this;
     app.getUserInfo(function (res) {
       thisPage.setData({
@@ -276,5 +283,15 @@ Page({
       posterUrl: app.globalData.miniUrl + "group/poster/" + groupId,
       showPosterModal: true
     });
+  },
+
+  onShareAppMessage: function () {
+    if (this.data.group_order.status == 0 || this.data.group_order.status == 8) {
+      var desc = '您参加的 ' + this.data.group_order.order.order_goods.goods_name + '目前还差' + (this.data.group_order.require_num - this.data.group_order.people) + '人,快去叫上身边的小伙伴一起' + app.globalData._.config.app.name;
+      return app.share({ title: this.data.group_order.order.order_goods.goods_name, desc: desc, path: "pages/group?id=" + groupId });
+    } else {
+      return app.share({ title: "", desc: "", path: "pages/group?id=" + groupId });
+    }
   }
+  
 })
