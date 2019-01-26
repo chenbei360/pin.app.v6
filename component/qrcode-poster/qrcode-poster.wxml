@@ -24,7 +24,7 @@
 
       <view class="ps-wrap">
         <view class="text">长按识别图中的小程序码</view>
-        <view class="text">查看{{goods.title_1?"":" 拼团 "}}详情</view>
+        <view class="text">查看{{goods.title_one?"":" 拼团 "}}详情</view>
       </view>
     </view>
 

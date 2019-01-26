@@ -214,7 +214,7 @@ Page({
 
     that.setData({
       qrcodeUrl: app.globalData.miniUrl + "v1.0/wxacode/" + goodsId + "?page=" + "pages/goods",
-      posterUrl: app.globalData.miniUrl + "goods/poster/" + goodsId,
+      posterUrl: app.globalData.miniUrl + "v1.0/goods/poster/" + goodsId,
       showPosterModal: true
     });
   },
