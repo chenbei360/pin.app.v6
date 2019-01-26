@@ -7,7 +7,7 @@
     <view class="close" bindtap='hidePosterModal' hover-class='hover-effect'>
       <image src="../../images/push/exit2.png"></image>
     </view>
-    <image class="goods-cover" src="{{goods.image_url}}" mode='cover'></image>
+    <image class="goods-cover" src="{{goods.image_url + '?x-oss-process=image/resize,w_380,h_380'}}" mode='cover'></image>
 
     <view class="goods-info">
       <view class="title-1 {{goods.title_one?'':'text-center'}}">{{goods.title_one}}</view>

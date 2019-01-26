@@ -7,7 +7,7 @@
                 <view class="div mt_g"  data-url="./group" data-id="{{item.group_order_id}}" bindtap="toDetail">
                 <view class="div mt_g_img">  
                     <view class="a" href="group.html?id=2071596">
-                    <image mode="aspectFill" class="img" src="{{item.order_goods.image_url}}" /></view> </view> 
+                    <image mode="aspectFill" class="img" src="{{item.order_goods.image_url + '?x-oss-process=image/resize,w_380,h_380'}}" /></view> </view> 
                     <view class="div mt_g_info">
                         <view class="p mt_g_name">{{item.order_goods.goods_name}}</view> 
                         <view class="p mt_g_price"> 成团价： <view class="span"> <view class="b"> <view class="small">￥</view>{{item.order_amount}}</view>/件</view><view class="i"></view> </view> </view> </view>
@@ -28,4 +28,3 @@
 
     <view class="div" style="visibility:hidden "></view>
 </view>
-<include src="common/footer.wxml"/>

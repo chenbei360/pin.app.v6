@@ -32,7 +32,7 @@
                      <view class="a goItemPage"  bindtap="redirect" data-url="goods?goods_id={{group_order.order.goods_id}}">
                      <view class="div td tuanDetailWrap">
                      <view class="div td_img">
-                        <image class="img" alt="" src="{{group_order.order.order_goods.image_url}}" mode="aspectFill" />
+                        <image class="img" alt="" src="{{group_order.order.order_goods.image_url  + '?x-oss-process=image/resize,w_380,h_380'}}" mode="aspectFill" />
                      </view>
                      <view class="div td_info margin_height">
                      <view class="p td_name">{{group_order.order.order_goods.goods_name}}</view>

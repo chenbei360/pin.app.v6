@@ -42,7 +42,7 @@
                                     
                                     <view class="div order_goods_img ">
                                         
-                                        <image mode="aspectFill" class="img" alt="" src="{{order.order_goods.image_url}}"></image>
+                                        <image mode="aspectFill" class="img" alt="" src="{{order.order_goods.image_url + '?x-oss-process=image/resize,w_380,h_380'}}"></image>
                                     </view>
 
                                     <view class="div order_goods_info">
