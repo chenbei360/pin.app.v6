@@ -255,8 +255,8 @@ App({
   globalData: {
     userInfo: null,
     isIphonex: false,
-    apiUrl: "http://192.168.9.139/api/",
-    miniUrl: "http://192.168.9.139/mini/",
+    apiUrl: "http://test.pintuan-xcx.cn/api/",
+    miniUrl: "http://test.pintuan-xcx.cn/mini/",
     device: "",
     windowHeight: "",
     windowWidth: "",
