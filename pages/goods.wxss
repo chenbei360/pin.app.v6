@@ -58,7 +58,8 @@ button::after {
 
 .goods-info .goods_price .red {
     color: #e02e24;
-    font-size: 48rpx;
+    font-size: 36rpx;
+    font-weight:700;
 }
 
 .goods-info .goods_price .red .span {
