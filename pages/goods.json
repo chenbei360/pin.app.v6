@@ -1,7 +1,8 @@
 {
   "enablePullDownRefresh": true,
-  "navigationBarBackgroundColor": "#3B3A3E",
   "navigationBarTitleText": "商品详情",
+  "navigationBarBackgroundColor": "#F8F8F8",
+  "navigationBarTextStyle": "black",
   "usingComponents": {
     "page-loading": "../../component/page-loading/page-loading",
     "net-error-tips": "../../component/net-error-tips/net-error-tips",

@@ -130,19 +130,19 @@ page{
 .nav_item_hd:before {
     background-image: url(http://139.199.168.122:8989/Public/Api/images/sprite_icon_e3352a.png);
     background-repeat: no-repeat;
-    background-size: 48rpx auto;
+    background-size: 24px auto;
     content: "";
-    height: 48rpx;
+    height: 24px;
     left: 0;
     position: absolute;
-    top: 20rpx;
-    width: 48rpx;
+    top: 10px;
+    width: 24px;
 }
 
 
 .nav_item_hd:after, .nav_item_hd_coupons:after {
-    border-bottom: 1px solid #cdcdcd;
-    border-left: 1px solid #cdcdcd;
+    border-bottom: 2rpx solid #cdcdcd;
+    border-left: 2rpx solid #cdcdcd;
     content: "";
     display: inline-block;
     height: 14rpx;

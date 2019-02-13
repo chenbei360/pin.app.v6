@@ -3,32 +3,32 @@
 
 <view class="body" wx:if="{{!isLoading || isOperate}}">
 	<view class="div mod_container">
-		<!-- <view class="div wx_bar">
+		<view class="div wx_bar">
         <view class="div wx_bar_back">
             <navigator id="back" url="javascript:void(0);"></navigator>
         </view>
         <view class="div wx_bar_tit">收货地址</view>
-    </view> -->
+    </view>
 		<form bindsubmit="listenFormSubmit" bindreser="listenFormReser" report-submit="true">
 		<view class=" div wx_wrap">
 			<view class="address_new">
 				<view class="p">
                     <label for="name"><view class="span tit">收货人</view>
-                        <input id="name" name="receive_name" value="{{address.receive_name}}" placeholder="名字" type="text" bindblur='receive_function'/>
+                        <input id="name" name="receive_name" value="{{address.receive_name}}" placeholder="名字" type="text" bindblur='receive_function' placeholder-class="i_placeholder"/>
                         <view class="span" id="updateTip1" style="color: #F43530; {{!receive_name_tip ? 'display: none;' : ''}}">请填写姓名</view>
                     </label>
                 </view>
 				
 				<view class="p">
                     <label for="mobile"><view class="span tit">手机号码</view>
-                        <input id="mobile" name="mobile" value="{{address.mobile}}" placeholder="手机号码" type="number" bindblur='mobile_function'/>
+                        <input id="mobile" name="mobile" value="{{address.mobile}}" placeholder="手机号码" type="number" bindblur='mobile_function' placeholder-class="i_placeholder"/>
                         <view class="span" id="updateTip2" style="color: #F43530; {{!mobile_tip ? 'display: none;' : ''}}">请填写正确的手机号</view>
                     </label>
                 </view>
 				
                 <view class="p">
                     <label><view class="span tit">选择地区</view>
-                        <view class="input __border" id="address_text" name="address_text" bindtap="openRegion">
+                        <view class="input __border i_placeholder" id="address_text" name="address_text" bindtap="openRegion">
                             <block wx:if="{{provinces[old_value[0]].region_name}}"> {{provinces[old_value[0]].region_name}} {{citys[old_value[1]].region_name}} {{areas[old_value[2]].region_name}}</block>
                             <block wx:else>选择地区</block> 
 
@@ -47,7 +47,7 @@
 
                 <view class="p" id="adType">
                     <view class="label" for="adType"><view class="span tit">地址类别</view>
-                        <picker bindchange="adTypesChange" value="{{adTypeIdx}}" range="{{adTypes}}" class='__border'>
+                        <picker bindchange="adTypesChange" value="{{adTypeIdx}}" range="{{adTypes}}" class='__border i_placeholder'>
                             <view class="picker">
                                 {{adTypes[adTypeIdx]}}
                                 <input disabled="true" name="address_name" value="{{addressNames[adTypeIdx]}}" class="hide"/>
@@ -61,7 +61,7 @@
 
                 <view class="p">
                     <view class="label" for="adinfo"><view class="span tit">详细地址</view>
-                        <input id="adinfo" name="address" value="{{address.address}}" placeholder="详细地址" type="text" bindblur='adinfo_function'/>
+                        <input id="adinfo" name="address" value="{{address.address}}" placeholder="详细地址" type="text" bindblur='adinfo_function' placeholder-class="i_placeholder"/>
                         <view classs="span" id="updateTip6" style="color: #F43530; {{!adinfo_tip ? 'display: none;' : ''}}">请填写详细地址</view>
                     </view>
                 </view>

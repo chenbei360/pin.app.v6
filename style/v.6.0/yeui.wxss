@@ -23,6 +23,24 @@
 }
 
 .step {
-  border-color: #ccc!important;
+  border-color: #dddde0!important;
 }
 
+/* 新增地址  */
+.address_new input, .address_new .select,.address_new .__border {
+  border: none!important;
+}
+.address_new .p {
+  /* box-shadow: 20rpx 20rpx 10rpx #eceded; */
+  border-bottom: 1px solid rgb(250, 250, 250);
+}
+.i_placeholder {
+  color:#C7C7CD;
+}
+.mod_container .wx_bar {
+  display: none!important;
+}
+.my {
+  background:none!important; 
+  background-color: #FF4C42!important;
+}

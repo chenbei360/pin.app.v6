@@ -9,6 +9,7 @@
   font-size: 12px;
   color:white;
   background-color: #FF4C42;
+  border-radius:50rpx;
 }
 .net-error .tips{
   text-align: center;
