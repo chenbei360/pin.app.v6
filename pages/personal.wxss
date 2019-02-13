@@ -14,16 +14,16 @@ page{
 .container {
     position: relative;
     width: 100%;
-    max-width: 640px;
+    max-width: 1280rpx;
     min-height: 100%;
     margin: 0 auto;
-    padding: 0 0 56px;
+    padding: 0 0 112rpx;
     overflow-x: hidden;
     background-color: #eceded;
 }
 
 .my {
-    height: 185px;
+    height: 370rpx;
     position: relative;
     width: 100%;
     z-index: 1;
@@ -36,7 +36,7 @@ page{
 }
 
 .my_head_pic {
-    padding: 50px 0 0;
+    padding: 100rpx 0 0;
 }
 
 .my_head_info {
@@ -44,9 +44,9 @@ page{
 }
 
 .my_head_name {
-    font-size: 14px;
+    font-size: 28rpx;
     line-height: 1;
-    padding: 7.5px 0 5.5px;
+    padding: 15rpx 0 11rpx;
 }
 
 .my_head {
@@ -59,17 +59,17 @@ page{
 }
 
 .my_head_name {
-    font-size: 14px;
+    font-size: 28rpx;
     line-height: 1;
-    padding: 7.5px 0 5.5px;
+    padding: 15rpx 0 11rpx;
 }
 
 .my_head_img {
     border-radius: 50%;
     -webkit-border-radius: 50%;
     box-shadow: 0 0 0 2px #fff;
-    height: 65px;
-    width: 65px;
+    height: 130rpx;
+    width: 130rpx;
     display: inline-block;
     background-repeat: no-repeat;
 }
@@ -115,10 +115,10 @@ page{
 
 .nav_item_hd {
     color: #000;
-    font-size: 14px;
-    height: 45px;
-    line-height: 45px;
-    padding-left: 34px;
+    font-size: 28rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    padding-left: 68rpx;
     position: relative;
     z-index: 1;
 }
@@ -130,13 +130,13 @@ page{
 .nav_item_hd:before {
     background-image: url(http://139.199.168.122:8989/Public/Api/images/sprite_icon_e3352a.png);
     background-repeat: no-repeat;
-    background-size: 24px auto;
+    background-size: 48rpx auto;
     content: "";
-    height: 24px;
+    height: 48rpx;
     left: 0;
     position: absolute;
-    top: 10px;
-    width: 24px;
+    top: 20rpx;
+    width: 48rpx;
 }
 
 
@@ -145,25 +145,25 @@ page{
     border-left: 1px solid #DDDDDD;
     content: "";
     display: inline-block;
-    height: 7px;
+    height: 14rpx;
     overflow: hidden;
     position: absolute;
     right: 0;
     top: 50%;
     -webkit-transform: rotate(-135deg);
     transform: rotate(-135deg);
-    width: 7px;
+    width: 14rpx;
 }
 
 .nav_item_bd {
     font-size: 0;
-    padding: 11px 0;
+    padding: 22rpx 0;
     position: relative;
-    display:none;
 }
 
 .nav_item_bd:before {
-    border-bottom: 1px solid #DDDDDD;
+    /* border-bottom: 1px solid #DDDDDD; */
+    border-bottom: 1px solid #eeee;
     content: "";
     left: 0;
     position: absolute;
@@ -181,10 +181,10 @@ page{
 
 .nav_item_hd_coupons, .nav_item_refresh {
     position: relative;
-    height: 45px;
+    height: 90rpx;
     color: #000;
     font-size: 14px;
-    line-height: 45px;
+    line-height: 90rpx;
     z-index: 1;
 }
 
@@ -209,15 +209,15 @@ page{
 
 .coupons_a {
     display: block;
-    line-height: 45px;
+    line-height: 90rpx;
 }
 
 .nav_item_hd_promotion {
     color: #000;
-    font-size: 14px;
-    height: 45px;
-    line-height: 45px;
-    padding-left: 34px;
+    font-size: 28rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    padding-left: 68rpx;
     position: relative;
     z-index: 1;
 }
@@ -234,7 +234,7 @@ page{
 .nav_item_bd .a {
     color: #000;
     display: inline-block;
-    font-size: 12px;
+    font-size: 24rpx;
     position: relative;
     text-align: center;
     width: 33.333%;
@@ -259,11 +259,11 @@ page{
 
 .nav_item_num {
     background: none repeat scroll 0 0 #ee2328;
-    border-radius: 13px;
+    border-radius: 26rpx;
     color: #fff;
-    font-size: 9px;
-    height: 13px;
-    line-height: 13px;
+    font-size: 18rpx;
+    height: 26rpx;
+    line-height: 26rpx;
     position: absolute;
     right: -12px;
     top: -7px;

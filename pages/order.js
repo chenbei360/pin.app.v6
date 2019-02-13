@@ -72,7 +72,10 @@ Page({
 
         if (res.data.result == 'ok') {
           order.goPay(res.data.param, function () {
-            wx.startPullDownRefresh();
+            // 支付成功
+            order.paySuccess(orderId)
+
+            
           }, function () { }, function () {
           });
         }

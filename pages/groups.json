@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "拼团详情",
+  "navigationBarTitleText": "我的拼团",
   "enablePullDownRefresh": true,
   "navigationBarBackgroundColor": "#3B3A3E",
   "usingComponents": {

@@ -117,7 +117,7 @@
 
             
             <import src="./base/group-step.wxml" />
-            <template is="step" data="{{setIsGroupHelp: setIsGroupHelp,step: (!group_but_url) ? 3 : (group_order.status == 1) ? 4 : 2}}" />
+            <template is="step" data="{{setIsGroupHelp: setIsGroupHelp,step: 0}}" />
 
 
 

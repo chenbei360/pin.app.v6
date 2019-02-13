@@ -22,7 +22,7 @@
     webkit-transform: translate3d(-50%,-50%,0);
     width: 80%;
     height: 30%;
-    border-radius: 5px;
+    border-radius: 10rpx;
     background-color: #fff;
 }
 
@@ -35,12 +35,12 @@
     height: 75%;
     overflow: hidden;
     text-wrap: normal;
-    line-height: 24px;
+    line-height: 48rpx;
     color: #666;
     padding: auto;
     text-align: center;
     vertical-align: center;
-    font-size: 18px;
+    font-size: 36rpx;
     position: relative;
 }
 
@@ -70,13 +70,13 @@
 
 .winpop-box .pop-btn {
     width: 80%;
-    height: 35px;
-    border-radius: 5px;
+    height: 70rpx;
+    border-radius: 10rpx;
     background-color: transparent;
     border: 0 solid #df0a17;
     font-family: Microsoft Yahei;
     color: #df0a17;
-    font-size: 16px;
+    font-size: 32rpx;
 }
 
 button::after {
@@ -92,7 +92,7 @@ button::after {
     border: 0 solid #df0a17;
     font-family: Microsoft Yahei;
     color: #df0a17;
-    font-size: 16px;
+    font-size: 32rpx;
     position: relative;
     display: inline-block;
     border-radius: 0!important;

@@ -29,6 +29,12 @@ Page({
     });
   },
 
+  goReLaunch(e) {
+    wx.reLaunch({
+      url: e.currentTarget.dataset.url,
+    });
+  },
+  
   onLoad: function (options) {
     var that = this;
   },

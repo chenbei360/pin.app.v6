@@ -79,6 +79,7 @@ function receive(that,orderId, successCallback, failCallback){
 }
 
 function pay(orderId, successCallback, failCallback, completeCallback){
+  var that = this;
   wx.request({
     url: app.globalData.apiUrl + 'v1.0/users/orders/wxpay/' + orderId,
     header: {
@@ -105,7 +106,7 @@ function goPay(payParams, successCallback, failCallback, completeCallback){
     'paySign': payParams.paySign,
     
     success:function (res) {
-      successCallback();
+      successCallback()
     },
 
     fail:function(res){
@@ -126,10 +127,33 @@ function goPay(payParams, successCallback, failCallback, completeCallback){
   });
 }
 
+function paySuccess(orderId) {
+  wx.request({
+    url: app.globalData.apiUrl + 'v1.0/users/orders/' + orderId,
+    header: {
+      'AccessToken': wx.getStorageSync("token")
+    },
+    success: function (res) {
+      if (res.data.result == 'ok') {
+        if (res.data.order.group_order_id && res.data.order.group_order_id != '0') {
+          wx.redirectTo({ 'url': 'group?id=' + res.data.order.group_order_id });
+        } else {
+          wx.redirectTo({ 'url': 'order?id=' + orderId });
+        }
+      } else {
+        wx.redirectTo({ 'url': 'orders' });
+      }
+    }
+  });
+}
+
+
+
 module.exports = {
   cancel: cancel,
   pay: pay,
   goPay: goPay,
   receive: receive,
-  express: express
+  express: express,
+  paySuccess: paySuccess
 }

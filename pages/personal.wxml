@@ -16,24 +16,25 @@
 		<view class="div">
 			<view class="div nav">
 				<view class="ul nav_list">
-					<view class="li nav_item nav_order" ptag="12478.1.1">
-						<view bindtap="goSwitchTab" data-url="./orders" data-type="3" class="a" ptag="12478.16.1">
-							<view class="a" ptag="12478.1.1" href="orders.html">
+					<view class="li nav_item nav_order">
+						<view bindtap="goSwitchTab" data-url="./orders" class="a">
+							<view class="a">
 								<view class="div nav_item_hd">我的订单</view>
 							</view>
 						</view>
 						<view class="div nav_item_bd">
-							<view bindtap="goSwitchTab" data-url="./orders" class="a" ptag="12478.16.1"  data-type="3"  ><view  class="span nav_item_txt" >全部</view></view>
+							<view bindtap="goSwitchTab" data-url="./orders" class="a"><view  class="span nav_item_txt" >全部</view></view>
 							
-							<view class=" a" ptag="12478.17.1" data-type="0" bindtap="toOrder">
+							<view class=" a" bindtap="goReLaunch" data-url="./orders?order_type=0">
 								<view class="span nav_item_txt">待付款<view class="i nav_item_num" id="need_pay_count" style="{{!unpaid || unpaid == 0 || unpaid == undefined? 'display:none' : ''}}">{{unpaid}}</view></view>
 							</view>
 							
-							<view class="a" ptag="12478.18.1" data-type="1" bindtap="toOrder">
+							<view class="a" bindtap="goReLaunch" data-url="./orders?order_type=1">
 								<view class="span nav_item_txt">待收货<view class="nav_item_num" id="need_recv_count" style="{{!unreceived || unreceived == 0 || unreceived == undefined ? 'display:none' : ''}}">{{unreceived}}</view></view>
 							</view>
 						</view>
 					</view>
+          
 					<view class="li nav_item nav_cheap">
 						<view class="div nav_item_hd"><view class="a" bindtap="goSwitchTab" data-url="./groups"  href="groups.html"  open-type="switchTab"> 我的拼团 </view></view>
 					</view>

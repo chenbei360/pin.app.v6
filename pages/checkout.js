@@ -195,7 +195,13 @@ Page({
     order.pay(orderId,function(res){  
 
       if (res.data.result == 'ok') {
-        order.goPay(res.data.param, function () { }, function () { }, function (res) {
+        order.goPay(res.data.param, function () { 
+          // 支付成功
+          order.paySuccess(orderId)
+          
+        }, function () { 
+
+        }, function (res) {
           if (res.errMsg == "requestPayment:fail cancel") {
             that.setData({ "isCancelPay": true }),
               wx.showToast({ title: "支付未完成， 请重新支付", icon: "none" });

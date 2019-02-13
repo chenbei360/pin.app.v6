@@ -1,8 +1,8 @@
 // pages/orders.js
 //获取应用实例
 const app = getApp();
-var orderType = 0,
-    order = require('../utils/order.js')
+var order = require('../utils/order.js')
+//orderType = 0,
 
 Page({
 
@@ -96,6 +96,7 @@ Page({
   },
 
   onLoad: function (options) {
+    this.setData({ navStatus: options.order_type || null}),
     this.loadData();
   },
 
@@ -127,9 +128,9 @@ Page({
 
       if(res.data.result == 'ok'){
         order.goPay(res.data.param,function(){
-          wx.redirectTo({
-            url: "./order?id=" + orderId
-          })
+          // 支付成功
+          order.paySuccess(orderId)
+          
         },function(){},function(){
           
         });
