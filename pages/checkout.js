@@ -245,9 +245,6 @@ Page({
 
   },
 
-  onShareAppMessage: function () {
-
-  },
 
 
   addressSort: function (list, address_id) {

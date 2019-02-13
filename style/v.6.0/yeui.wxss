@@ -1,0 +1,22 @@
+/* 个人中心 */
+.nav_item:after {
+  border-bottom: none!important;
+}
+
+.nav_item_hd:after, .nav_item_hd_coupons:after {
+  border-bottom: 1px solid #DDDDDD!important;
+  border-left: 1px solid #DDDDDD!important;
+}
+
+.nav_item_bd:before { 
+  border-bottom: 1px solid #eeee!important;
+}
+
+/* 确定订单 */
+.h_20 {
+  background: #eceded;
+  height: 30rpx;
+}
+.order,.order_bd,.pay2,.pay2_list,.pay2_item,.step {
+  border: none!important;
+}

@@ -96,11 +96,11 @@ page{
     right: 0;
     top: 0;
 }
-/*
+
 .nav_item {
     padding: 0 10px;
     position: relative;
-}*/
+}
 
 .a {
     text-decoration: none;
@@ -141,8 +141,8 @@ page{
 
 
 .nav_item_hd:after, .nav_item_hd_coupons:after {
-    border-bottom: 1px solid #DDDDDD;
-    border-left: 1px solid #DDDDDD;
+    border-bottom: 1px solid #cdcdcd;
+    border-left: 1px solid #cdcdcd;
     content: "";
     display: inline-block;
     height: 14rpx;
@@ -162,8 +162,7 @@ page{
 }
 
 .nav_item_bd:before {
-    /* border-bottom: 1px solid #DDDDDD; */
-    border-bottom: 1px solid #eeee;
+    border-bottom: 1px solid #d3d3d3;
     content: "";
     left: 0;
     position: absolute;
@@ -199,7 +198,7 @@ page{
 }
 
 .nav_item:after {
-    /* border-bottom: 1px solid #d3d3d3; */
+    border-bottom: 1px solid #d3d3d3;
     bottom: -.5px;
     content: "";
     left: 0;

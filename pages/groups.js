@@ -121,12 +121,7 @@ Page({
   onReachBottom: function () {
 
   },
-
-
-  onShareAppMessage: function () {
-
-  },
-
+  
   onTabItemTap: function (item) {
     wx.startPullDownRefresh();
   }

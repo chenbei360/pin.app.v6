@@ -56,7 +56,7 @@ Page({
           that.setData({
             goods: res.data.goods,
             gallery: res.data.gallery,
-            isShow_out: 0 >= parseInt(res.data.goods.goods_stock),
+            isShowOut: 0 >= parseInt(res.data.goods.goods_stock),
             showPage: true
           });
 

@@ -1,6 +1,6 @@
 /**app.wxss**/
-@import 'style/v.1.0/weui.wxss';
-@import 'style/v.1.0/yeui.wxss';
+@import 'style/v.6.0/weui.wxss';
+@import 'style/v.6.0/yeui.wxss';
 @import 'libs/font/iconfont.wxss';
 .clearfix:after{
     display: block;

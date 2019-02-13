@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 9,
 			"list": [
 				{
 					"id": 0,
@@ -89,6 +89,12 @@
 					"name": "团详情",
 					"pathName": "pages/group",
 					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "确认订单",
+					"pathName": "pages/checkout",
+					"query": "goods_id=340&sell_type=1"
 				}
 			]
 		}
