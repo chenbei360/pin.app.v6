@@ -942,8 +942,8 @@ image {
   background: none;
   border:none;
   padding:0;
-  right:20rpx;
-  top:0rpx;
+  right:10rpx;
+  top:-4rpx;
   position: absolute;
 }
 
@@ -958,9 +958,10 @@ image {
   height:40rpx;
 }
 .share-btn .text{
-  font-size:24rpx;
+  font-size:20rpx;
   padding-top:10rpx;
   height:24rpx;
   color:#4e4e4e;
+  font-weight:600;
 }
 /* 分享按钮 */

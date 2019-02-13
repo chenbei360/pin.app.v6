@@ -17,6 +17,12 @@
   background: #eceded;
   height: 30rpx;
 }
-.order,.order_bd,.pay2,.pay2_list,.pay2_item,.step {
+
+.order,.order_bd,.pay2,.pay2_list,.pay2_item {
   border: none!important;
 }
+
+.step {
+  border-color: #ccc!important;
+}
+
