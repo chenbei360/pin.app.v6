@@ -106,11 +106,11 @@ function goPay(payParams, successCallback, failCallback, completeCallback){
     'paySign': payParams.paySign,
     
     success:function (res) {
-      successCallback()
+      successCallback(res)
     },
 
     fail:function(res){
-      failCallback();
+      failCallback(res);
 
       if (res.errMsg == "requestPayment:fail cancel"){
       }else{

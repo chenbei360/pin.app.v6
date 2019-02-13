@@ -199,12 +199,13 @@ Page({
           // 支付成功
           order.paySuccess(orderId)
           
-        }, function () { 
-
+        }, function (res) { 
+          
+          console.log(res)
         }, function (res) {
           if (res.errMsg == "requestPayment:fail cancel") {
             that.setData({ "isCancelPay": true }),
-              wx.showToast({ title: "支付未完成， 请重新支付", icon: "none" });
+              wx.showToast({ title: app.globalData._.config.pay_text.cancel, icon: "none" });
           }
           that.setData({ "isPayDisable": false })
         });

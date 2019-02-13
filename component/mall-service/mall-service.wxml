@@ -1,4 +1,4 @@
-<view class="goods-header false false">
+<view class="goods-header false false" style='opacity:0;height:20rpx;'>
   <view class="div">
       <view class="g-h-div"></view>
       <view class="div g-h-services" catchtap="open_service_detail">
