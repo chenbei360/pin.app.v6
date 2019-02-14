@@ -180,6 +180,13 @@ Page({
 
   handlerAddress: function (addressData, url, method, successCallback, failCallback) {
     var that = this;
+    
+    if (this.data.isOperate) 
+    {
+      console.log("快");
+      return true;
+    }
+
 
     this.setData({isLoading: true,isOperate: true});
     wx.request({

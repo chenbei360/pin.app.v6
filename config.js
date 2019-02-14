@@ -112,7 +112,7 @@ var config =
   pay_text: {
     success: "支付成功",
     fail: "支付失败",
-    cancel: "支付取消"
+    cancel: "支付未完成， 请重新支付"
   },
 
   // mall_service: [

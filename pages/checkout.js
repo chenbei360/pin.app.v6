@@ -201,13 +201,13 @@ Page({
           
         }, function (res) { 
           
+          that.setData({ "isPayDisable": false })
           console.log(res)
         }, function (res) {
           if (res.errMsg == "requestPayment:fail cancel") {
             that.setData({ "isCancelPay": true }),
               wx.showToast({ title: app.globalData._.config.pay_text.cancel, icon: "none" });
           }
-          that.setData({ "isPayDisable": false })
         });
       }
 
