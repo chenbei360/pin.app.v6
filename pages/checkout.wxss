@@ -364,7 +364,7 @@ page{
 }
 
 .pay2_item_ico {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/pay_icon_8780ed.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/pay_icon_8780ed.png);
     background-repeat: no-repeat;
     background-size: 155px auto;
     margin-right: 10px;
@@ -428,7 +428,7 @@ page{
 }
 
 .fixopt_home:after, .fixopt_share:after, .mt_shop:before, .pp_list_blank:before, .pp_list_more:after, .pp_users_dot, .pp_vipuser_tit, .say_state:before, .step_more:after, .support_lk:after, .support_tit:before, .td_lk:after, .tips_opt a:after, .tm:before, .vip .pp_users_sale span, .yy_hd {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/bg_v6_afc11c.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/bg_v6_afc11c.png);
     background-repeat: no-repeat;
     background-size: 365px 490px;
 }
@@ -474,7 +474,7 @@ page{
 }
 
 .order_fp_item_selected .order_fp_ico:after, .order_post_item_selected .order_post_ico:after, .order_promo_item_selected .order_promo_ico:after, .pay2_selected .pay2_item_state:after {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/yes.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/yes.png);
 }
 
 .pay2_selected .pay2_item_state:after {

@@ -28,7 +28,7 @@
 }
 
 .state_step .ul {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/state.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/state.png);
     background-repeat: no-repeat;
     background-size: 282px 150px;
     height: 74px;
@@ -51,7 +51,7 @@
 }
 
 .state_step .li:after {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/state.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/state.png);
     background-repeat: no-repeat;
     background-size: 282px 150px;
     content: "";

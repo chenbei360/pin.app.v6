@@ -369,7 +369,7 @@ img {
 
 .footer-special .nav .goods-footer .goods-home {
     display: block;
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/home.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/home.png);
     background-repeat: no-repeat;
     background-size: 48rpx auto;
     height: 46rpx;
@@ -429,7 +429,7 @@ em, i {
 .goods-info .goods-out-pic {
     width: 60px;
     height: 60px;
-    background: url(http://139.199.168.122:8989/Public/Api/images/out_b7b8a4.png) no-repeat;
+    background: url(//pintuan-xcx.cn/v1.0/out_b7b8a4.png) no-repeat;
     background-size: contain;
     position: absolute;
     right: 25px;
@@ -755,7 +755,7 @@ image {
     display: block;
     height: .06rem;
     bottom: 0;
-    background-image: url(http://cdn.yangkeduo.com/assets/img/banner_shadow-6b35717b62.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/banner_shadow-6b35717b62.png);
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 10001;

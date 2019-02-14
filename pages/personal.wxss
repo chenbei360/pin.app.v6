@@ -27,7 +27,7 @@ page{
     position: relative;
     width: 100%;
     z-index: 1;
-    background: url(http://139.199.168.122:8989/Public/Api/images/my_bg_v2.jpg);
+    background: url(//pintuan-xcx.cn/v1.0/my_bg_v2.jpg);
     opacity:0.85;
 }
 
@@ -128,7 +128,7 @@ page{
 }
 
 .nav_item_hd:before {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/sprite_icon_e3352a.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/sprite_icon_e3352a.png);
     background-repeat: no-repeat;
     background-size: 24px auto;
     content: "";
@@ -304,7 +304,7 @@ page{
 }
 
 .nav_item_hd_coupons_sale:before {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/photo.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/photo.png);
     background-repeat: no-repeat;
     background-size: 24px auto;
     content: "";
@@ -317,7 +317,7 @@ page{
 }
 
 .nav_item_hd_coupons:before {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/youhuijuan.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/youhuijuan.png);
     background-repeat: no-repeat;
     background-size: 24px auto;
     content: "";
@@ -330,7 +330,7 @@ page{
 }
 
 .nav_item_hd_promotion:before {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/notice-reduce_3f819b.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/notice-reduce_3f819b.png);
     background-repeat: no-repeat;
     background-size: 24px auto;
     content: "";

@@ -75,7 +75,7 @@ page{
 
 
 .mt_g_price:before, .mt_g_price .i:before {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/bg_v6_afc11c.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/bg_v6_afc11c.png);
     background-repeat: no-repeat;
     background-size: 730rpx 980rpx;
 }
@@ -151,7 +151,7 @@ page{
 
 
 .mt_g_price:before, .mt_g_price .i:before {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/bg_v6_afc11c.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/bg_v6_afc11c.png);
     background-repeat: no-repeat;
     background-size: 730rpx 980rpx;
 }

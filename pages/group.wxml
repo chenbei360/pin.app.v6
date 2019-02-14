@@ -105,7 +105,7 @@
             </view>
             
             <view id="shareit" bindtap="groupShareUp" class="div" style="{{share_down ? 'display:block;' : 'display:none;'}}">
-                 <image class="arrow" src="http://139.199.168.122:8989/Public/Api/images/share-it.png"/> 
+                 <image class="arrow" src="//pintuan-xcx.cn/v1.0/share-it.png"/> 
                 <view class="div img-share">
                     <view class="div img-arrow"></view>
                     <view class="div img-head">分享至朋友圈</view>
@@ -151,7 +151,7 @@
 <button open-type='share' class="item">
 
   <view class="image-wrap">
-    <image src="http://static.zhibojie.tv/images/miniapp/share_user_icon.png"></image>
+    <image src="//pintuan-xcx.cn/v1.0/share_user_icon.png"></image>
   </view>
 
   <view class="text">发给朋友</view>
@@ -159,7 +159,7 @@
 
 <view class="item" bindtap='shareQrcode'>
   <view class="image-wrap">
-    <image src="http://static.zhibojie.tv/images/miniapp/share_qrcode_icon.png"></image>
+    <image src="//pintuan-xcx.cn/v1.0/share_qrcode_icon.png"></image>
   </view>
 
   <view class="text">生成海报</view>

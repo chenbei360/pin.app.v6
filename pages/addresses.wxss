@@ -152,7 +152,7 @@ page {background-color: #fff;}
 }
 
 .address_list .edit:after, .address_list .ul:before {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/sprites_v3.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/sprites_v3.png);
     background-repeat: no-repeat;
     background-size: 100px 100px;
 }
@@ -178,7 +178,7 @@ page {background-color: #fff;}
 }
 
 .address_list .edit:after, .address_list ul:before {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/sprites_v3.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/sprites_v3.png);
     background-repeat: no-repeat;
     background-size: 100px 100px;
 }
@@ -257,7 +257,7 @@ page {background-color: #fff;}
 }
 
 .icon_address {
-    background: url(http://139.199.168.122:8989/Public/Api/images//selectDefault.png) no-repeat;
+    background: url(//pintuan-xcx.cn/v1.0/selectDefault.png) no-repeat;
     background-size: 18px 18px;
     z-index: 999;
     left: 12px;

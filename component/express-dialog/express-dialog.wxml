@@ -5,7 +5,7 @@
     <view class="div express_header">物流信息 </view>
             <view class="div right_pos" catchtap="closeExpress">
                 <view class="div i" style='display:initial;'>
-                    <image src="http://139.199.168.122:8989/Public/Api/images/close_1.png" class="img cancel_icon"></image>
+                    <image src="//pintuan-xcx.cn/v1.0/close_1.png" class="img cancel_icon"></image>
                 </view>
                 </view>
                  <view class="div shipper" wx:if="{{shippingInfo.tracking_number}}">运单号：<view class="span tracking_number">
@@ -27,7 +27,7 @@
                 <view class="div center" wx-if="{{isNoNetError}}">{{_.error_text[8]}}</view>
             
             </scroll-view>
-            <image class="express_loading" wx-if="{{isLoading}}" src="http://139.199.168.122:8989/Public/Api/images/loading_eb0d43.gif"></image>
+            <image class="express_loading" wx-if="{{isLoading}}" src="//pintuan-xcx.cn/v1.0/loading_eb0d43.gif"></image>
         </view>
 
         

@@ -23,7 +23,7 @@
             <block>
             <button bindtap='showShareModal' class="share-btn">
               <view class="image-wrap">
-                <image src="http://static.zhibojie.tv/images/miniapp/goods-detail-share.png"></image>
+                <image src="//pintuan-xcx.cn/v1.0/goods-detail-share.png"></image>
               </view>
               <view class="text">分享</view>
             </button>
@@ -203,7 +203,7 @@
 <button open-type='share' class="item">
 
   <view class="image-wrap">
-    <image src="http://static.zhibojie.tv/images/miniapp/share_user_icon.png"></image>
+    <image src="//pintuan-xcx.cn/v1.0/share_user_icon.png"></image>
   </view>
 
   <view class="text">发给朋友</view>
@@ -211,7 +211,7 @@
 
 <view class="item" bindtap='shareQrcode'>
   <view class="image-wrap">
-    <image src="http://static.zhibojie.tv/images/miniapp/share_qrcode_icon.png"></image>
+    <image src="//pintuan-xcx.cn/v1.0/share_qrcode_icon.png"></image>
   </view>
 
   <view class="text">生成海报</view>

@@ -15,7 +15,7 @@
 }
 
 .tips .tips_ico {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/bg_v6_afc11c.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/bg_v6_afc11c.png);
     background-repeat: no-repeat;
     background-size: 365px 490px
 }
@@ -27,7 +27,7 @@
     left: 10px;
     height: 50px;
     width: 50px;
-    background: url(http://139.199.168.122:8989/Public/Api/images/logo_b285d9.jpg) no-repeat;
+    background: url(//pintuan-xcx.cn/v1.0/logo_b285d9.jpg) no-repeat;
     background-size: 50px 50px;
     border-radius: 25px
 }
@@ -256,7 +256,7 @@
 }
 
 .fixopt_home:after, .fixopt_share:after, .mt_shop:before, .pp_list_blank:before, .pp_list_more:after, .pp_users_dot, .pp_vipuser_tit, .say_state:before, .step_more:after, .support_lk:after, .support_tit:before, .td_lk:after, .tips_opt a:after, .tm:before, .vip .pp_users_sale .span, .yy_hd {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/bg_v6_afc11c.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/bg_v6_afc11c.png);
     background-repeat: no-repeat;
     background-size: 365px 490px;
 }
@@ -369,7 +369,7 @@
     top: 0;
     right: 5px;
     display: none;
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/soldout_65099a.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/soldout_65099a.png);
 }
 
 
@@ -547,7 +547,7 @@
 }
 
 .pp_list_item_1 .pp_list_words:before, .pp_list_item_2:after {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/bg_v6_afc11c.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/bg_v6_afc11c.png);
     background-repeat: no-repeat;
     background-size: 365px 490px;
 }
@@ -586,7 +586,7 @@
     right: 27px;
     width: 50px;
     height: 42px;
-    background: url(http://139.199.168.122:8989/Public/Api/images/share.png) no-repeat;
+    background: url(//pintuan-xcx.cn/v1.0/share.png) no-repeat;
     background-size: 50px 42px;
 }
 
@@ -735,7 +735,7 @@
 }
 
 .fixopt_home:after, .fixopt_share:after, .mt_shop:before, .pp_list_blank:before, .pp_list_more:after, .pp_users_dot, .pp_vipuser_tit, .say_state:before, .step_more:after, .support_lk:after, .support_tit:before, .td_lk:after, .tips_opt a:after, .tm:before, .vip .pp_users_sale span, .yy_hd {
-    background-image: url(http://139.199.168.122:8989/Public/Api/images/bg_v6_afc11c.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/bg_v6_afc11c.png);
     background-repeat: no-repeat;
     background-size: 365px 490px;
 }

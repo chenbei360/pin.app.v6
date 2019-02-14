@@ -130,7 +130,7 @@ var config =
   //   }
   // ],
 
-  group_image_url: "http://139.199.168.122:8989/Public/Api/images/avatar_4_64.png"
+  group_image_url: "//pintuan-xcx.cn/v1.0/avatar_4_64.png"
 };
 
 module.exports = {
