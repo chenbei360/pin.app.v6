@@ -252,9 +252,12 @@ App({
     return paramStr;
   },
 
+  
   globalData: {
     userInfo: null,
     isIphonex: false,
+    // apiUrl: "http://pin6.cn/api/",
+    // miniUrl: "http://pin6.cn/mini/",
     apiUrl: "http://test.pintuan-xcx.cn/api/",
     miniUrl: "http://test.pintuan-xcx.cn/mini/",
     device: "",

@@ -93,6 +93,10 @@ page{
 .mt_g_price .span {
     font-size: 18rpx;
     vertical-align: middle;
+    display: inline-block;
+    height: 52rpx;
+    line-height: 52rpx;
+    margin-top: -8rpx;
 }
 
 .mt_g_price .span .b {

@@ -6,7 +6,7 @@
 <wxs src="../libs/tools.wxs" module="tools" />
 
     <view class="body">
-    <view class="div" ms-controller="root">
+    <view class="div" id="orders" ms-controller="root">
             
             <!-- <include src="common/express.wxml"/> -->
             

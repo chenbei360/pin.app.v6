@@ -4,12 +4,12 @@
 }
 
 .nav_item_hd:after, .nav_item_hd_coupons:after {
-  border-bottom: 1px solid #DDDDDD!important;
-  border-left: 1px solid #DDDDDD!important;
+  border-bottom: 1px solid #f2f2f2!important;
+  border-left: 1px solid #f2f2f2!important;
 }
 
 .nav_item_bd:before { 
-  border-bottom: 1px solid #eeee!important;
+  border-bottom: 1px solid #f2f2f2!important;
 }
 
 /* 确定订单 */
@@ -43,4 +43,36 @@
 .my {
   background:none!important; 
   background-color: #FF4C42!important;
+  opacity:1!important;
+}
+
+/* 我的订单 */
+#orders #dealliststatus1 {
+  padding-top: 0!important;
+}
+#orders .nav_fixed {
+  position: relative;
+}
+#orders .order_hd {
+  border-top:none;
+  border-bottom-color: #f2f2f2;
+}
+.order_bd,.order_goods {
+  border-bottom-color: #f2f2f2!important;
+}
+#orders .order {border:none;}
+
+/* 我的团 */
+#groups .mt_g {
+  border-bottom-color: #f2f2f2!important;
+}
+.step {
+  border-bottom-color: #e0e0e0!important;
+  border-top-color: #e0e0e0!important;
+}
+.pp_state:after {
+  background-color: #e0e0e0!important;
+}
+.tm {
+  border-bottom-color: #e0e0e0!important;
 }

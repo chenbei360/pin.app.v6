@@ -1,5 +1,5 @@
     
-<view class="body">
+<view class="body" id="groups">
     <view class="div con">
         <block wx:key="item" wx:for="{{groups}}">
             <view class="div mt_order " id="groups">

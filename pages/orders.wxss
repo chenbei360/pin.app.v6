@@ -201,7 +201,7 @@
     width: 160rpx;
     height: 60rpx;
     background-color: #4b4b4b;
-    line-height: 6r0px;
+    line-height: 60rpx;
     border-radius: 9rpx;
     color: #fff;
     margin-left: 10rpx;

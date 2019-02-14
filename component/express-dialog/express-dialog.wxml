@@ -4,7 +4,7 @@
   <view class="div dialog_content">
     <view class="div express_header">物流信息 </view>
             <view class="div right_pos" catchtap="closeExpress">
-                <view class="div i">
+                <view class="div i" style='display:initial;'>
                     <image src="http://139.199.168.122:8989/Public/Api/images/close_1.png" class="img cancel_icon"></image>
                 </view>
                 </view>
