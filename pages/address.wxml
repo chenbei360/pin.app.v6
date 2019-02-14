@@ -28,7 +28,7 @@
 				
                 <view class="p">
                     <label><view class="span tit">选择地区</view>
-                        <view class="input __border i_placeholder" id="address_text" name="address_text" bindtap="openRegion">
+                        <view class="input __border {{provinces[old_value[0]].region_name ? '' : 'i_placeholder'}}" id="address_text" name="address_text" bindtap="openRegion">
                             <block wx:if="{{provinces[old_value[0]].region_name}}"> {{provinces[old_value[0]].region_name}} {{citys[old_value[1]].region_name}} {{areas[old_value[2]].region_name}}</block>
                             <block wx:else>选择地区</block> 
 
@@ -47,7 +47,8 @@
 
                 <view class="p" id="adType">
                     <view class="label" for="adType"><view class="span tit">地址类别</view>
-                        <picker bindchange="adTypesChange" value="{{adTypeIdx}}" range="{{adTypes}}" class='__border i_placeholder'>
+                        <picker bindchange="adTypesChange" value="{{adTypeIdx}}" range="{{adTypes}}" class='__border'>
+                        <!-- i_placeholder -->
                             <view class="picker">
                                 {{adTypes[adTypeIdx]}}
                                 <input disabled="true" name="address_name" value="{{addressNames[adTypeIdx]}}" class="hide"/>

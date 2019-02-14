@@ -54,12 +54,6 @@
     transform: translate(-50%,-50%);
 }
 
-.winpop-box .winpop-btns {
-    text-align: center;
-    height: 25%;
-    z-index: 999999999;
-    border-top: 1px solid #999;
-}
 
 .winpop-box .winpop-btns {
     text-align: center;
@@ -99,3 +93,14 @@ button::after {
     border-right: 1px solid #aaa;
     border-radius: 0;
 }
+
+
+
+/* start.v.6 */
+.winpop-box .pop-btn2 {
+  border-right-color: #e0e0e0;
+}
+.winpop-box .winpop-btns {
+    border-top-color: #e0e0e0;
+}
+/* end */
