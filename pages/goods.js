@@ -185,9 +185,7 @@ Page({
 
   /*返回首页*/
   goHome: function () {
-    wx.switchTab({
-      url: './index',
-    });
+    app.goHome();
   },
 
 

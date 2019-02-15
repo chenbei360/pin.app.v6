@@ -1,6 +1,6 @@
 <page-loading isLoading="{{isLoading}}" isOperate="{{isOperate}}"></page-loading>
 
-<view class="body checkout" wx:if="{{!isLoading}}">
+<view class="body checkout" wx-if="{{showPage}}">
     <view class="div" style="display: block;">
         <view class="div wx_wrap">
             
@@ -122,3 +122,5 @@
 <group-help isGroupHelp="{{isGroupHelp}}"></group-help>
 
 <net-error-tips isNoNetError="{{isNoNetError}}" bind:loadData="loadData"></net-error-tips>
+
+<winpop-mask showWinpopModal="{{showWinpopModal}}" showWinpopCancel="{{showWinpopCancel}}" winpopContent="{{winpopContent}} " bind:cancelCallback="cancelCallback" bind:confirmCallback="confirmCallback"></winpop-mask>

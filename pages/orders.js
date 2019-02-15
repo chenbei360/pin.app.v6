@@ -121,19 +121,38 @@ Page({
   },
   
   orderBuy: function(e) {
+    if (this.data.isPayDisable) return true;
+
+    this.setData({ "isPayDisable": true });
     var that = this, orderId = e.currentTarget.dataset.order_id;
 
 
     order.pay(orderId,function(res) {
 
-      if(res.data.result == 'ok'){
+
+      if (res.data.result == 'fail') {
+
+        that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: res.data.error_info });
+        
+      } else if(res.data.result == 'ok') {
         order.goPay(res.data.param,function(){
           // 支付成功
           order.paySuccess(orderId)
           
-        },function(){},function(){
+        }, function (res) {
+
+          that.setData({ "isPayDisable": false })
+          console.log(res)
+        },function() {
           
         });
+      } else {
+        that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: that.data._.error_text[0] })
+      }
+
+
+      that.confirmCallback = function () {
+        wx.startPullDownRefresh();
       }
       
     },function() {

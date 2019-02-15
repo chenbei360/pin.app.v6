@@ -12,7 +12,10 @@ Page({
     isGroupHelp: false,
     isNoNetError: true,
     isPayDisable: false,
-    isCancelPay: false
+    isCancelPay: false,
+
+    showPage: false,
+    _: app.globalData._.config
   },
   
   loadAddresses: function (successCallback, failCallback) {
@@ -41,9 +44,30 @@ Page({
     wx.request({
       url: app.globalData.miniUrl + 'v1.0/goods/' + goodsId,
       success: function (res) {
-        that.setData({
-          goods: res.data.goods
-        });
+        
+
+        if (res.data.result == 'fail') {
+
+          that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: that.data._.error_text[4] }),
+            that.setData({ isLoading: false, isOperate: false })
+
+        } else if (res.data.result == 'ok') {
+
+          that.setData({
+            goods: res.data.goods,
+            showPage: true
+          });
+
+        } else {
+          
+          that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: that.data._.error_text[0] })
+
+        }
+
+        that.confirmCallback = function(){
+          app.goHome();
+        }
+        
         that.setData({
           isNoNetError: true
         });
@@ -177,6 +201,21 @@ Page({
           orderId = res.data.order_id,
           that.pay();
         }else{
+
+          if (res.data.result == "fail")
+          {
+            that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: res.data.error_info });
+            // wx.showToast({ title: res.data.error_info, icon: "none" });  
+          }else{
+            that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: res.data.error_info });
+            // wx.showToast({ title: that.data._.error_text[0], icon: "none" });  
+          }
+          
+          that.confirmCallback = function (){
+          }
+          
+          console.log(res);
+
           that.setData({ "isPayDisable": false });
         }
       },
@@ -194,7 +233,12 @@ Page({
     var that = this;
     order.pay(orderId,function(res){  
 
-      if (res.data.result == 'ok') {
+      
+      if (res.data.result == 'fail') {
+
+        that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: res.data.error_info });
+
+      } else if (res.data.result == 'ok') {
         order.goPay(res.data.param, function () { 
           // 支付成功
           order.paySuccess(orderId)

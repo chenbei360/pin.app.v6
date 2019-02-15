@@ -251,7 +251,18 @@ App({
     }
     return paramStr;
   },
+  
+  goHome: function () {
+    wx.switchTab({
+      url: './index',
+    });
+  },
 
+  goOrders: function () {
+    wx.switchTab({
+      url: './orders',
+    });
+  },
   
   globalData: {
     userInfo: null,

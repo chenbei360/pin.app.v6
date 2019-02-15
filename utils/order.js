@@ -25,7 +25,7 @@ function cancel(that,orderId,successCallback, failCallback){
     })
   }
 
-  that.setData({ showWinpopModal: true, winpopContent: "确定“取消订单”吗？"})
+  that.setData({ showWinpopModal: true, winpopContent: "确定“取消订单”吗？", showWinpopCancel: true } )
 }
 
 function express(orderId, successCallback, failCallback, completeCallback){
@@ -67,7 +67,7 @@ function receive(that,orderId, successCallback, failCallback){
     })
   }
 
-  that.setData({ showWinpopModal: true, winpopContent: "确定“确认收货”吗？" })
+  that.setData({ showWinpopModal: true, winpopContent: "确定“确认收货”吗？", showWinpopCancel: true })
 
 
   // wx.showModal({

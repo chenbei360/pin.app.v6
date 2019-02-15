@@ -6,10 +6,8 @@
 
 
 
-<view class="body" wx:if="{{!isLoading}}">
+<view class="body" wx-if="{{showPage}}">
     
-    <include src="common/express.wxml"/>
-
      <view class=" div mod_container" ms-class=" exp_overflow:!express_hide">
          <view id="detailCon" class="div wx_wrap" ms-visible="order.order_id != undefined">
              <!-- ms-class="state_1: order.total_status == 2" ms-class-1="state_2: order.total_status == 3" ms-class-2="state_3: order.total_status == 4"-->
@@ -133,4 +131,4 @@
     </view>
 
 
-<winpop-mask showWinpopModal="{{showWinpopModal}}" winpopContent="{{winpopContent}} " bind:cancelCallback="cancelCallback" bind:confirmCallback="confirmCallback"></winpop-mask>
+<winpop-mask showWinpopModal="{{showWinpopModal}}"  showWinpopCancel="{{showWinpopCancel}}" winpopContent="{{winpopContent}} " bind:cancelCallback="cancelCallback" bind:confirmCallback="confirmCallback"></winpop-mask>
