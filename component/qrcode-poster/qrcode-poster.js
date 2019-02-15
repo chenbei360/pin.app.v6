@@ -96,10 +96,26 @@ Component({
 
                 that.triggerEvent("close", {}, {});
               },
-              fail: function () {
+              fail: function (res) {
                 wx.hideLoading();
                 app.handlerShare("分享海报", 0, uri );
                 that.triggerEvent("close", {}, {});
+                console.log(res);
+
+                wx.getSetting({
+                  success(res) {
+                    if (!res.authSetting["scope.writePhotosAlbum"]) {
+                      wx.openSetting({
+                        success: (res) => {
+                          if (res.authSetting["scope.writePhotosAlbum"] && res.authSetting["scope.writePhotosAlbum"] == true) {
+                            that.save();
+                          }
+                        }
+                      });
+                    }
+                  }
+                });
+                
               }
             });
           }

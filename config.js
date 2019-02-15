@@ -4,7 +4,7 @@ var config =
   app: {
     url: "pintuan-xcx.cn",
     name: "拼购",
-    icon_url: "https://cdn.notestore.cn/w3/logo.png"
+    icon_url: "//pintuan-xcx.cn/v1.0/logo.png"
   },
 
   share_text: {
