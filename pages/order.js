@@ -110,6 +110,7 @@ Page({
         }
         
         that.confirmCallback = function () {
+          that.setData({ "isPayDisable": false }),
           wx.startPullDownRefresh();
         }
       }, function () {

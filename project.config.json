@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 8,
 			"list": [
 				{
 					"id": 0,
@@ -88,7 +88,7 @@
 					"id": 8,
 					"name": "团详情",
 					"pathName": "pages/group",
-					"query": "id=1"
+					"query": "id=14"
 				},
 				{
 					"id": 9,

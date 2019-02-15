@@ -152,7 +152,8 @@ Page({
 
 
       that.confirmCallback = function () {
-        wx.startPullDownRefresh();
+        wx.startPullDownRefresh(),
+        that.setData({ "isPayDisable": false })
       }
       
     },function() {
