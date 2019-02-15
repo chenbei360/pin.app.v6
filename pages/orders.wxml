@@ -93,6 +93,7 @@
                 </view>
 
                 <view class="div wrap_position" ms-class="pullUp_hide:pullUp_hide" ms-class="pullUp_show:pullUp_show">
+                  <!--
                     <view class="div posi_abso" ms-class="up:isloading" wx:if="{{is_over == 0 && pullDown == 1 && page.load == 1}}">
                         <view class="div center " id="center_pullup">
                             <view class="span">
@@ -100,8 +101,9 @@
                             <view class="span loading-text">正在加载中...</view>
                         </view>
                     </view>
+                    -->
                     
-                    <view class="div no-orders-at-all" wx:elif="{{orders.length == 0 && no_order == 1 && page.load ==1}}">
+                    <view class="div no-orders-at-all" wx:if="{{!isLoading && orders.length == 0}}">
                         <view class="div head-block">
                             <view class="div blank-icon"></view>
                             <view class="hint">您还没有相关的订单</view>
@@ -109,11 +111,13 @@
                         </view>
                     </view>
 
+                    <!-- 
                     <view class="div posi_abso" ms-class="up:!isloading" wx:elif="{{is_over == 1 && page.load ==1}}">
                         <view class="div center " id="center_pullup">
                             <view class="span orders_text" id="noOrders">{{pullload_text.no_orders}}</view>
                         </view>
                     </view>
+                    -->
 
                 </view>
 

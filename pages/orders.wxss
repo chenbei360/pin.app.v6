@@ -33,6 +33,7 @@
 #dealliststatus1 {
     font-size: 24rpx;
     padding-top: 84rpx;
+    background-color:#eceded;
 }
 
 .order {
@@ -262,7 +263,7 @@ page {
 }
 
 .no-orders-at-all .head-block {
-    height: 76.2rpx;
+    /* height: 76.2rpx; */
     text-align: center;
     padding-top: 216rpx;
 }

@@ -1,7 +1,7 @@
 // pages/group.js
 //获取应用实例
 const app = getApp();
-var groupId = 0, util = require('../utils/util.js');
+var groupId = 0, util = require('../utils/util.js'), cron = require('../utils/cron.js');
 Page({
 
 
@@ -28,7 +28,17 @@ Page({
     if (this.timer) clearTimeout(this.timer);
     var times = (expire_time - new Date().getTime() / 1000) * 1000, that = this;
     util.countdowns(this, [times],function(i) {
-      clearTimeout(that.timer);
+
+      clearTimeout(that.timer),
+      cron.run(function() 
+      {  
+      },function() 
+      {
+      },function() 
+      {
+        wx.startPullDownRefresh();
+      })
+      
     });
   },
 
