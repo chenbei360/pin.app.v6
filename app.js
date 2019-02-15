@@ -87,6 +87,10 @@ App({
         console.log("app.checkseesion fail");
         // 登录
         that.login(successCallback, failCallback);
+
+        // 通知
+        var tokenUtils = require('./utils/token.js')
+        tokenUtils.run(function(){},function(){},function(){});
       },
 
       complete: function () {
@@ -267,10 +271,10 @@ App({
   globalData: {
     userInfo: null,
     isIphonex: false,
-    // apiUrl: "http://pin6.cn/api/",
-    // miniUrl: "http://pin6.cn/mini/",
-    apiUrl: "http://test.pintuan-xcx.cn/api/",
-    miniUrl: "http://test.pintuan-xcx.cn/mini/",
+    apiUrl: "http://pin6.cn/api/",
+    miniUrl: "http://pin6.cn/mini/",
+    // apiUrl: "http://test.pintuan-xcx.cn/api/",
+    // miniUrl: "http://test.pintuan-xcx.cn/mini/",
     device: "",
     windowHeight: "",
     windowWidth: "",
