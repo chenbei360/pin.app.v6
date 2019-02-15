@@ -2,7 +2,7 @@ var config =
 {
   
   app: {
-    url: "w5.pintuan-xcx.cn",
+    url: "pintuan-xcx.cn",
     name: "拼购",
     icon_url: "https://cdn.notestore.cn/w3/logo.png"
   },
