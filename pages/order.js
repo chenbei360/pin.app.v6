@@ -60,6 +60,7 @@ Page({
     var that = this, orderId = e.currentTarget.dataset.order_id;
     order.receive(that,orderId, function (res) {
       if (res.data.result == 'ok') {
+        that.prevPageRefresh(),
         wx.startPullDownRefresh();
       }
     }, function (res) {
@@ -70,6 +71,7 @@ Page({
     var that = this;
     order.cancel(that,orderId, function (res) {
       if (res.data.result == 'ok') {
+        that.prevPageRefresh(),
         wx.startPullDownRefresh();
       }
     }, function (res) {
@@ -93,6 +95,7 @@ Page({
         }else if (res.data.result == 'ok') {
           order.goPay(res.data.param, function () {
             // 支付成功
+            that.prevPageRefresh(),
             order.paySuccess(orderId)
             
           }, function () {
@@ -171,6 +174,15 @@ Page({
   
   onReachBottom: function () {
 
+  },
+
+  prevPageRefresh: function () {
+    var pages = getCurrentPages(),
+      prevPage = pages.length - 2;
+      
+    if (prevPage >= 0 && pages[prevPage].route == "pages/orders") {
+      pages[prevPage].onPullDownRefresh();
+    }
   }
 
   
