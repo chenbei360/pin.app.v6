@@ -28,11 +28,11 @@ Page({
     if (this.timer) clearTimeout(this.timer);
     var times = (expire_time - new Date().getTime() / 1000) * 1000, that = this;
     
-    if (times <= 0) 
-    {
-      cron.run(function () {}, function () {}, function () {wx.startPullDownRefresh();})
-      return;
-    }
+    // if (times <= 0) 
+    // {
+    //   cron.run(function () {}, function () {}, function () {wx.startPullDownRefresh();})
+    //   return;
+    // }
 
     util.countdowns(this, [times],function(i) {
 
