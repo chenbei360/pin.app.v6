@@ -118,7 +118,11 @@ Page({
           res.data.group_order.group_title_class = group_title_class;
 
 
-          that.countdown(res.data.group_order.expire_time);
+          if (res.data.group_order.status == '0')
+          {
+            that.countdown(res.data.group_order.expire_time);
+          }
+            
 
 
           that.setData({
