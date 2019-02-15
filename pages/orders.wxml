@@ -103,7 +103,7 @@
                     </view>
                     -->
                     
-                    <view class="div no-orders-at-all" wx:if="{{!isLoading && orders.length == 0}}">
+                    <view class="div no-orders-at-all" wx:if="{{!isLoading && orders.length == 0 && isNoNetError}}">
                         <view class="div head-block">
                             <view class="div blank-icon"></view>
                             <view class="hint">您还没有相关的订单</view>

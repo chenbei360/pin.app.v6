@@ -28,3 +28,5 @@
 
     <view class="div" style="visibility:hidden "></view>
 </view>
+<net-error-tips isNoNetError="{{isNoNetError}}" bind:loadData="loadData"></net-error-tips>
+<load-more isHideLoadMore="{{isHideLoadMore}}"></load-more>
