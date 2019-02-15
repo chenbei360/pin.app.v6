@@ -280,7 +280,7 @@ page {
 }
 
 .blank-icon, .coupon-icon, .hot-icon {
-    background-image: url(http://cdn.yangkeduo.com/assets/img/orders_sprites_v2-0d494f291a.png);
+    background-image: url(//pintuan-xcx.cn/v1.0/orders_sprites_v2-0d494f291a.png);
     background-repeat: no-repeat;
     background-size: 392rpx 392rpx;
 }
