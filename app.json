@@ -9,7 +9,13 @@
     "pages/addresses",
     "pages/address",
     "pages/order",
-    "pages/group"
+    "pages/group",
+
+
+    
+    "pages/develop/goods",
+    "pages/backup/goods"
+
   ],
   "window": {
     "backgroundColor": "#fff",

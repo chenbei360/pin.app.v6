@@ -16,6 +16,7 @@ button::after {
 .goods-info {
     position: relative;
     padding: 16rpx 0;
+    text-align: center;
     padding-bottom:0px;
 }
 
@@ -29,7 +30,7 @@ button::after {
     height: auto;
     color: #343434;
     line-height: 44rpx;
-    /* text-align: center; */
+    text-align: center;
     font-weight: 600;
     width:85%;
 }
@@ -49,10 +50,10 @@ button::after {
 }
 
 .goods-info .goods_price {
-    /* margin-top: 20rpx; */
+    margin-top: 20rpx;
     height: 50rpx;
     line-height: 50rpx;
-    display: inline-block;
+    text-align: center;
 }
 
 .goods-info .goods_price .red {
@@ -97,6 +98,7 @@ button::after {
 .goods-info .goods-sold {
     color: #878787;
     font-size: 24rpx;
+    text-align: center;
 }
 
 .rule-intro {
@@ -110,8 +112,6 @@ button::after {
     margin-bottom: 18rpx;
     height: 28rpx;
     line-height: 28rpx;
-    display: inline-block;
-    float: right;
 }
 
 .rule-intro {
@@ -628,7 +628,8 @@ image {
 .goods-direct-btn {
     width: 264rpx;
     font-size: 0;
-    background-color: #FFAAB0;
+    background-color: #e02e24;
+    opacity:0.6;
 }
 
 .goods-direct-btn, .goods-group-btn {
@@ -672,7 +673,7 @@ image {
     flex: 1;
     width: 0;
     font-size: 0;
-    background-color: #FF3138
+    background-color: #e02e24
 }
 
 .goods-direct-btn, .goods-group-btn {
@@ -942,8 +943,8 @@ image {
   background: none;
   border:none;
   padding:0;
-  right:20rpx;
-  top:74rpx;
+  right:10rpx;
+  top:-4rpx;
   position: absolute;
 }
 
@@ -961,107 +962,7 @@ image {
   font-size:20rpx;
   padding-top:10rpx;
   height:24rpx;
-  color:#BABABA;
-  font-weight:800;
+  color:#4e4e4e;
+  font-weight:600;
 }
 /* 分享按钮 */
-
-
-/* 新版商品详情 开始*/
-#g-base {
-    position: relative;
-    width: 100%;
-    background-color: #fff;
-    padding-bottom: 0;
-}
-
-#g-base .g-price-group {
-    height: 52rpx;
-    font-size: 0;
-    color: #FF3A37;
-    box-sizing: content-box;
-    padding: 22rpx 24rpx 0 20rpx;
-    /* box-sizing: border-box; */
-}
-
-#g-base .g-price-group .g-group-price {
-    display: inline-block;
-    height: 56rpx;
-    line-height: 56rpx;
-    font-size: 56rpx;
-    font-weight: 700;
-}
-
-#g-base .g-price-group .g-group-price i {
-    font-size: 30rpx;
-    margin: 0;
-    margin-left: -2rpx;
-}
-
-#g-base .g-price-group .g-group-price .price-range {
-    letter-spacing: -2rpx;
-    font-size: 56rpx;
-    line-height: 42rpx;
-}
-
-#g-base .g-price-group .g-group-price .price-range .qi {
-    font-size: 24rpx;
-    color: #FF3A37;
-    line-height: 32rpx;
-    position: relative;
-    left: 4rpx;
-    bottom: 2rpx;
-    font-weight: 400;
-}
-
-#g-base .g-price-group .g-market-price {
-    height: 100%;
-    line-height: 48rpx;
-    margin-left: 12rpx;
-    color: #58595b;
-    display: inline-block;
-}
-
-#g-base .g-price-group .del {
-  text-decoration:line-through;
-}
-
-.regular-text {
-    font-size: 26rpx;
-}
-
-#g-base .g-price-group .g-sales {
-    position: relative;
-    float: right;
-    height: 100%;
-    line-height: 48rpx;
-    color: #58595b;
-    top: 6rpx;
-}
-
-#g-base .g-name-new {
-    position: relative;
-    width: 80%;
-    font-size: 30rpx;
-    line-height: 1.4;
-    color: #151516;
-    overflow: hidden;
-    font-weight: 700;
-    text-align: justify;
-    word-break: break-all;
-    word-wrap: break-word;
-    padding: 16rpx 24rpx 2rpx;
-    box-sizing: border-box;
-}
-
-
-#g-base .g-name-new .goods-name-content {
-    display: block;
-    max-height: 82rpx;
-    overflow: hidden;
-}
-
-#g-base .g-name-new .goods-name-content .g-n-goods-title {
-    margin-right: 12rpx;
-}
-/* 新版商品详情 结束 */

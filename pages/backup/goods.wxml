@@ -15,46 +15,56 @@
             </block>
             </swiper>
         </view>
-        
-        <!-- new title -->
-        <view id="g-base" class="section false">
-          <view class="div g-price-group">
-            <view class=" span g-group-price">
-              <view class="i">￥</view>
-              <view class="span price-range">{{goods.group_price}}<view class="span qi">起</view></view></view>
-              <view class="span g-market-price regular-text">
-                <view class="del">￥{{ goods.sell_type == 2 ? goods.alone_price : goods.market_price }}</view>
-              </view>
-              <view class="span g-sales regular-text">累计销量：{{goods.sell_count < 10000 ? goods.sell_count : "10000+"}}件</view></view>
-              <view class="div g-name-new">
-                <view class="span goods-name-content">
-                  <view>
-                      <view class="span g-n-goods-title">
-                        <view class="span enable-select">{{goods.goods_name}}</view>
-                      </view>
-                    </view>
-                  </view>
-              </view>
-
-              <block>
-                <button bindtap='showShareModal' class="share-btn">
-                  <view class="image-wrap">
-                    <image src="//pintuan-xcx.cn/v1.0/goods-detail-share.png"></image>
-                  </view>
-                  <view class="text">分享</view>
-                </button>
-              </block> 
-
-        </view>
-
-        <!-- new title end -->
 
         <view class="goods-info goods-white div">
-          
-           
 
+            <view class="goods-name div">{{goods.goods_name}}</view>
 
+            <block>
+            <button bindtap='showShareModal' class="share-btn">
+              <view class="image-wrap">
+                <image src="//pintuan-xcx.cn/v1.0/goods-detail-share.png"></image>
+              </view>
+              <view class="text">分享</view>
+            </button>
+            </block>
             
+            <view class="p tuan_goods_cx">
+                <view class="span"></view>
+            </view> 
+
+            <view class="goods_price div">
+                <view class="red span" style="{{goods.sell_type == 2 ? 'display:none;' : ''}}">
+                    <view class="red-padding span">￥</view>
+                    {{goods.group_price}} 
+                </view>
+
+                 <view class="red span" style="{{goods.sell_type == 2 ? '' : 'display:none;'}}">
+                    <view class="red-padding span">￥</view>
+                    {{goods.alone_price}} 
+                </view>
+                <view class="grey span" style="{{goods.sell_type == 2 ? 'display:none;' : 'text-decoration:none;'}}">
+                    {{goods.group_number}}人团
+                </view>
+
+                <view class="grey span" style="{{goods.sell_type == 2 ? 'text-decoration:none;' : 'display:none;'}}">
+                    单独购
+                </view>
+
+
+                <view class="grey span">
+                    <view class="grey-padding span">
+                        <view class="small">￥</view>
+                    </view>
+                      {{goods.market_price}}
+                </view>
+                <view class="market-price span">（市场价）</view>
+            </view>  
+
+            <view class="goods-sold div">
+                累计销量：{{goods.sell_count < 10000 ? goods.sell_count : "10000+"}}件
+            </view>
+
 
 
             <mall-service></mall-service>
