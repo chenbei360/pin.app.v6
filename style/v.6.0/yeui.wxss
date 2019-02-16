@@ -87,3 +87,20 @@
 #g-base .share-btn {
   display: none !important;
 }
+
+.goods_list .tuan_g .tuan_g_img {
+  width:100%; 
+  height:352rpx;
+  overflow:hidden;
+}
+
+.portal-banner-bg {
+  height:340rpx;
+  background-color:#fff;
+}
+
+.portal-banner-bg swiper {
+  width: 100%;
+  height: 100%;
+  overflow-y:hidden;
+}

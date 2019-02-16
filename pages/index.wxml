@@ -4,7 +4,7 @@
 <view class="container" wx-if="{{!isLoading || isOperate}}">
   <view class="for-margin-top"></view>   
   <!--banner广告区域-->
-  <view class="banner">
+  <view class="banner portal-banner-bg">
     <swiper autoplay="true"  interval="5000" indicator-active-color="#d81e06" circular="true" >
     <block wx:for="{{banner}}" wx:key="id">
       <swiper-item data-type="{{item.banner_type}}" data-text="{{item.banner_name}}" bindtap="bannerClick">
