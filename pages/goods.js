@@ -88,6 +88,7 @@ Page({
         that.setData({
           isNoNetError: false
         });
+        that.setData({ isLoading: false, isOperate: false })
       },
       complete: function (res) {
         wx.stopPullDownRefresh();
