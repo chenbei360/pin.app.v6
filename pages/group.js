@@ -162,9 +162,7 @@ Page({
 
 
   goHome: function () {
-    wx.switchTab({
-      url: './index',
-    });
+    app.goHome();
   },
 
 
