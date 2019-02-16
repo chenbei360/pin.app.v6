@@ -4,7 +4,7 @@
 <view class="container" wx-if="{{showPage}}">
     <view class="main-view">
 
-        <view class="goods-banner" id="banner">
+        <view class="goods-banner" id="banner" catchlongpress="showShareModal">
             <view class="div banner-index" hidden="{{gallery.length <= 1}}">{{current}} / {{gallery.length}}</view>
             <swiper bindchange="bindchange" indicator-color="#eceded" indicator-active-color="#e02e24"  indicator-dots="{{indicatorDots}}"
             autoplay="{{false}}" interval="{{3500}}" duration="{{800}}" wx:if="{{gallery}}" circular="true" style="height:{{image_w_h.imageheight*2 || '750'}}rpx" >

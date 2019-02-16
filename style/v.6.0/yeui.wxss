@@ -79,3 +79,11 @@
 .tm {
   border-bottom-color: #e0e0e0!important;
 }
+
+/* 商品详情 */
+#g-base .g-name-new {
+  width: 100% !important;
+}
+#g-base .share-btn {
+  display: none !important;
+}
