@@ -123,8 +123,8 @@
 
             <view class="div mod_footer" id="mod_footer">
                 <view class="div mod_footer_lk">
-                    <view class="a on" href="index.html" id="shop_name" catchtouchstart="goHome" data-url="index">{{_.app.name}}</view>
-                    <view class="a" href="groups.html" catchtouchstart="redirect" data-url="groups">我的团</view>
+                    <view class="a on" href="index.html" id="shop_name" bindtouchstart="goHome" data-url="index">{{_.app.name}}</view>
+                    <view class="a" href="groups.html" bindtouchstart="redirect" data-url="groups">我的团</view>
                 </view>
                 <view class="div mod_footer_logo">
                     <view class="span">{{_.app.url}}</view>
