@@ -35,9 +35,7 @@ Page({
     // }
 
     util.countdowns(this, [times],function(i) {
-
-      clearTimeout(that.timer),
-      cron.run(function(){},function(){},function() {wx.startPullDownRefresh();})
+      that.data.group_order.status == '0' && cron.run(function(){},function(){},function() {wx.startPullDownRefresh();})
       
 
       

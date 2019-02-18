@@ -52,7 +52,7 @@ function countdowns(that, total_micro_seconds, initCallback) {
     if (total_micro_second <= 0 || isNaN(total_micro_second)) {
       clock[i] = [0, 0, 0].map(formatNumber);
       if (that.timer != undefined) {
-        // total_micro_seconds = remove_array(total_micro_seconds, i),
+        total_micro_seconds = remove_array(total_micro_seconds, i),
         initCallback(i);
       }
       continue;

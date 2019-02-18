@@ -111,5 +111,27 @@ Page({
   },
   onShareAppMessage: function () { 
     return app.share({ title: "", desc: "", path: "" }); 
+  },
+  bannerClick: function (e) {
+    var bannerType = e.currentTarget.dataset.banner_type,targetUrl = e.currentTarget.dataset.target_url;
+
+    switch (bannerType) {
+      case "1":
+        wx.navigateTo({
+          url: targetUrl,
+        });
+        break;
+
+      case "2":
+        wx.navigateTo({
+          url: './webview?url=' + targetUrl,
+        });
+        break;
+
+      default:
+        break;
+    }
+
   }
+  
 })
