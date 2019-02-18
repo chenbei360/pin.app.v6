@@ -207,7 +207,7 @@ Page({
             that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: res.data.error_info });
             // wx.showToast({ title: res.data.error_info, icon: "none" });  
           }else{
-            that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: res.data.error_info });
+            that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: that.data._.error_text[0] });
             // wx.showToast({ title: that.data._.error_text[0], icon: "none" });  
           }
           
@@ -253,8 +253,15 @@ Page({
               wx.showToast({ title: app.globalData._.config.pay_text.cancel, icon: "none" });
           }
         });
-      }
+      } else {
 
+        that.setData({ showWinpopModal: true, showWinpopCancel: false, winpopContent: that.data._.error_text[0] }),
+        
+        that.confirmCallback = function () {
+          that.setData({ "isPayDisable": false })
+        }
+
+      }
     },function(res){
       that.setData({ "isPayDisable": false })
     },function(res){
