@@ -178,6 +178,7 @@ Page({
     }, function () {
       that.setData({
         showAuthModal: true,
+        showPage: true
       });
     });
   },

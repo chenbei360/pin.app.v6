@@ -37,64 +37,66 @@
                     </view>
                 </view>
              </view>
-            <view class="div order">
-                <view class="div order_bd">
-                    <view id="orderList" class="div order_glist">
-                        <view class="div only">
-                            <view class="div order_goods">
-                                <view class="div order_goods_img">
-                                    <image mode="aspectFill" class="img" alt="" src="{{goods.image_url}}" />
-                                </view>
-                                <view class="div order_goods_info">
-                                    <view class="div order_goods_name"><view id="tuanLbl"></view>{{goods.goods_name}}</view>
-                                    <view class="div order_goods_attr">
-                                        <view class="div order_goods_attr_item">
-                                            <view id="goodsPrice" class="div order_goods_price2">
-                                                <view class="i">￥</view>
-                                                    <block wx:if="{{sell_type == 1}}">{{goods.group_price}}</block>
-                                                    <block wx:else>{{goods.alone_price}}</block>
-                                                <view class="i" style="display:none;">/8个 </view>
-                                            </view>
-                                        </view>
-                                        <view class="p order_goods_attr_item"><view id="skuLast" class="span"></view><view class="i"></view></view>
-                                    </view>
-                                </view>
-                            </view>
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <view class="div" id="pay_area" style="opacity: 1;">
-                <view class="div total">快递：<view class="small">￥</view>0.00 总价：<view id="totalPrice" class="span total_price"><view class="i">￥</view>
-                    <block wx:if="{{sell_type == 1}}">{{goods.group_price}}</block>
-                    <block wx:else>{{goods.alone_price}}</block></view></view>
-                <view class="pay2 div ">
-                    <!-- <view class="div pay2_hd">请选择支付方式</view> -->
-                    <view class='h_20'></view>
-                    
-                    <view id="payList" class="div pay2_list">
-                        <view id="goTenPay" class="div pay2_item pay2_wx pay2_selected">
-                            <view class="span pay2_item_state"></view>
-                            <view class="span pay2_item_ico"></view>
-                            <view class="span pay2_item_tit">微信支付</view>
-                        </view>
-                    </view>
-                    
-                    <view class='h_20'></view>
+            <block wx:if="{{ goods }}">
+              <view class="div order">
+                  <view class="div order_bd">
+                      <view id="orderList" class="div order_glist">
+                          <view class="div only">
+                              <view class="div order_goods">
+                                  <view class="div order_goods_img">
+                                      <image mode="aspectFill" class="img" alt="" src="{{goods.image_url}}" />
+                                  </view>
+                                  <view class="div order_goods_info">
+                                      <view class="div order_goods_name"><view id="tuanLbl"></view>{{goods.goods_name}}</view>
+                                      <view class="div order_goods_attr">
+                                          <view class="div order_goods_attr_item">
+                                              <view id="goodsPrice" class="div order_goods_price2">
+                                                  <view class="i">￥</view>
+                                                      <block wx:if="{{sell_type == 1}}">{{goods.group_price}}</block>
+                                                      <block wx:else>{{goods.alone_price}}</block>
+                                                  <view class="i" style="display:none;">/8个 </view>
+                                              </view>
+                                          </view>
+                                          <view class="p order_goods_attr_item"><view id="skuLast" class="span"></view><view class="i"></view></view>
+                                      </view>
+                                  </view>
+                              </view>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+              <view class="div" id="pay_area" style="opacity: 1;">
+                  <view class="div total">快递：<view class="small">￥</view>0.00 总价：<view id="totalPrice" class="span total_price"><view class="i">￥</view>
+                      <block wx:if="{{sell_type == 1}}">{{goods.group_price}}</block>
+                      <block wx:else>{{goods.alone_price}}</block></view></view>
+                  <view class="pay2 div ">
+                      <!-- <view class="div pay2_hd">请选择支付方式</view> -->
+                      <view class='h_20'></view>
+                      
+                      <view id="payList" class="div pay2_list">
+                          <view id="goTenPay" class="div pay2_item pay2_wx pay2_selected">
+                              <view class="span pay2_item_state"></view>
+                              <view class="span pay2_item_ico"></view>
+                              <view class="span pay2_item_tit">微信支付</view>
+                          </view>
+                      </view>
+                      
+                      <view class='h_20'></view>
 
-                    <form name="theForm" id="theForm" class="form" report-submit="true" bindsubmit="btnOrderDone">
-                        <view>  
-                             <button formType="submit" class="pay2_btn" id="btn_order_done" style="{{isPayDisable || !address ? 'opacity: 0.4;' : ''}}" >
-                                 <block wx:if="{{isPayDisable}}">正在支付 请稍候</block>
-                                 <block wx:elif="{{isCancelPay}}">继续支付</block>
-                                 <block wx:else>立即支付</block>
-                             </button>
-                        </view>
-                    </form>
-                </view>
-            </view>
-        </view>
-
+                      <form name="theForm" id="theForm" class="form" report-submit="true" bindsubmit="btnOrderDone">
+                          <view>  
+                              <button formType="submit" class="pay2_btn" id="btn_order_done" style="{{isPayDisable || !address ? 'opacity: 0.4;' : ''}}" >
+                                  <block wx:if="{{isPayDisable}}">正在支付 请稍候</block>
+                                  <block wx:elif="{{isCancelPay}}">继续支付</block>
+                                  <block wx:else>立即支付</block>
+                              </button>
+                          </view>
+                      </form>
+                  </view>
+              </view>
+            </block>
+          
+          </view>
         <view class='h_20'></view>
 
 
