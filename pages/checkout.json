@@ -6,6 +6,7 @@
     "page-loading": "../../component/page-loading/page-loading",
     "net-error-tips": "../../component/net-error-tips/net-error-tips",
     "group-help": "../../component/group-help/group-help",
-    "winpop-mask": "../../component/winpop-mask/winpop-mask"
+    "winpop-mask": "../../component/winpop-mask/winpop-mask",
+    "auth-dialog": "../../component/auth-dialog/auth-dialog"
   }
 }

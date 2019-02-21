@@ -7,8 +7,8 @@ var sellType = 0, goodsId = 0, addressId = 0, groupOrderId = 0, orderId = 0,
 Page({
 
   data: {
-    isLoading: true,
-    isBannering: true,
+    isLoading: false,
+    isBannering: false,
     isGroupHelp: false,
     isNoNetError: true,
     isPayDisable: false,
@@ -160,11 +160,26 @@ Page({
       goods_id: goodsId
     });
 
-    setTimeout(function () {
-      that.closeBanner();
-    }, 3500);
+    
 
-    this.loadData();
+    app.getUserInfo(function (res) {
+      
+      that.setData({
+        isLoading: true,
+        isBannering: true
+      }),
+
+      setTimeout(function () {
+        that.closeBanner();
+      }, 3500),
+      
+      that.loadData();
+
+    }, function () {
+      that.setData({
+        showAuthModal: true,
+      });
+    });
   },
 
 
