@@ -81,7 +81,7 @@ function receive(that,orderId, successCallback, failCallback){
 function pay(orderId, successCallback, failCallback, completeCallback){
   var that = this;
   wx.request({
-    url: app.globalData.apiUrl + 'v1.0/users/orders/wxpay/' + orderId,
+    url: app.globalData.apiUrl + 'v1.0/users/orders/' + orderId + "/wxpay",
     header: {
       'AccessToken': wx.getStorageSync("token")
     },
