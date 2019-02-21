@@ -60,9 +60,11 @@ Page({
       },
       data: { offset: that.data.groups.length, size: 15 },
       success: function (res) {
-        that.setData({
-          groups: that.data.group_orders.concat(res.data.group_orders)
-        });
+        if (res.data.result == 'ok') {
+          that.setData({
+            groups: that.data.groups.concat(res.data.group_orders)
+          });
+        }
       },
       fail: function (res) {
       },
@@ -117,11 +119,7 @@ Page({
       this.loadMore();
     }
   },
-
-  onReachBottom: function () {
-
-  },
-  
+    
   onTabItemTap: function (item) {
     wx.startPullDownRefresh();
   }

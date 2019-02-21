@@ -19,7 +19,7 @@
             </view>
         </block>
         
-        <view class="div mt_nogroups" wx:if="{{!groups || groups.length <= 0 && no_data == 1}}">
+        <view class="div mt_nogroups" wx:if="{{!isLoading && groups.length == 0 && isNoNetError}}">
             <view class="h4">您还没有任何相关团购哦</view>
         </view>
     </view>

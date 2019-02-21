@@ -68,11 +68,16 @@ Page({
     });
     wx.request({
       url: app.globalData.apiUrl + 'v1.0/users/orders',
+      header: {
+        'AccessToken': wx.getStorageSync("token")
+      },
       data: { offset: that.data.orders.length, size: 15 },
       success: function (res) {
-        that.setData({
-          orders: that.data.orders.concat(res.data.order_list)
-        });
+        if (res.data.result == 'ok') {
+          that.setData({
+            orders: that.data.orders.concat(res.data.order_list)
+          });
+        }
       },
       fail: function (res) {
 
@@ -209,11 +214,6 @@ Page({
   
   onUnload: function () {
 
-  },
- 
-  onReachBottom: function () {
-
   }
-
   
 })
