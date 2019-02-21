@@ -3,8 +3,8 @@ function debugConsole(e) {
   console.log(e);
 }
 
-var loginCode = null;
-
+var loginCode = null,
+  fileAir = require('./config.js');
 
 App({
   onLaunch: function () {
@@ -268,16 +268,15 @@ App({
     });
   },
   
+  
   globalData: {
     userInfo: null,
     isIphonex: false,
-    apiUrl: "http://pin6.cn/api/",
-    miniUrl: "http://pin6.cn/mini/",
-    // apiUrl: "http://test.pintuan-xcx.cn/api/",
-    // miniUrl: "http://test.pintuan-xcx.cn/mini/",
+    apiUrl: fileAir.config.apiUrl,
+    miniUrl: fileAir.config.miniUrl,
     device: "",
     windowHeight: "",
     windowWidth: "",
-    _: require('./config.js')
+    _: fileAir
   }
 })

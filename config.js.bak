@@ -1,6 +1,9 @@
 var config = 
 {
   
+  apiUrl: "http://test.pintuan-xcx.cn/api/",
+  miniUrl: "http://test.pintuan-xcx.cn/mini/",
+  
   app: {
     url: "pintuan-xcx.cn",
     name: "拼购",
