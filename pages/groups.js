@@ -25,9 +25,11 @@ Page({
       },
       data: { offset: that.data.groups.length, size: 30 },
       success: function (res) {
-        that.setData({
-          groups: res.data.group_orders
-        });
+        if (res.data.result == 'ok') {
+          that.setData({
+            groups: res.data.group_orders
+          });
+        }
 
         that.setData({
           isNoNetError: true

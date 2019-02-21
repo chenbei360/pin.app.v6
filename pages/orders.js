@@ -29,10 +29,12 @@ Page({
       },
       data: { order_status: (that.data.navStatus == null ? "" : that.data.navStatus),offset: that.data.orders.length, size: 30 },
       success: function (res) {
-        that.setData({
-          orders: res.data.order_list
-        });
-
+        if (res.data.result == 'ok') {
+          that.setData({
+            orders: res.data.order_list
+          });
+        }
+        
         that.setData({
           isNoNetError: true
         });
