@@ -5,7 +5,7 @@
 
 ### 获取代码
 ```
-git clone https://github.com/noteapps/pin.app.v6
+git clone https://github.com/chenbei360/pin.app.v6
 ```
 
 ### 修改配置
