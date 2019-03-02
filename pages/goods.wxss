@@ -1065,3 +1065,8 @@ image {
     margin-right: 12rpx;
 }
 /* 新版商品详情 结束 */
+
+.goods-detail {
+    padding: 0 20rpx;
+    background-color: #fff;
+}
