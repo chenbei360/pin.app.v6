@@ -1066,7 +1066,9 @@ image {
 }
 /* 新版商品详情 结束 */
 
-.goods-detail {
+/* #### v.6.0.1 #### start*/
+/* .goods-detail {
     padding: 0 20rpx;
     background-color: #fff;
-}
+} */
+/* #### v.6.0.1 #### end */
