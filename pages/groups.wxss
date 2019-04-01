@@ -182,5 +182,11 @@ page{
 }
 
 .mt_nogroups .h4 {
-    font-weight: 400;
+  /* v.6.0.1 */
+  /* font-weight: 400; */
+  height:40rpx;
+  line-height:40rpx;
+  margin:48rpx auto;
+  color:#9c9c9c;
+  font-size:28rpx;
 }
